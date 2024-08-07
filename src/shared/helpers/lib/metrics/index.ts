@@ -1,1 +1,1 @@
-export * from './YandexMetrica';
+export * from './MetricsWrapper';

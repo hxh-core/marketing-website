@@ -1,6 +1,11 @@
 'use client';
 
-import { YandexMetricaWrapper } from '@/shared/helpers/lib/metrics';
+import { MetricsWrapper } from '@/shared/helpers/lib/metrics';
+import {
+	IGoogleAnalytics,
+	IGoogleTagManager,
+	IYandexMetrics,
+} from '@/shared/types';
 import type {
 	IFooter,
 	INavigation,
@@ -13,6 +18,11 @@ interface ClientLayoutProps {
 	navProps: INavigation;
 	newsProps: INewsMessages;
 	footerProps: IFooter;
+	analytics?: {
+		yandex?: IYandexMetrics;
+		googleAnalytics?: IGoogleAnalytics;
+		googleTagManager?: IGoogleTagManager;
+	};
 }
 
 export const ClientRootLayout = ({
@@ -20,10 +30,15 @@ export const ClientRootLayout = ({
 	footerProps,
 	navProps,
 	newsProps,
+	analytics,
 }: ClientLayoutProps) => {
 	return (
 		<body>
-			<YandexMetricaWrapper>
+			<MetricsWrapper
+				yandexMetrics={analytics ? analytics.yandex : undefined}
+				googleAnalytics={analytics ? analytics.googleAnalytics : undefined}
+				googleTagManager={analytics ? analytics.googleTagManager : undefined}
+			>
 				<Navigation
 					data={navProps}
 					news={newsProps}
@@ -34,7 +49,7 @@ export const ClientRootLayout = ({
 				/>
 				<main className='main'>{children}</main>
 				<Footer data={footerProps} />
-			</YandexMetricaWrapper>
+			</MetricsWrapper>
 		</body>
 	);
 };

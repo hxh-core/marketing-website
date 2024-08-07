@@ -61,6 +61,10 @@ body.blur {
 	&.from-bottom-to-top {
 		transform: translate3d(0, $animation-px, 0);
 	}
+	&.none {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
 
 	&.show-animation {
 		opacity: 1;

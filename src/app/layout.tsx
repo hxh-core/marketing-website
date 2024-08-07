@@ -2,7 +2,11 @@ import favicon128 from '@/data/user/favicon/favicon-128x128.png';
 import favicon32 from '@/data/user/favicon/favicon-32x32.png';
 import favicon64 from '@/data/user/favicon/favicon-64x64.png';
 import faviconSvg from '@/data/user/favicon/favicon.svg';
-import { FooterService, NavigationService } from '@/services/user/layout';
+import {
+	FooterService,
+	MetricsService,
+	NavigationService,
+} from '@/services/user/layout';
 import { REVALIDATE_TIME } from '@/shared';
 import { ClientRootLayout } from '@/widgets/lib';
 import type { Metadata } from 'next';
@@ -48,6 +52,12 @@ export default async function RootLayout({
 	const navigation = await NavigationService.getNavigation();
 	const newsMessages = await NavigationService.getNewsMessages();
 	const footer = await FooterService.getFooter();
+
+	// Get analytics
+	const yandexMetrics = await MetricsService.getYandexMetrics();
+	const googleAnalytics = await MetricsService.getGoogleAnalytics();
+	const googleTagManager = await MetricsService.getGoogleTagManager();
+
 	return (
 		<html lang='ru'>
 			<meta name='color-scheme' content='only dark' />
@@ -66,6 +76,20 @@ export default async function RootLayout({
 				footerProps={footer.data}
 				navProps={navigation.data}
 				newsProps={newsMessages.data}
+				analytics={{
+					yandex:
+						yandexMetrics && yandexMetrics.data
+							? yandexMetrics.data
+							: undefined,
+					googleAnalytics:
+						googleAnalytics && googleAnalytics.data
+							? googleAnalytics.data
+							: undefined,
+					googleTagManager:
+						googleTagManager && googleTagManager.data
+							? googleTagManager.data
+							: undefined,
+				}}
 			>
 				{children}
 			</ClientRootLayout>

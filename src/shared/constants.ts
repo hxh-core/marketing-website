@@ -4,8 +4,6 @@ export const WEBSITE_DOMEN = `${process.env.NODE_ENV === 'production' ? 'https' 
 export const SERVER_URL = process.env.NEXT_PUBLIC_API_URL;
 export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
 export const SERVER_FILES_DIST = 'uploads';
-export const YANDEX_METRIKA = 97876070;
-export const GOOGLE_ANALYTICS = undefined;
 export const MAIN_ARTICLES_COUNT = 4; // Сколько выводить статей на главной странице
 export const REVALIDATE_TIME = 10;
 
@@ -14,6 +12,7 @@ export const ANIMATION_CLASSES = {
 	animationBlock: 'animation-block',
 	animationBlockActive: 'show-animation',
 	direction: {
+		none: 'none',
 		'from-left-to-right': 'from-left-to-right',
 		'from-right-to-left': 'from-right-to-left',
 		'from-top-to-bottom': 'from-top-to-bottom',
