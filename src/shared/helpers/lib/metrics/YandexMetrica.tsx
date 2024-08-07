@@ -1,4 +1,5 @@
 import { YANDEX_METRIKA } from '@/shared/constants';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { YandexMetricaProvider } from 'next-yandex-metrica';
 
 interface YandexMetricaProps {
@@ -25,17 +26,20 @@ export const YandexMetricaWrapper = ({ children }: YandexMetricaProps) => {
 		// 	</YandexMetrikaWrapper>
 		// );
 		return (
-			<YandexMetricaProvider
-				initParameters={{
-					accurateTrackBounce: true,
-					clickmap: true,
-					trackLinks: true,
-					webvisor: true,
-				}}
-				tagID={YANDEX_METRIKA}
-			>
-				{children}
-			</YandexMetricaProvider>
+			<>
+				<GoogleAnalytics gaId='G-CKFGJ6E6G5' />
+				<YandexMetricaProvider
+					initParameters={{
+						accurateTrackBounce: true,
+						clickmap: true,
+						trackLinks: true,
+						webvisor: true,
+					}}
+					tagID={YANDEX_METRIKA}
+				>
+					{children}
+				</YandexMetricaProvider>
+			</>
 		);
 	}
 
