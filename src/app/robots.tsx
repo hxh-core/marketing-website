@@ -1,5 +1,5 @@
 import { MetaService } from '@/services/user/meta';
-import { appLinks, CLIENT_URL } from '@/shared/constants';
+import { appLinks, WEBSITE_DOMEN } from '@/shared/constants';
 
 // robots.txt / v.1.0.0
 export default async function robots() {
@@ -14,7 +14,7 @@ export default async function robots() {
 					disallow: [`${appLinks.user.main}*?*`, '/admin'],
 				},
 			],
-			sitemap: `${CLIENT_URL}/sitemap.xml`,
+			sitemap: `${WEBSITE_DOMEN}/sitemap.xml`,
 		};
 	}
 
@@ -26,6 +26,6 @@ export default async function robots() {
 				disallow: page.attributes.disallow?.map((page) => page.path),
 			};
 		}),
-		sitemap: `${CLIENT_URL}/sitemap.xml`,
+		sitemap: `${WEBSITE_DOMEN}/sitemap.xml`,
 	};
 }
