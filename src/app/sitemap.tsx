@@ -1,5 +1,5 @@
 import { MetaService } from '@/services/user/meta';
-import { CLIENT_URL } from '@/shared/constants';
+import { WEBSITE_DOMEN } from '@/shared/constants';
 import type { MetadataRoute } from 'next';
 
 // sitemap.xml / v.1.0.1
@@ -8,7 +8,7 @@ export default async function sitemap() {
 	const allPages = await MetaService.getAllPages();
 	// Все страницы
 	const routes: MetadataRoute.Sitemap = allPages.data.map((page) => ({
-		url: `${CLIENT_URL}${page.attributes.path}`,
+		url: `${WEBSITE_DOMEN}${page.attributes.path}`,
 		lastModified: page.attributes.updatedAt
 			? new Date(page.attributes.updatedAt).toISOString()
 			: new Date(page.attributes.createdAt).toISOString(),
