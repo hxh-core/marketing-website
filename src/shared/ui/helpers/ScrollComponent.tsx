@@ -1,7 +1,8 @@
 'use client';
 
 import { ANIMATION_CLASSES } from '@/shared/constants';
-import { useScrollTrigger } from '@hxhcore/react';
+import { useScrollTrigger } from '@/shared/helpers/hooks';
+// import { useScrollTrigger } from '@hxhcore/react';
 
 interface Props {
 	children?: React.ReactNode;

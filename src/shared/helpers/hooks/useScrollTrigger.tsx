@@ -2,6 +2,12 @@
 
 import { useEffect } from 'react';
 
+export interface UseScrollTriggerProps {
+	className: string;
+	visibleClass: string;
+	offset?: number;
+}
+
 /**
  * useScrollTrigger
  *
@@ -11,11 +17,11 @@ import { useEffect } from 'react';
  * @param visibleClass - класс, который будет добавляться/удаляться при достижении условий
  * @param offset - смещение от нижней границы окна просмотра (по умолчанию 30 пикселей)
  */
-export const useScrollTrigger = (
-	className: string,
-	visibleClass: string,
-	offset: number = 30,
-) => {
+export const useScrollTrigger = ({
+	className,
+	visibleClass,
+	offset = 30,
+}: UseScrollTriggerProps) => {
 	// const pathname = useRouter();
 
 	// useEffect(() => {
