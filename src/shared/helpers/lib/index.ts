@@ -1,3 +1,4 @@
+export * from './generateCustomMetadata';
 export * from './getAnimationStyle';
 export * from './getComponentFromBlockName';
 export * from './getIconFromName';

@@ -1,34 +1,45 @@
 import { PageService } from '@/services/user';
-import { getComponentFromBlockName } from '@/shared/helpers/lib';
+import { REVALIDATE_TIME } from '@/shared';
+import {
+	generateCustomMetadata,
+	getComponentFromBlockName,
+} from '@/shared/helpers/lib';
 import { ScrollComponent } from '@/shared/ui/helpers';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next/types';
+
+export const revalidate = REVALIDATE_TIME;
+
+export const generateMetadata = async ({
+	params,
+}: {
+	params: { slug: string; path: string };
+}): Promise<Metadata> => {
+	console.log(params);
+	const page = await PageService.getPageData(`/${params.slug}/${params.path}`);
+
+	return generateCustomMetadata({
+		page: page.data[0],
+		path: `${params.slug}/${params.path}`,
+		type: 'website',
+	});
+};
 
 const SlugPage = async ({
 	params,
 }: {
-	params: { path: string; slug: string };
+	params: { slug: string; path: string };
 }) => {
-	console.log(`path: ${params.path}`);
-	console.log(`slug: ${params.slug}`);
 	const pageData = await PageService.getPageData(
 		`/${params.slug}/${params.path}`,
 	);
 
-	if (!pageData.data[0]) {
+	if (!pageData.data[0] || !pageData.data[0].attributes.path) {
 		return notFound();
 	}
 
 	return (
 		<>
-			<title>{pageData.data[0].attributes.metaTitle}</title>
-			<meta
-				name='description'
-				content={pageData.data[0].attributes.metaDescription}
-			/>
-			<meta
-				name='keywords'
-				content={pageData.data[0].attributes.metaKeywords}
-			/>
 			<ScrollComponent>
 				{pageData.data[0] &&
 					pageData.data[0].attributes.blocks &&

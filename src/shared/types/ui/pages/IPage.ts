@@ -1,4 +1,4 @@
-import type { StrapiImage } from '../../api';
+import type { StrapiImageWithoutData } from '../../api';
 import type { IBlock } from '../blocks';
 
 export interface IPage {
@@ -11,8 +11,8 @@ export interface IPage {
 		metaTitle: string;
 		metaDescription?: string;
 		metaKeywords?: string;
-		metaImage: {
-			data: StrapiImage[];
+		metaImage?: {
+			data: StrapiImageWithoutData[];
 		};
 		path: string;
 		blocks: IBlock<any>[];

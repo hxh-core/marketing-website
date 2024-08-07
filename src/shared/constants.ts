@@ -1,5 +1,6 @@
 export const SITE_NAME = 'HxH Marketing';
 export const CLIENT_URL = process.env.NEXT_PUBLIC_CLIENT_URL;
+export const WEBSITE_DOMEN = `${process.env.NODE_ENV === 'production' ? 'https' : 'http'}://${process.env.NEXT_PUBLIC_WEBSITE_DOMEN}`;
 export const SERVER_URL = process.env.NEXT_PUBLIC_API_URL;
 export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
 export const SERVER_FILES_DIST = 'uploads';
