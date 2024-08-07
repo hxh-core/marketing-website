@@ -1,4 +1,4 @@
-export * from './CustomInput';
+export * from './ICustomInput';
 export * from './IAnimationDirection';
 export * from './IButton';
 export * from './IContactLink';

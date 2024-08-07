@@ -32,8 +32,8 @@ export const CollectForm = ({ data }: Props) => {
 
 	const submitForm = async (formData: { [key: string]: string }) => {
 		try {
-			await TelegramService.sendNewClient(formData, {
-				blockName: content.uniqueBlockName,
+			await TelegramService.sendNewClient(data, formData, {
+				blockName: data.blockName,
 			});
 			clearErrors();
 			content.inputs.forEach((input) => {
@@ -111,7 +111,7 @@ export const CollectForm = ({ data }: Props) => {
 							/>
 						))}
 						<CustomButton.Button
-							type={content.button.type}
+							type={'submit'}
 							size={content.button.size}
 							icon={content.button.icon}
 							color={content.button.color}
