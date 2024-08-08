@@ -21,10 +21,10 @@ export const CollectLinkLarge = ({ data }: Props) => {
 					<h3 className={styles.title}>{content.title}</h3>
 					<p className={styles.description}>{content.description}</p>
 					<div>
-						<CustomButton.Button
+						<CustomButton.Link
 							className={styles.button}
 							{...content.button}
-						></CustomButton.Button>
+						></CustomButton.Link>
 					</div>
 				</div>
 			</Container>

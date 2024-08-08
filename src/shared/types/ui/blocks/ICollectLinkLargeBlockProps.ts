@@ -1,4 +1,4 @@
-import type { ICustomButtonProps } from '../shared';
+import type { ICustomLinkProps } from '../shared';
 import type { IDefaultBlockProps } from './IDefaultBlockProps';
 
 export interface ICollectLinkLargeProps {
@@ -7,7 +7,7 @@ export interface ICollectLinkLargeProps {
 		uniqueBlockName: string;
 		title: string;
 		description: string;
-		button: ICustomButtonProps;
+		button: ICustomLinkProps;
 		locale?: string;
 		createdAt: string;
 		updatedAt?: string;
