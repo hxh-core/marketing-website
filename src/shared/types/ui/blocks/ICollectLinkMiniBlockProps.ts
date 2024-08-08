@@ -1,4 +1,4 @@
-import type { ICustomButtonProps } from '../shared';
+import type { ICustomLinkProps } from '../shared';
 import type { IDefaultBlockProps } from './IDefaultBlockProps';
 
 export interface ICollectLinkMiniProps {
@@ -7,7 +7,7 @@ export interface ICollectLinkMiniProps {
 		uniqueBlockName: string;
 		title: string;
 		description: string;
-		button: ICustomButtonProps;
+		button: ICustomLinkProps;
 		infinityBar?: string;
 		locale?: string;
 		createdAt: string;

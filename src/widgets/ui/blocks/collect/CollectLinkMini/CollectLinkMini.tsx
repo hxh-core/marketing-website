@@ -24,10 +24,10 @@ export const CollectLinkMini = ({ data }: Props) => {
 							<div className={styles.lower}>
 								<p className={styles.description}>{content.description}</p>
 								<div>
-									<CustomButton.Button
+									<CustomButton.Link
 										className={styles.button}
 										{...content.button}
-									></CustomButton.Button>
+									></CustomButton.Link>
 								</div>
 							</div>
 						</Container>
