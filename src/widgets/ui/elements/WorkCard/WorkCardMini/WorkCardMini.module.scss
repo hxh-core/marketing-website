@@ -50,6 +50,8 @@
 .content {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
 	gap: rem(30);
 	padding: rem(30) rem(20) rem(20);
 

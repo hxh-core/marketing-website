@@ -60,6 +60,7 @@ export const Footer = ({ data }: FooterProps) => {
 						{data.attributes.contacts.map((contact) => (
 							<Link
 								href={contact.href}
+								target='_blank'
 								className={styles.icon}
 								key={contact.id}
 							>

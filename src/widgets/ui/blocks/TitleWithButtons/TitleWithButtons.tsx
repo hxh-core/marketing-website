@@ -39,13 +39,7 @@ export const TitleWithButtons = ({ data }: Props) => {
 							content.buttons.length > 0 &&
 							content.buttons.map((link, index) => (
 								<div key={index}>
-									<CustomButton.Link
-										size='large'
-										color={link.color}
-										href={link.href}
-									>
-										{link.children}
-									</CustomButton.Link>
+									<CustomButton.Link {...link}></CustomButton.Link>
 								</div>
 							))}
 					</div>
