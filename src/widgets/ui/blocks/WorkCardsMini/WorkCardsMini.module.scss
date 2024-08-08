@@ -1,0 +1,13 @@
+@import '@/shared/styles/_vars';
+
+.workCardsMini {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	gap: 30px;
+
+	@media (max-width: $max-650) {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+}

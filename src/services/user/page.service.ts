@@ -19,6 +19,8 @@ const queryParams = [
 	'populate[blocks][populate][8]=data.button',
 	// Services
 	'populate[blocks][populate][9]=data.price',
+	'populate[blocks][populate][10]=data.oldPrice',
+	'populate[blocks][populate][11]=data.link',
 	'populate=metaImage',
 	'pagination[pageSize]=1000',
 ];

@@ -1,6 +1,7 @@
+import { getIconFromName } from '@/shared/helpers/lib';
 import { IService, IServicePrice } from '@/shared/types/ui/elements';
 import { CustomButton } from '@/shared/ui';
-import { ArrowIcon, RobotIcon } from '@/shared/ui/icons';
+import { ArrowIcon } from '@/shared/ui/icons';
 import Link from 'next/link';
 import styles from './ServiceCard.module.scss';
 
@@ -24,19 +25,43 @@ const getServicePrice = (price: IServicePrice) => {
 	}
 };
 
+const getServiceCardTheme = (
+	color: 'primary' | 'secondary',
+	transition?: boolean,
+) => {
+	switch (color) {
+		case 'primary':
+			return transition
+				? `${styles.primary} ${styles.primaryTransition}`
+				: styles.primary;
+		case 'secondary':
+			return transition
+				? `${styles.secondary} ${styles.secondaryTransition}`
+				: styles.secondary;
+		default:
+			return transition
+				? `${styles.primary} ${styles.primaryTransition}`
+				: styles.primary;
+	}
+};
+
 export const ServiceCard = ({ data }: Props) => {
 	return (
-		<div className={styles.serviceCard}>
+		<div
+			className={`${styles.serviceCard} ${getServiceCardTheme(data.attributes.color, data.attributes.hoverTransition)}`}
+		>
 			<div className={styles.header}>
 				<div className={styles.titleWrapper}>
 					<div className={styles.iconWrapper}>
-						<RobotIcon className={styles.previewIcon} />
+						{getIconFromName(data.attributes.icon, styles.previewIcon)}
 					</div>
 					<p className={styles.title}>{data.attributes.title}</p>
 				</div>
-				<Link href={data.attributes.slug} className={styles.linkIcon}>
-					<ArrowIcon />
-				</Link>
+				{data.attributes.slug && (
+					<Link href={data.attributes.slug} className={styles.linkIcon}>
+						<ArrowIcon className={styles.arrowLinkIcon} />
+					</Link>
+				)}
 			</div>
 			<div className={styles.content}>
 				<p className={styles.description}>{data.attributes.description}</p>
@@ -44,6 +69,11 @@ export const ServiceCard = ({ data }: Props) => {
 					<div className={styles.button}>
 						<CustomButton.Link {...data.attributes.button}></CustomButton.Link>
 					</div>
+					{data.attributes.oldPrice && (
+						<p className={styles.oldPrice}>
+							<s>{getServicePrice(data.attributes.oldPrice)}</s>
+						</p>
+					)}
 					<p className={styles.price}>
 						{getServicePrice(data.attributes.price)}
 					</p>

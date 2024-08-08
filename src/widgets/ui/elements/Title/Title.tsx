@@ -16,16 +16,16 @@ export const Title = ({ title }: TitleProps) => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.container}>
-				<div className={styles.title}>
+				<h3 className={styles.title}>
 					<Markdown>{title.label}</Markdown>
-				</div>
+				</h3>
 				{title.link && title.link.label && (
 					<Link
 						className={styles.link}
 						href={title.link.href}
 						target={title.link.target}
 					>
-						{title.link.label}
+						<span>{title.link.label}</span>
 						<ArrowIcon className={styles.icon} />
 					</Link>
 				)}

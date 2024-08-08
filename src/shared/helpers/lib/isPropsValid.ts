@@ -6,8 +6,7 @@ export const isPropsValid = <T extends IComponentProps>(
 	props: any,
 	propType: T,
 ): props is T => {
-	if (!propType.data.data || !propType.data.data.data) {
-		// TelegramService.sendNotPublishedBlock(propType.data.blockName);
+	if (!propType.data.data) {
 		return false;
 	}
 

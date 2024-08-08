@@ -63,7 +63,7 @@ export const Footer = ({ data }: FooterProps) => {
 								className={styles.icon}
 								key={contact.id}
 							>
-								{getIconFromName(contact.socialNetwork)}
+								{getIconFromName(contact.socialNetwork, '', 'dark')}
 							</Link>
 						))}
 					</div>

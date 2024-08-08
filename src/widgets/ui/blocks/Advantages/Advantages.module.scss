@@ -1,0 +1,114 @@
+@import '@/shared/styles/_vars';
+
+.advantages {
+	display: flex;
+	align-items: stretch;
+	gap: rem(30);
+	overflow-x: visible;
+	margin-top: rem(40);
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+.scrollHorizontalContainer {
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	display: flex;
+	align-items: stretch;
+	cursor: -webkit-grab;
+	cursor: grab;
+
+	&:active {
+		cursor: -webkit-grabbing;
+		cursor: grabbing;
+	}
+}
+.swiperWrapper {
+	width: 100%;
+	display: flex;
+}
+.advantagesSwiperWrapper {
+	width: 100%;
+	display: flex;
+	flex-wrap: nowrap;
+	gap: rem(40);
+	align-items: flex-start;
+	justify-content: flex-start;
+	overflow: visible;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+.advantageCard {
+	padding: rem(40);
+	@include gradient-secondary();
+	border-radius: $corner-medium;
+	min-width: rem(400);
+	max-width: rem(400);
+	width: 100%;
+	display: flex !important;
+	flex-direction: column !important;
+	gap: rem(20) !important;
+
+	@media (max-width: $max-768) {
+		padding: rem(20);
+		min-width: rem(280);
+		max-width: rem(280);
+	}
+
+	&.selected {
+		@include gradient-primary();
+
+		.title {
+			color: $gray-extra-light;
+		}
+		.description {
+			color: $gray-light;
+		}
+	}
+	&.big {
+		min-width: rem(620);
+		max-width: rem(620);
+
+		@media (max-width: $max-768) {
+			min-width: rem(320);
+			max-width: rem(320);
+		}
+	}
+}
+.title {
+	@include gilroy(500, 32);
+	color: $primary-main;
+	cursor: -webkit-grab;
+	cursor: grab;
+
+	@media (max-width: $max-768) {
+		font-size: rem(24);
+	}
+}
+.description {
+	@include gilroy(400, 22);
+	line-height: 1.2;
+	color: $text-dark;
+	cursor: -webkit-grab;
+	cursor: grab;
+
+	@media (max-width: $max-768) {
+		font-size: rem(16);
+	}
+}
+
+.fingerAnimation {
+	max-width: rem(100);
+	width: 100%;
+	margin: 0 auto;
+
+	@media (max-width: $max-768) {
+		max-width: rem(60);
+		margin: initial;
+		align-self: flex-end;
+	}
+}

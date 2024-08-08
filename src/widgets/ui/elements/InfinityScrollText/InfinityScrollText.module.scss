@@ -1,0 +1,76 @@
+@import '@/shared/styles/_vars';
+
+.scrollText {
+	padding: rem(16) 0;
+	border-block: 1px solid $gray-dark;
+	overflow: hidden;
+
+	@media (max-width: $max-768) {
+		padding: rem(12) 0;
+	}
+
+	&:hover {
+		.scrollContainer {
+			-webkit-animation-play-state: paused;
+			animation-play-state: paused;
+		}
+	}
+}
+.scrollContainer {
+	width: 100%;
+	padding: 0 rem(30);
+	position: relative;
+	z-index: 2;
+	gap: rem(40);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	-webkit-animation: scroll-horizontal linear infinite;
+	animation: scroll-horizontal linear infinite;
+	-webkit-animation-duration: 30s;
+	animation-duration: 30s;
+	transition: 0.2s;
+}
+.text {
+	@include gilroy(400, 16);
+	color: $gray-dark;
+	text-transform: uppercase;
+	white-space: nowrap;
+	position: relative;
+	z-index: 2;
+
+	&::after {
+		content: '';
+		width: rem(7);
+		height: rem(7);
+		background-color: $primary-tint-200;
+		position: absolute;
+		top: 50%;
+		left: rem(-23);
+		transform: translate(0, -50%);
+		z-index: 3;
+		border-radius: $corner-full;
+	}
+
+	@media (max-width: $max-768) {
+		font-size: rem(12);
+	}
+}
+
+@-webkit-keyframes scroll-horizontal {
+	0% {
+		left: 100%;
+	}
+	100% {
+		left: -100%;
+	}
+}
+
+@keyframes scroll-horizontal {
+	0% {
+		left: 100%;
+	}
+	100% {
+		left: -100%;
+	}
+}

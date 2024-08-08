@@ -1,23 +1,23 @@
 import { getAnimationStyle } from '@/shared/helpers/lib';
-import { IServiceBlockProps } from '@/shared/types/ui/blocks';
+import { IWorksLargeProps } from '@/shared/types';
 import { BlockWithTitle, Container } from '@/shared/ui/layout';
-import { ServiceCard, Title } from '@/widgets/ui/elements';
-import styles from './ServiceBlock.module.scss';
+import { Title, WorkCardLarge } from '../../elements';
+import styles from './WorkCardsLarge.module.scss';
 
 interface Props {
-	data: IServiceBlockProps;
+	data: IWorksLargeProps;
 }
 
-export const ServiceBlock = ({ data }: Props) => {
+export const WorkCardsLarge = ({ data }: Props) => {
 	const content = data.data.data;
 
 	return (
 		<BlockWithTitle id={data.blockId}>
 			<Container className={getAnimationStyle('from-bottom-to-top')}>
 				<Title title={data.title} />
-				<div className={styles.services}>
-					{content.map((service, index) => (
-						<ServiceCard key={index} data={service} />
+				<div className={styles.workCardsLarge}>
+					{content.map((work, index) => (
+						<WorkCardLarge key={index} data={work} />
 					))}
 				</div>
 			</Container>

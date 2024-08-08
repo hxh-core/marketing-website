@@ -81,19 +81,18 @@ export const Navigation = ({
 			>
 				<div className={styles.container}>
 					<Logo logo={data.attributes.logo} className={styles.logo} />
-					{/* TODO: поменять на <menu> + outline up */}
-					<ul className={styles.pages}>
+					<menu className={styles.pages}>
 						{data.attributes.links.map((link) => (
-							<li
-								className={`${styles.navPageLink} ${isActivePath(link.href)}`}
+							<Link
 								key={link.id}
+								className={`${styles.navPageLink} ${isActivePath(link.href)}`}
+								target={link.target}
+								href={link.href}
 							>
-								<Link target={link.target} href={link.href}>
-									{link.label}
-								</Link>
-							</li>
+								{link.label}
+							</Link>
 						))}
-					</ul>
+					</menu>
 					<div
 						ref={burger}
 						className={styles.burger}

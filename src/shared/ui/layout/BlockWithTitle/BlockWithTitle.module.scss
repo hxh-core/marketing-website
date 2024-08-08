@@ -3,6 +3,7 @@
 .block {
 	padding: rem(40) 0;
 	width: 100%;
+	overflow-x: hidden;
 
 	@media (max-width: $max-768) {
 		padding: rem(20) 0;

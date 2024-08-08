@@ -1,0 +1,49 @@
+@import '@/shared/styles/_vars';
+
+.collectLinkLarge {
+	gap: rem(40);
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@media (max-width: $max-768) {
+		gap: rem(30);
+	}
+}
+.collectLinkContent {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: rem(40);
+
+	@media (max-width: $max-768) {
+		gap: rem(30);
+	}
+}
+.title {
+	color: $gray-extra-light;
+	@include gilroy(400, 64);
+	line-height: 1.1;
+	text-align: center;
+	text-wrap: pretty;
+
+	@media (max-width: $max-768) {
+		font-size: rem(28);
+	}
+}
+.description {
+	color: $gray-extra-light;
+	@include gilroy(400, 20);
+	line-height: 1.2;
+	text-align: center;
+
+	@media (max-width: $max-768) {
+		font-size: rem(16);
+	}
+}
+.button {
+	text-wrap: nowrap;
+}
