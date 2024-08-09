@@ -4,4 +4,5 @@ export interface ICustomInput {
 	error?: FieldError | Merge<FieldError, FieldErrorsImpl<any>>;
 	label?: string;
 	inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+	mask?: string;
 }

@@ -13,19 +13,12 @@
 		.container {
 			align-items: flex-end;
 		}
-		.title {
-			text-align: right;
-		}
-		.description {
-			text-align: right;
-		}
 		.bgImage {
-			transform: scaleX(-1);
+			transform: scaleX(-1.02);
 		}
 		.man {
 			right: auto;
 			left: rem(-10);
-			transform: scaleX(-1);
 		}
 	}
 
@@ -47,6 +40,7 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	transform: scale(1.02);
 }
 .man {
 	position: absolute;

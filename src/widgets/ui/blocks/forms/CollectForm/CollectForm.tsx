@@ -3,11 +3,16 @@
 import darkMan from '@/data/user/images/dark-man.png';
 import primaryBg from '@/data/user/images/primary-gradient.jpg';
 import { TelegramService } from '@/services/user/messages';
-import { getAnimationStyle, setupParallax } from '@/shared/helpers/lib';
+import {
+	getAnimationStyle,
+	setupParallax,
+	validatePhone,
+} from '@/shared/helpers/lib';
 import type { ICollectDataFormBlockProps } from '@/shared/types/ui/blocks';
 import { CustomButton, CustomInput } from '@/shared/ui';
 import { Container } from '@/shared/ui/layout';
 import Image from 'next/image';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './CollectForm.module.scss';
 
@@ -23,21 +28,37 @@ export const CollectForm = ({ data }: Props) => {
 	const content = data.data.data.attributes;
 
 	const {
+		register,
 		handleSubmit,
 		setValue,
 		setError,
 		clearErrors,
-		formState: { errors, isSubmitSuccessful },
+		formState: { errors, isSubmitSuccessful, isValid },
 	} = useForm<any>();
 
+	useEffect(() => {
+		console.log(errors);
+	}, [errors]);
+
 	const submitForm = async (formData: { [key: string]: string }) => {
+		clearErrors();
+
+		// Validation
+		for (const input of content.inputs) {
+			const isValidPhone = validatePhone({
+				input,
+				value: formData[input.inputProps?.name!],
+			});
+
+			if (!isValidPhone.isValid) {
+				setError(input.inputProps!.name!, isValidPhone.error);
+				return;
+			}
+		}
+
 		try {
 			await TelegramService.sendNewClient(data, formData, {
 				blockName: data.blockName,
-			});
-			clearErrors();
-			content.inputs.forEach((input) => {
-				setValue(input.inputProps?.name!, '');
 			});
 		} catch (error) {
 			content.inputs.forEach((input) => {
@@ -51,7 +72,9 @@ export const CollectForm = ({ data }: Props) => {
 
 	return (
 		<div
-			className={`${styles.collectBlock} ${getAnimationStyle(data.animation)}`}
+			className={`${styles.collectBlock} ${getAnimationStyle(data.animation)} ${getFormPositionStyles(
+				content.contentPosition,
+			)}`}
 			id={data.blockId}
 			onMouseMove={(e) =>
 				setupParallax(styles.man, e, {
@@ -94,27 +117,22 @@ export const CollectForm = ({ data }: Props) => {
 					<form onSubmit={handleSubmit(submitForm)} className={styles.inputs}>
 						{content.inputs.map((input, index) => (
 							<CustomInput
+								mask={input.mask}
 								error={errors[input.inputProps!.name!]}
-								key={index}
-								label={input.label}
 								inputProps={{
-									required: input.inputProps?.required,
-									autoComplete: input.inputProps?.autoComplete,
-									type: input.inputProps?.type,
-									placeholder: input.inputProps?.placeholder,
-									name: input.inputProps!.name,
-									onChange: (e) =>
-										setValue(input.inputProps!.name!, e.target.value),
-									onBlur: (e) =>
-										setValue(input.inputProps!.name!, e.target.value),
+									...input.inputProps,
+									...register(input.inputProps?.name!, {
+										required: {
+											value: input.inputProps?.required!,
+											message: 'Поле обязательно для заполнения',
+										},
+									}),
 								}}
+								label={input.label}
+								key={index}
 							/>
 						))}
-						<CustomButton.Button
-							{...content.button}
-							type={'submit'}
-							disabled={isSubmitSuccessful}
-						>
+						<CustomButton.Button {...content.button} type={'submit'}>
 							{isSubmitSuccessful
 								? 'Спасибо за заявку!'
 								: content.button.children}
