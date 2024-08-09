@@ -1,11 +1,9 @@
 @import '@/shared/styles/_vars';
 
 .advantages {
-	display: flex;
-	align-items: stretch;
-	gap: rem(30);
-	overflow-x: visible;
-	margin-top: rem(40);
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: visible;
 
 	&::-webkit-scrollbar {
 		display: none;
@@ -19,6 +17,7 @@
 	align-items: stretch;
 	cursor: -webkit-grab;
 	cursor: grab;
+	overflow-x: visible;
 
 	&:active {
 		cursor: -webkit-grabbing;

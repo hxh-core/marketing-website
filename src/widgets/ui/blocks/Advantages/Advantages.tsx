@@ -25,7 +25,7 @@ const getAdvantageStyles = (isSelected?: boolean, isBig?: boolean) => {
 export const Advantages = ({ data }: Props) => {
 	return (
 		<BlockWithTitle
-			className={`${getAnimationStyle(data.animation)}`}
+			className={`${getAnimationStyle(data.animation)} ${styles.advantages}`}
 			id={data.blockId}
 		>
 			<Container>

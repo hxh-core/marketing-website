@@ -42,13 +42,8 @@ export const Footer = ({ data }: FooterProps) => {
 						<div className={styles.text}>
 							<p className={styles.textTitle}>{data.attributes.text.label}</p>
 							<CustomButton.Link
-								href={data.attributes.text.link.href}
-								color={data.attributes.text.link.color}
-								size={data.attributes.text.link.size}
-								target={data.attributes.text.link.target}
-							>
-								{data.attributes.text.link.children}
-							</CustomButton.Link>
+								{...data.attributes.text.link}
+							></CustomButton.Link>
 						</div>
 					)}
 				</Container>
