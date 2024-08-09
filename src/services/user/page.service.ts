@@ -14,13 +14,15 @@ const queryParams = [
 	'populate[blocks][populate][4]=data.contacts',
 	'populate[blocks][populate][5]=data.info',
 	'populate[blocks][populate][6]=data.image',
+	'populate[blocks][populate][7]=data.contactLink',
 	// Forms
-	'populate[blocks][populate][7]=data.inputs.inputProps',
-	'populate[blocks][populate][8]=data.button',
+	'populate[blocks][populate][8]=data.inputs.inputProps',
+	'populate[blocks][populate][9]=data.button',
 	// Services
-	'populate[blocks][populate][9]=data.price',
-	'populate[blocks][populate][10]=data.oldPrice',
-	'populate[blocks][populate][11]=data.link',
+	'populate[blocks][populate][10]=data.price',
+	'populate[blocks][populate][11]=data.oldPrice',
+	'populate[blocks][populate][12]=data.link',
+	// Page meta settings
 	'populate=metaImage',
 	'pagination[pageSize]=1000',
 ];

@@ -49,14 +49,7 @@ export const NewsMessages = ({ data }: NewsMessagesProps) => {
 						<p className={styles.label}>{message.label}</p>
 						{message.link && message.link.children && (
 							<div>
-								<CustomButton.Link
-									href={message.link.href}
-									target={message.link.target}
-									color={message.link.color}
-									size={message.link.size}
-								>
-									{message.link.children}
-								</CustomButton.Link>
+								<CustomButton.Link {...message.link}></CustomButton.Link>
 							</div>
 						)}
 					</div>

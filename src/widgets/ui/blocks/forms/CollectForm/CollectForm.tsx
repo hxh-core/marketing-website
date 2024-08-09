@@ -111,10 +111,8 @@ export const CollectForm = ({ data }: Props) => {
 							/>
 						))}
 						<CustomButton.Button
+							{...content.button}
 							type={'submit'}
-							size={content.button.size}
-							icon={content.button.icon}
-							color={content.button.color}
 							disabled={isSubmitSuccessful}
 						>
 							{isSubmitSuccessful

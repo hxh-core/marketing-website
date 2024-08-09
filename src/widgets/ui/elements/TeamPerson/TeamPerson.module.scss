@@ -5,6 +5,8 @@
 	flex-direction: column;
 	padding: rem(20);
 	gap: rem(20);
+	height: 100%;
+	justify-content: space-between;
 	border-radius: $corner-large;
 	width: 100%;
 	background-color: $text-light-black;
@@ -13,6 +15,12 @@
 	@media screen and (max-width: $max-600) {
 		padding: rem(10);
 	}
+}
+.contentWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: rem(20);
+	width: 100%;
 }
 .personImageWrapper {
 	width: 100%;
