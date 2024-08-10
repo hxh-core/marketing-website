@@ -5,13 +5,10 @@ $animation-px: rem(100);
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: rem(80);
-	width: 100vw;
 	background-color: $text-black;
 }
 body {
 	scroll-behavior: smooth;
-	max-width: 100%;
-	overflow-x: hidden;
 	min-height: 100vh;
 	-ms-scroll-chaining: none;
 	overscroll-behavior: none; // Останавливает скролл по Y на iOS
