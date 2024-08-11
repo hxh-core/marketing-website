@@ -70,7 +70,10 @@ export const ServiceCard = ({ data }: Props) => {
 				></div>
 				<div className={styles.footer}>
 					<div className={styles.button}>
-						<CustomButton.Link {...data.attributes.button}></CustomButton.Link>
+						<CustomButton.Link
+							{...data.attributes.button}
+							className={styles.button}
+						></CustomButton.Link>
 					</div>
 					{data.attributes.oldPrice && (
 						<p className={styles.oldPrice}>

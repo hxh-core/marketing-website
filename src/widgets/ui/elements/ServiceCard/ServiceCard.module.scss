@@ -198,6 +198,9 @@
 		font-size: rem(16);
 	}
 }
+.button {
+	text-wrap: nowrap;
+}
 .footer {
 	display: flex;
 	align-items: center;
