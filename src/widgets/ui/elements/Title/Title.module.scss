@@ -20,7 +20,7 @@
 	color: $gray-extra-light;
 	max-width: rem(600);
 
-	& > * {
+	& {
 		@include gilroy(500, 50);
 		color: $gray-extra-light;
 		line-height: 1.2;
@@ -28,6 +28,11 @@
 	}
 
 	& strong {
+		@include gilroy(600, 50);
+		color: $primary-tint-200;
+		line-height: 1.2;
+	}
+	& b {
 		@include gilroy(600, 50);
 		color: $primary-tint-200;
 		line-height: 1.2;

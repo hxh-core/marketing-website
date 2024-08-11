@@ -32,9 +32,11 @@ export const Accordion = ({ accordion, isOpen, setIsOpen }: AccordionProps) => {
 				}
 			>
 				<div className={styles.divider}></div>
-				<p className={styles.content} ref={content}>
-					{accordion.answer}
-				</p>
+				<div
+					className={styles.content}
+					ref={content}
+					dangerouslySetInnerHTML={{ __html: accordion.answer }}
+				></div>
 			</div>
 		</div>
 	);

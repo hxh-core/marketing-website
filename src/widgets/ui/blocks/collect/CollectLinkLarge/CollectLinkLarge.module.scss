@@ -30,6 +30,11 @@
 	text-align: center;
 	text-wrap: pretty;
 
+	& b {
+		color: $primary-tint-200;
+		font-weight: 500;
+	}
+
 	@media (max-width: $max-768) {
 		font-size: rem(28);
 	}
@@ -39,6 +44,15 @@
 	@include gilroy(400, 20);
 	line-height: 1.2;
 	text-align: center;
+
+	& a {
+		text-decoration: underline;
+		color: $primary-tint-200;
+	}
+
+	& p {
+		min-height: 1em;
+	}
 
 	@media (max-width: $max-768) {
 		font-size: rem(16);

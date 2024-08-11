@@ -1,14 +1,8 @@
+import { IIcons } from './IconType';
+
 export interface IContactLink {
 	id: number;
-	socialNetwork:
-		| 'Instagram'
-		| 'Telegram'
-		| 'VK'
-		| 'WhatsApp'
-		| 'Behance'
-		| 'OK'
-		| 'GitHub'
-		| 'Habr'
-		| 'Website';
+	socialNetwork: IIcons;
+	label: string;
 	href: string;
 }

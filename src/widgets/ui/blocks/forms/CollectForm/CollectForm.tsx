@@ -12,7 +12,6 @@ import type { ICollectDataFormBlockProps } from '@/shared/types/ui/blocks';
 import { CustomButton, CustomInput } from '@/shared/ui';
 import { Container } from '@/shared/ui/layout';
 import Image from 'next/image';
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './CollectForm.module.scss';
 
@@ -35,10 +34,6 @@ export const CollectForm = ({ data }: Props) => {
 		clearErrors,
 		formState: { errors, isSubmitSuccessful, isValid },
 	} = useForm<any>();
-
-	useEffect(() => {
-		console.log(errors);
-	}, [errors]);
 
 	const submitForm = async (formData: { [key: string]: string }) => {
 		clearErrors();
@@ -112,7 +107,10 @@ export const CollectForm = ({ data }: Props) => {
 				<div className={styles.content}>
 					<h2 className={styles.title}>{content.title}</h2>
 					{content.description && (
-						<p className={styles.description}>{content.description}</p>
+						<div
+							className={styles.description}
+							dangerouslySetInnerHTML={{ __html: content.description }}
+						></div>
 					)}
 					<form onSubmit={handleSubmit(submitForm)} className={styles.inputs}>
 						{content.inputs.map((input, index) => (

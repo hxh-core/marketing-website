@@ -64,7 +64,10 @@ export const ServiceCard = ({ data }: Props) => {
 				)}
 			</div>
 			<div className={styles.content}>
-				<p className={styles.description}>{data.attributes.description}</p>
+				<div
+					className={styles.description}
+					dangerouslySetInnerHTML={{ __html: data.attributes.description }}
+				></div>
 				<div className={styles.footer}>
 					<div className={styles.button}>
 						<CustomButton.Link {...data.attributes.button}></CustomButton.Link>

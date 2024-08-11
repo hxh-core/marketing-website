@@ -20,9 +20,15 @@ export const CollectLinkMini = ({ data }: Props) => {
 				<div className={styles.collectLinkMiniWrapper}>
 					<div className={styles.collectLinkContent}>
 						<Container>
-							<h3 className={styles.title}>{content.title}</h3>
+							<h3
+								className={styles.title}
+								dangerouslySetInnerHTML={{ __html: content.title }}
+							></h3>
 							<div className={styles.lower}>
-								<p className={styles.description}>{content.description}</p>
+								<div
+									className={styles.description}
+									dangerouslySetInnerHTML={{ __html: content.description }}
+								></div>
 								<div>
 									<CustomButton.Link
 										className={styles.button}

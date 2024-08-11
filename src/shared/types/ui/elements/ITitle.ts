@@ -1,7 +1,7 @@
 export interface ITitle {
 	label: string;
 	link?: {
-		label: string;
+		label: React.ReactNode;
 		href: string;
 		target?: '_blank' | '_self' | '_parent' | '_top';
 	};

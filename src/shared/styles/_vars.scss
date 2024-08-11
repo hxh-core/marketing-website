@@ -10,7 +10,6 @@
 	@return $result;
 }
 
-// Colors
 $white: #ffffff;
 // Primary
 $primary-main: #1e41e3;
@@ -37,6 +36,9 @@ $primary-tint-900: #edf5ff;
 $text-black: #141414;
 $text-light-black: #1e1e1e;
 $text-dark: #3a3a3a;
+// Backgrounds
+$bg-main-dark: #141414;
+$bg-main-light: #f7f7f7;
 // State
 $state-info: #2f80ed;
 $state-warning: #ebbc2e;
@@ -47,6 +49,7 @@ $gray-dark: #a7a7a7;
 $gray-medium: #cfcfcf;
 $gray-light: #e9e9e9;
 $gray-extra-light: #f7f7f7;
+
 // Gradients
 // Primary
 @property --gradient-primary-1 {

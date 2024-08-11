@@ -50,7 +50,10 @@ export const Advantages = ({ data }: Props) => {
 								key={advantage.id}
 							>
 								<p className={styles.title}>{advantage.title}</p>
-								<p className={styles.description}>{advantage.description}</p>
+								<div
+									className={styles.description}
+									dangerouslySetInnerHTML={{ __html: advantage.description }}
+								></div>
 							</SwiperSlide>
 						))}
 					</Swiper>

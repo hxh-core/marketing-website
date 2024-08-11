@@ -66,6 +66,10 @@
 		}
 		.description {
 			color: $gray-light;
+
+			& a {
+				color: $primary-tint-900;
+			}
 		}
 	}
 	&.big {
@@ -94,6 +98,15 @@
 	color: $text-dark;
 	cursor: -webkit-grab;
 	cursor: grab;
+
+	& a {
+		text-decoration: underline;
+		color: $primary-tint-200;
+	}
+
+	& p {
+		min-height: 1em;
+	}
 
 	@media (max-width: $max-768) {
 		font-size: rem(16);

@@ -5,7 +5,7 @@ $animation-px: rem(100);
 html {
 	scroll-behavior: smooth;
 	scroll-padding-top: rem(80);
-	background-color: $text-black;
+	background-color: $bg-main-dark;
 }
 body {
 	scroll-behavior: smooth;
@@ -70,11 +70,6 @@ body.blur {
 		transform: translate3d(0, 0, 0);
 	}
 }
-
-:root {
-	color-scheme: only dark;
-}
-
 .main {
 	display: flex;
 	flex-direction: column;

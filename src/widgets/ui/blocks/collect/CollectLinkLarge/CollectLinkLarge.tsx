@@ -18,8 +18,14 @@ export const CollectLinkLarge = ({ data }: Props) => {
 		>
 			<Container>
 				<div className={styles.collectLinkContent}>
-					<h3 className={styles.title}>{content.title}</h3>
-					<p className={styles.description}>{content.description}</p>
+					<h3
+						className={styles.title}
+						dangerouslySetInnerHTML={{ __html: content.title }}
+					></h3>
+					<div
+						className={styles.description}
+						dangerouslySetInnerHTML={{ __html: content.description }}
+					></div>
 					<div>
 						<CustomButton.Link
 							className={styles.button}

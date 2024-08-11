@@ -94,6 +94,15 @@
 	color: $gray-extra-light;
 	line-height: 1.2;
 
+	& p {
+		min-height: 1em;
+	}
+
+	& a {
+		text-decoration: underline;
+		color: inherit;
+	}
+
 	@media (max-width: $max-768) {
 		font-size: rem(18);
 	}

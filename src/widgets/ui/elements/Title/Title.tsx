@@ -1,6 +1,5 @@
 import type { ITitle } from '@/shared/types/ui/elements';
 import { ArrowIcon } from '@/shared/ui/icons';
-import Markdown from 'markdown-to-jsx';
 import Link from 'next/link';
 import styles from './Title.module.scss';
 
@@ -16,9 +15,10 @@ export const Title = ({ title }: TitleProps) => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.container}>
-				<h3 className={styles.title}>
-					<Markdown>{title.label}</Markdown>
-				</h3>
+				<h3
+					className={styles.title}
+					dangerouslySetInnerHTML={{ __html: title.label }}
+				></h3>
 				{title.link && title.link.label && (
 					<Link
 						className={styles.link}
