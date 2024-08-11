@@ -20,10 +20,7 @@ export const validatePhone = ({
 	if (input.mask && input.inputProps?.type === 'tel') {
 		const maskDigitsOnly = input.mask.replace(/\D/g, '');
 		const valueDigitsOnly = value.replace(/\D/g, '');
-		console.log(maskDigitsOnly, valueDigitsOnly);
 		const isValid = maskDigitsOnly.length === valueDigitsOnly.length;
-
-		console.log(isValid);
 
 		if (!isValid) {
 			return {

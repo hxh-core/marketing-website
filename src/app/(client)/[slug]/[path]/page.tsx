@@ -15,7 +15,6 @@ export const generateMetadata = async ({
 }: {
 	params: { slug: string; path: string };
 }): Promise<Metadata> => {
-	console.log(params);
 	const page = await PageService.getPageData(`/${params.slug}/${params.path}`);
 
 	return generateCustomMetadata({

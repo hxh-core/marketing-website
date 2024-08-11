@@ -12,12 +12,16 @@ import type { ICollectDataFormBlockProps } from '@/shared/types/ui/blocks';
 import { CustomButton, CustomInput } from '@/shared/ui';
 import { Container } from '@/shared/ui/layout';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './CollectForm.module.scss';
 
 interface Props {
 	data: ICollectDataFormBlockProps;
 }
+
+const MAX_ERRORS = 3;
 
 const getFormPositionStyles = (position: 'left' | 'right'): string => {
 	return position === 'right' ? styles.right : '';
@@ -34,6 +38,12 @@ export const CollectForm = ({ data }: Props) => {
 		clearErrors,
 		formState: { errors, isSubmitSuccessful, isValid },
 	} = useForm<any>();
+
+	const [serverErrorCount, setServerErrorCount] = useState(0);
+
+	useEffect(() => {
+		console.log(serverErrorCount);
+	}, [serverErrorCount]);
 
 	const submitForm = async (formData: { [key: string]: string }) => {
 		clearErrors();
@@ -62,6 +72,8 @@ export const CollectForm = ({ data }: Props) => {
 					type: 'serverError',
 				});
 			});
+			console.log(serverErrorCount);
+			setServerErrorCount((prev) => prev + 1);
 		}
 	};
 
@@ -130,11 +142,23 @@ export const CollectForm = ({ data }: Props) => {
 								key={index}
 							/>
 						))}
-						<CustomButton.Button {...content.button} type={'submit'}>
+						<CustomButton.Button
+							{...content.button}
+							disabled={serverErrorCount >= MAX_ERRORS}
+							type={'submit'}
+						>
 							{isSubmitSuccessful
 								? 'Спасибо за заявку!'
 								: content.button.children}
 						</CustomButton.Button>
+
+						{/* Если много ошибок */}
+						{serverErrorCount >= MAX_ERRORS && (
+							<p className={styles.serverError}>
+								Слишком много ошибок, попробуйте позже или{' '}
+								<Link href='#footer'>напишите нам</Link>
+							</p>
+						)}
 					</form>
 				</div>
 			</Container>

@@ -117,3 +117,13 @@
 		margin-top: 0;
 	}
 }
+
+.serverError {
+	@include gilroy(400, 16);
+	color: $state-error;
+
+	& a {
+		text-decoration: underline;
+		color: inherit;
+	}
+}

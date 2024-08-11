@@ -19,14 +19,6 @@ export const CustomInput = ({
 			htmlFor={id}
 			className={`${styles.inputWrapper} ${error ? styles.error : ''}`}
 		>
-			{label && (
-				<label htmlFor={id} className={styles.label}>
-					{label}
-					{error && (
-						<span className={styles.error}>{error.message?.toString()}</span>
-					)}
-				</label>
-			)}
 			{mask ? (
 				<InputMask
 					{...inputProps}
@@ -36,6 +28,15 @@ export const CustomInput = ({
 				/>
 			) : (
 				<input {...inputProps} className={styles.input} id={id} />
+			)}
+			{label && (
+				<label htmlFor={id} className={styles.label}>
+					{inputProps?.required && <span className={styles.required}>*</span>}
+					{label}
+				</label>
+			)}
+			{error && (
+				<span className={styles.errorMessage}>{error.message?.toString()}</span>
 			)}
 		</label>
 	);
