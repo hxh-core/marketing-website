@@ -70,7 +70,6 @@ export const CollectForm = ({ data, index }: Props) => {
 					type: 'serverError',
 				});
 			});
-			console.log(serverErrorCount);
 			setServerErrorCount((prev) => prev + 1);
 		}
 	};

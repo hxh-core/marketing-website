@@ -42,7 +42,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
 	);
 
 	if (!pageData.data[0] || !pageData.data[0].attributes.path) {
-		return notFound();
+		notFound();
 	}
 
 	return (

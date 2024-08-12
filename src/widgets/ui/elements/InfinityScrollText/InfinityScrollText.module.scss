@@ -9,10 +9,12 @@
 		padding: rem(12) 0;
 	}
 
-	&:hover {
-		.scrollContainer {
-			-webkit-animation-play-state: paused;
-			animation-play-state: paused;
+	@media (hover: hover) {
+		&:hover {
+			.scrollContainer {
+				-webkit-animation-play-state: paused;
+				animation-play-state: paused;
+			}
 		}
 	}
 }
@@ -29,6 +31,11 @@
 	animation: scroll-horizontal linear infinite;
 	-webkit-animation-duration: 30s;
 	animation-duration: 30s;
+
+	@media (max-width: $max-768) {
+		-webkit-animation-duration: 15s;
+		animation-duration: 15s;
+	}
 	transition: 0.2s;
 }
 .text {

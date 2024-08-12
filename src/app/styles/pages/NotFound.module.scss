@@ -7,6 +7,7 @@
 	justify-content: center;
 	flex-direction: column;
 	width: 100%;
+	gap: rem(50);
 
 	&.lightBg {
 		background-color: $gray-extra-light;
@@ -37,7 +38,6 @@
 	color: $text-black;
 }
 .text {
-	margin-top: rem(60);
 	display: flex;
 	align-items: center;
 	justify-content: center;

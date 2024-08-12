@@ -34,7 +34,7 @@ const SlugPage = async ({
 	);
 
 	if (!pageData.data[0] || !pageData.data[0].attributes.path) {
-		return notFound();
+		notFound();
 	}
 
 	return (

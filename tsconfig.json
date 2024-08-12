@@ -26,7 +26,8 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"src/shared/ui/helpers/ScrollComponent copy.jsx"
+		"src/shared/ui/helpers/ScrollComponent copy.jsx",
+		"../admin/error.tsx"
 	],
 	"exclude": ["node_modules"]
 }

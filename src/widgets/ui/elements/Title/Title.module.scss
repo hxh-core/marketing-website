@@ -39,10 +39,14 @@
 	}
 
 	@media (max-width: $max-768) {
-		& > * {
+		& {
 			font-size: rem(26);
 
 			& strong {
+				font-size: rem(26);
+			}
+
+			& b {
 				font-size: rem(26);
 			}
 		}

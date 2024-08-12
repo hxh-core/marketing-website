@@ -34,7 +34,7 @@ const MainPage = async () => {
 	const pageData = await PageService.getPageData('/');
 
 	if (!pageData.data[0] || !pageData.data[0].attributes.path) {
-		return notFound();
+		notFound();
 	}
 
 	return (

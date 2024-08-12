@@ -46,11 +46,21 @@ export const getIconFromName = (
 	className?: string,
 	color?: 'dark' | 'light' | string,
 ): React.ReactNode => {
-	const Icon = Icons[name];
-	if (Icon) {
-		return <Icon className={className} color={color} />;
+	if (!name) {
+		const DefaultIcon = Icons['Website'];
+		return <DefaultIcon className={className} color={color} />;
 	}
 
-	const DefaultIcon = Icons['Website'];
-	return <DefaultIcon className={className} color={color} />;
+	try {
+		const Icon = Icons[name];
+		if (Icon) {
+			return <Icon className={className} color={color} />;
+		}
+
+		const DefaultIcon = Icons['Website'];
+		return <DefaultIcon className={className} color={color} />;
+	} catch (error) {
+		const DefaultIcon = Icons['Website'];
+		return <DefaultIcon className={className} color={color} />;
+	}
 };

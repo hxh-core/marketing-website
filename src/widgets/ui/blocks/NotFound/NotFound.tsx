@@ -1,3 +1,7 @@
+import { appLinks } from '@/shared';
+import Link from 'next/link';
+import styles from './NotFound.module.scss';
+
 interface Props {
 	code?: number;
 	text?: string | React.ReactNode;
@@ -11,8 +15,7 @@ interface Props {
 export const NotFound = ({ code, href, text, theme = 'dark' }: Props) => {
 	return (
 		<>
-			<h1>404 - Page Not Found</h1>
-			{/* <div
+			<div
 				className={`${styles.notFound} ${
 					theme === 'light' ? styles.lightBg : styles.darkBg
 				}`}
@@ -36,7 +39,7 @@ export const NotFound = ({ code, href, text, theme = 'dark' }: Props) => {
 				>
 					{href && href.text ? href.text : 'Перейти на главную страницу'}
 				</Link>
-			</div> */}
+			</div>
 		</>
 	);
 };
