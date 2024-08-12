@@ -1,7 +1,7 @@
 'use client';
 
-import darkMan from '@/data/user/images/dark-man.png';
-import primaryBg from '@/data/user/images/primary-gradient.jpg';
+import darkMan from '@/data/user/images/dark-man.webp';
+import primaryBg from '@/data/user/images/primary-gradient.webp';
 import { TelegramService } from '@/services/user/messages';
 import {
 	getAnimationStyle,
@@ -95,7 +95,6 @@ export const CollectForm = ({ data, index }: Props) => {
 				draggable={false}
 				className={styles.bgImage}
 				quality={100}
-				priority
 			/>
 			{/* Man */}
 			<Image
@@ -106,7 +105,6 @@ export const CollectForm = ({ data, index }: Props) => {
 				draggable={false}
 				className={styles.man}
 				quality={100}
-				priority
 			/>
 			{/* Content */}
 			<Container
