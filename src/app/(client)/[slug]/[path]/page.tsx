@@ -47,6 +47,7 @@ const SlugPage = async ({
 							block.blockName,
 							{
 								data: block,
+								index,
 							},
 							index,
 						),

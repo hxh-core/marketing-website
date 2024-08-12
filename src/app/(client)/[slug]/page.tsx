@@ -55,6 +55,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
 							block.blockName,
 							{
 								data: block,
+								index,
 							},
 							index,
 						),
