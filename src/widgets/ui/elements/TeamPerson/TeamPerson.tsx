@@ -21,7 +21,7 @@ export const TeamPerson = ({ data }: Props) => {
 							data.attributes.image.data.attributes.url,
 						)}
 						className={styles.personImage}
-						alt={data.attributes.name}
+						alt={`${data.attributes.name} - ${data.attributes.job} фото`}
 						width={505}
 						height={214}
 					/>
