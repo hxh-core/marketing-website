@@ -41,6 +41,8 @@
 	-ms-user-select: none;
 	user-select: none;
 	transform: scale(1.02);
+	-webkit-filter: blur(rem(10));
+	filter: blur(rem(10));
 }
 .man {
 	position: absolute;

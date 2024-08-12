@@ -24,7 +24,6 @@ export const TitleWithButtons = ({ data, index }: Props) => {
 					alt={''}
 					width={1920}
 					height={1080}
-					quality={100}
 				/>
 			</div>
 			<Container className={getAnimationStyle(data.animation)} size='medium'>

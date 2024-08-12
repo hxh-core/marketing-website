@@ -94,7 +94,6 @@ export const CollectForm = ({ data, index }: Props) => {
 				alt='Background'
 				draggable={false}
 				className={styles.bgImage}
-				quality={100}
 			/>
 			{/* Man */}
 			<Image
