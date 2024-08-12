@@ -8,8 +8,14 @@
 	overflow: hidden;
 	background-color: $text-light-black;
 	text-decoration: none;
+	transition: outline 0.1s;
 
-	&:hover {
+	&:focus-visible {
+		outline: 1px solid $primary-tint-700;
+	}
+
+	&:hover,
+	&:focus-visible {
 		.icon {
 			& svg {
 				transform: rotate3d(0, 0, 1, 90deg);

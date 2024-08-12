@@ -88,6 +88,7 @@ export const Navigation = ({
 								className={`${styles.navPageLink} ${isActivePath(link.href)}`}
 								target={link.target}
 								href={link.href}
+								aria-label={link.label}
 							>
 								{link.label}
 							</Link>

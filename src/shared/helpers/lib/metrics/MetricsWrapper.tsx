@@ -40,7 +40,10 @@ export const MetricsWrapper = ({
 						/>
 					)}
 					<YandexMetricaProvider
-						initParameters={yandexMetrics.attributes.initParameters}
+						initParameters={{
+							defer: true,
+							...yandexMetrics.attributes.initParameters,
+						}}
 						tagID={yandexMetrics.attributes.tagID}
 					>
 						{children}

@@ -34,7 +34,7 @@ export const getComponentFromBlockName = (
 	const Component = components[blockName];
 	if (Component) {
 		if (isPropsValid(props, props)) {
-			return <Component {...props} key={index} />;
+			return <Component {...props} index={index} key={index} />;
 		} else {
 			console.error(`Invalid props for block "${blockName}"`);
 			return null;

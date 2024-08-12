@@ -6,7 +6,7 @@ import { useId } from 'react';
 import styles from './CustomInput.module.scss';
 
 // 12.07.2024
-// Custom Input component / v.1.0.1
+// Custom Input component / v.1.0.2
 export const CustomInput = ({
 	inputProps,
 	label,

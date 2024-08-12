@@ -47,6 +47,7 @@ const MainPage = async () => {
 							block.blockName,
 							{
 								data: block,
+								index,
 							},
 							index,
 						),

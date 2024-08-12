@@ -6,15 +6,16 @@ import styles from './ServiceBlock.module.scss';
 
 interface Props {
 	data: IServiceBlockProps;
+	index: number;
 }
 
-export const ServiceBlock = ({ data }: Props) => {
+export const ServiceBlock = ({ data, index }: Props) => {
 	const content = data.data.data;
 
 	return (
 		<BlockWithTitle id={data.blockId}>
 			<Container className={getAnimationStyle('from-bottom-to-top')}>
-				<Title title={data.title} />
+				<Title title={data.title} index={index} />
 				<div className={styles.services}>
 					{content.map((service, index) => (
 						<ServiceCard key={index} data={service} />

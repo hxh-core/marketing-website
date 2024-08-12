@@ -46,6 +46,7 @@ export const TeamPerson = ({ data }: Props) => {
 									target='_blank'
 									className={styles.icon}
 									key={index}
+									aria-label={contact.label}
 								>
 									{getIconFromName(contact.socialNetwork)}
 								</Link>

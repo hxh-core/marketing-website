@@ -17,14 +17,11 @@ export const Accordion = ({ accordion, isOpen, setIsOpen }: AccordionProps) => {
 	const content = useRef<HTMLDivElement>(null);
 
 	return (
-		<div
-			className={`${styles.accordion} ${getIsOpen(isOpen)}`}
-			onClick={setIsOpen}
-		>
-			<div className={styles.upper}>
+		<div className={`${styles.accordion} ${getIsOpen(isOpen)}`}>
+			<button type='button' onClick={setIsOpen} className={styles.upperButton}>
 				<p className={styles.title}>{accordion.ask}</p>
 				<ArrowIcon className={styles.icon} />
-			</div>
+			</button>
 			<div
 				className={styles.hiddenContent}
 				style={

@@ -6,15 +6,16 @@ import styles from './WorkCardsMini.module.scss';
 
 interface Props {
 	data: IWorksMiniProps;
+	index: number;
 }
 
-export const WorkCardsMini = ({ data }: Props) => {
+export const WorkCardsMini = ({ data, index }: Props) => {
 	const content = data.data.data;
 
 	return (
 		<BlockWithTitle id={data.blockId}>
 			<Container className={getAnimationStyle('from-bottom-to-top')}>
-				<Title title={data.title} />
+				<Title title={data.title} index={index} />
 				<div className={styles.workCardsMini}>
 					{content.map((work, index) => (
 						<WorkCardMini key={index} data={work} />

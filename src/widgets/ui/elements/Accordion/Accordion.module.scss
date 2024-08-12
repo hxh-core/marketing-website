@@ -14,6 +14,10 @@
 	height: 100%;
 	@include accordion-transition;
 
+	&:has(.upperButton:focus-visible) {
+		outline: 1px solid $primary-tint-700;
+	}
+
 	@media (max-width: $max-768) {
 		padding: rem(20);
 	}
@@ -34,13 +38,16 @@
 		}
 	}
 }
-.upper {
+.upperButton {
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: rem(20);
 	@include accordion-transition;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
 }
 .title {
 	@include gilroy(500, 20);

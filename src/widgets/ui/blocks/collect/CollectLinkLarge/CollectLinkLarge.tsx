@@ -1,14 +1,16 @@
 import { getAnimationStyle } from '@/shared/helpers/lib';
 import { ICollectLinkLargeBlockProps } from '@/shared/types';
 import { CustomButton } from '@/shared/ui';
+import { HeadingByIndex } from '@/shared/ui/helpers';
 import { Container } from '@/shared/ui/layout';
 import styles from './CollectLinkLarge.module.scss';
 
 interface Props {
 	data: ICollectLinkLargeBlockProps;
+	index: number;
 }
 
-export const CollectLinkLarge = ({ data }: Props) => {
+export const CollectLinkLarge = ({ data, index }: Props) => {
 	const content = data.data.data.attributes;
 
 	return (
@@ -18,10 +20,15 @@ export const CollectLinkLarge = ({ data }: Props) => {
 		>
 			<Container>
 				<div className={styles.collectLinkContent}>
-					<h3
-						className={styles.title}
-						dangerouslySetInnerHTML={{ __html: content.title }}
-					></h3>
+					<HeadingByIndex
+						index={index}
+						props={{
+							className: styles.title,
+							dangerouslySetInnerHTML: {
+								__html: content.title,
+							},
+						}}
+					/>
 					<div
 						className={styles.description}
 						dangerouslySetInnerHTML={{ __html: content.description }}

@@ -10,15 +10,17 @@ import {
 } from '@/shared/helpers/lib';
 import type { ICollectDataFormBlockProps } from '@/shared/types/ui/blocks';
 import { CustomButton, CustomInput } from '@/shared/ui';
+import { HeadingByIndex } from '@/shared/ui/helpers';
 import { Container } from '@/shared/ui/layout';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './CollectForm.module.scss';
 
 interface Props {
 	data: ICollectDataFormBlockProps;
+	index: number;
 }
 
 const MAX_ERRORS = 3;
@@ -27,7 +29,7 @@ const getFormPositionStyles = (position: 'left' | 'right'): string => {
 	return position === 'right' ? styles.right : '';
 };
 
-export const CollectForm = ({ data }: Props) => {
+export const CollectForm = ({ data, index }: Props) => {
 	const content = data.data.data.attributes;
 
 	const {
@@ -40,10 +42,6 @@ export const CollectForm = ({ data }: Props) => {
 	} = useForm<any>();
 
 	const [serverErrorCount, setServerErrorCount] = useState(0);
-
-	useEffect(() => {
-		console.log(serverErrorCount);
-	}, [serverErrorCount]);
 
 	const submitForm = async (formData: { [key: string]: string }) => {
 		clearErrors();
@@ -117,7 +115,14 @@ export const CollectForm = ({ data }: Props) => {
 				className={`${styles.container} ${getFormPositionStyles(content.contentPosition)}`}
 			>
 				<div className={styles.content}>
-					<h2 className={styles.title}>{content.title}</h2>
+					<HeadingByIndex
+						index={index}
+						props={{
+							className: styles.title,
+						}}
+					>
+						{content.title}
+					</HeadingByIndex>
 					{content.description && (
 						<div
 							className={styles.description}

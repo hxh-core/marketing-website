@@ -2,15 +2,17 @@ import bgHeaderImage from '@/data/user/images/Bg image header.png';
 import { getAnimationStyle } from '@/shared/helpers/lib';
 import type { ITitleWithButtonsProps } from '@/shared/types/ui/blocks';
 import { CustomButton } from '@/shared/ui';
+import { HeadingByIndex } from '@/shared/ui/helpers';
 import { Container } from '@/shared/ui/layout';
 import Image from 'next/image';
 import styles from './TitleWithButtons.module.scss';
 
 interface Props {
 	data: ITitleWithButtonsProps;
+	index: number;
 }
 
-export const TitleWithButtons = ({ data }: Props) => {
+export const TitleWithButtons = ({ data, index }: Props) => {
 	const content = data.data.data.attributes;
 
 	return (
@@ -29,7 +31,9 @@ export const TitleWithButtons = ({ data }: Props) => {
 			<Container className={getAnimationStyle(data.animation)} size='medium'>
 				<div className={styles.content}>
 					<div className={styles.titleWrapper}>
-						<h1 className={styles.title}>{content.title && content.title}</h1>
+						<HeadingByIndex index={index} props={{ className: styles.title }}>
+							{content.title}
+						</HeadingByIndex>
 						<p className={styles.subtitle}>
 							{content.subtitle && content.subtitle}
 						</p>

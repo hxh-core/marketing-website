@@ -22,6 +22,10 @@
 			background: $gray-dark;
 			cursor: default;
 		}
+
+		&:focus-visible {
+			outline: 1px solid $state-error;
+		}
 	}
 
 	&.secondary {
@@ -35,6 +39,9 @@
 		&:disabled {
 			background: $gray-medium;
 			cursor: default;
+		}
+		&:focus-visible {
+			outline: 1px solid $state-error;
 		}
 	}
 
@@ -56,6 +63,10 @@
 
 		&:hover {
 			background: rgba(221, 236, 255, 0.6);
+		}
+
+		&:focus-visible {
+			outline: 1px solid $state-error;
 		}
 	}
 

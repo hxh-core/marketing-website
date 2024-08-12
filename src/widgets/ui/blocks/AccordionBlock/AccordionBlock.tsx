@@ -9,15 +9,16 @@ import styles from './AccordionBlock.module.scss';
 
 interface Props {
 	data: IAccordionBlockProps;
+	index: number;
 }
 
-export const AccordionBlock = ({ data }: Props) => {
+export const AccordionBlock = ({ data, index }: Props) => {
 	const [openIndex, setOpenIndex] = useState<number | null>(null);
 
 	return (
 		<BlockWithTitle id={data.blockId}>
 			<Container className={getAnimationStyle(data.animation)} size='medium'>
-				<Title title={data.title} />
+				<Title title={data.title} index={index} />
 				<div className={styles.accordions}>
 					{data.data.data.attributes.data.map((accordion, index) => (
 						<Accordion

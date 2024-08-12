@@ -58,6 +58,7 @@ export const Footer = ({ data }: FooterProps) => {
 								target='_blank'
 								className={styles.icon}
 								key={contact.id}
+								aria-label={contact.label}
 							>
 								{getIconFromName(contact.socialNetwork, '', 'dark')}
 							</Link>

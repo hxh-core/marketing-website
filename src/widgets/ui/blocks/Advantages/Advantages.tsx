@@ -14,6 +14,7 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 interface Props {
 	data: IAdvantagesBlockProps;
+	index: number;
 }
 
 const getAdvantageStyles = (isSelected?: boolean, isBig?: boolean) => {
@@ -22,14 +23,14 @@ const getAdvantageStyles = (isSelected?: boolean, isBig?: boolean) => {
 	}`;
 };
 
-export const Advantages = ({ data }: Props) => {
+export const Advantages = ({ data, index }: Props) => {
 	return (
 		<BlockWithTitle
 			className={`${getAnimationStyle(data.animation)} ${styles.advantages}`}
 			id={data.blockId}
 		>
 			<Container>
-				<Title title={data.title} />
+				<Title title={data.title} index={index} />
 				<div className={styles.scrollHorizontalContainer}>
 					<Swiper
 						wrapperClass={styles.swiperWrapper}

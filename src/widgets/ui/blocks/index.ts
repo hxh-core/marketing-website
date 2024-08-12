@@ -2,7 +2,7 @@ export * from './AccordionBlock/AccordionBlock';
 export * from './Advantages/Advantages';
 export * from './collect';
 export * from './forms';
-export * from './NotFount/NotFound';
+export * from './NotFound/NotFound';
 export * from './ServiceBlock/ServiceBlock';
 export * from './TeamBlock/TeamBlock';
 export * from './TitleWithButtons/TitleWithButtons';
