@@ -29,9 +29,6 @@ export const appLinks = {
 			byType: (type: string) => `${appLinks.user.articles.main}?type=${type}`,
 		},
 	},
-	admin: {
-		main: '/admin/',
-	},
 	contacts: {
 		vk: {
 			group: 'https://vk.com/hxh_marketing',

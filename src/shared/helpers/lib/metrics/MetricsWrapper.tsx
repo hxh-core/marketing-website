@@ -13,8 +13,8 @@ interface YandexMetricaProps {
 	googleTagManager?: IGoogleTagManager;
 }
 
-// 19.07.2024 / v.1.0.0
-// Компонент для установки Яндекс Метрики
+// 19.07.2024 / v.1.0.2
+// Компонент для установки Метрик
 export const MetricsWrapper = ({
 	children,
 	googleAnalytics,

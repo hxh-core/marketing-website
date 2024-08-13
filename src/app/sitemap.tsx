@@ -1,8 +1,10 @@
 import { MetaService } from '@/services/user/meta';
-import { WEBSITE_DOMEN } from '@/shared/constants';
+import { REVALIDATE_TIME, WEBSITE_DOMEN } from '@/shared/constants';
 import type { MetadataRoute } from 'next';
 
 // sitemap.xml / v.1.0.1
+
+export const revalidate = REVALIDATE_TIME;
 
 export default async function sitemap() {
 	const allPages = await MetaService.getAllPages();
