@@ -13,7 +13,6 @@ export default async function robots() {
 				{
 					userAgent: '*',
 					allow: [`${appLinks.user.main}`],
-					disallow: [`${appLinks.user.main}*?*`, '/admin'],
 				},
 			],
 			sitemap: `${WEBSITE_DOMEN}/sitemap.xml`,

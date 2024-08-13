@@ -7,7 +7,7 @@ import {
 	MetricsService,
 	NavigationService,
 } from '@/services/user/layout';
-import { REVALIDATE_TIME } from '@/shared';
+import { REVALIDATE_TIME, ZEN_VERIFICATION } from '@/shared';
 import { ClientRootLayout } from '@/widgets/lib';
 import type { Metadata } from 'next';
 import './styles';
@@ -38,6 +38,11 @@ export const metadata: Metadata = {
 			sizes: '128x128',
 		},
 	],
+	verification: {
+		other: {
+			'zen-verification': ZEN_VERIFICATION,
+		},
+	},
 	// openGraph: {
 	// 	images: [poster.src],
 	// },

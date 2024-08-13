@@ -7,6 +7,9 @@ export const SERVER_FILES_DIST = 'uploads';
 export const MAIN_ARTICLES_COUNT = 4; // Сколько выводить статей на главной странице
 export const REVALIDATE_TIME = 10;
 
+export const ZEN_VERIFICATION =
+	'be4alFKBDMp5HT7C9hEh7SLYcNWjyc07sMbVBWxIXOVYvCDNYr8W0S6XQciLxBmg';
+
 // Классы
 export const ANIMATION_CLASSES = {
 	animationBlock: 'animation-block',
