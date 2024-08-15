@@ -9,4 +9,6 @@ export * from './IDefaultBlockProps';
 export * from './IServicesProps';
 export * from './ITeamBlockProps';
 export * from './ITitleWithButtons';
+export * from './ITitleWithImageBlockProps';
 export * from './IWorksProps';
+export * from './IWorkStepsBlockProps';

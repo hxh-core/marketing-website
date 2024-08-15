@@ -1,0 +1,101 @@
+@import '@/shared/styles/_vars';
+
+.workStepsBlock {
+	overflow-x: hidden;
+	width: 100%;
+}
+.steps {
+	display: flex;
+	gap: rem(30);
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: stretch;
+	max-width: 100%;
+
+	@media (max-width: $max-768) {
+		gap: rem(16);
+	}
+}
+.step {
+	min-width: rem(280);
+	flex: 1 1 30%;
+	width: 100%;
+	min-height: rem(200);
+	padding: rem(40) rem(20);
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 100%;
+	border-radius: $corner-large;
+	position: relative;
+
+	@media (max-width: $max-768) {
+		min-height: rem(140);
+		padding: rem(20) rem(14);
+	}
+
+	@media (max-width: $max-500) {
+		min-width: 100%;
+	}
+
+	&.primary {
+		color: $gray-extra-light;
+		@include gradient-primary();
+
+		.icon path {
+			fill: $primary-shade-800;
+		}
+	}
+
+	&.secondary {
+		color: $text-dark;
+		@include gradient-secondary();
+
+		.icon path {
+			fill: $text-dark;
+		}
+	}
+}
+.stepTitle {
+	position: relative;
+	z-index: 2;
+	text-align: right;
+	align-self: flex-end;
+	@include gilroy(700, 26);
+
+	@media (max-width: $max-768) {
+		font-size: rem(20);
+		font-weight: 600;
+	}
+}
+.stepDescription {
+	position: relative;
+	z-index: 2;
+	align-self: flex-start;
+	@include gilroy(600, 26);
+	display: flex;
+	align-items: flex-end;
+	gap: rem(8);
+
+	@media (max-width: $max-768) {
+		font-size: rem(18);
+		font-weight: 500;
+	}
+}
+.helpText {
+	display: inline;
+}
+.stepIcon {
+	position: absolute;
+	bottom: rem(-30);
+	right: rem(-80);
+	z-index: 0;
+	min-width: rem(250);
+	width: 100%;
+	height: 100%;
+
+	& path {
+		width: 100%;
+		height: 100%;
+	}
+}

@@ -1,6 +1,6 @@
 import { API_URL, REVALIDATE_TIME } from '@/shared';
-import { DataWithoutMeta } from '@/shared/types/api';
-import { IFooter } from '@/shared/types/ui/elements';
+import type { DataWithoutMeta } from '@/shared/types/api';
+import type { IFooter } from '@/shared/types/ui/elements';
 
 const queryParams = [
 	'populate[0]=pages',

@@ -1,3 +1,4 @@
+export * from './CookieWidget/CookieWidget';
 export * from './CustomButton/CustomButton';
 export * from './CustomInput/CustomInput';
 export * from './Footer/Footer';

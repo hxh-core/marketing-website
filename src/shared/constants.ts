@@ -1,11 +1,12 @@
 export const SITE_NAME = 'HxH Marketing';
 export const CLIENT_URL = process.env.NEXT_PUBLIC_CLIENT_URL;
 export const WEBSITE_DOMEN = `${process.env.NODE_ENV === 'production' ? 'https' : 'http'}://${process.env.NEXT_PUBLIC_WEBSITE_DOMEN}`;
-export const SERVER_URL = process.env.NEXT_PUBLIC_API_URL;
+export const SERVER_URL = process.env.NEXT_PUBLIC_API_URL!;
 export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
 export const SERVER_FILES_DIST = 'uploads';
 export const MAIN_ARTICLES_COUNT = 4; // Сколько выводить статей на главной странице
 export const REVALIDATE_TIME = 10;
+export const COOKIE_NAME_HXH_AGENCY = 'hxh_agency_is_cookie_agree';
 
 export const ZEN_VERIFICATION =
 	'be4alFKBDMp5HT7C9hEh7SLYcNWjyc07sMbVBWxIXOVYvCDNYr8W0S6XQciLxBmg';

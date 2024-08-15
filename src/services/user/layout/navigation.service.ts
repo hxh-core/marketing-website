@@ -1,6 +1,9 @@
 import { API_URL, REVALIDATE_TIME } from '@/shared';
-import { DataWithoutMeta } from '@/shared/types/api';
-import { INavigation, INewsMessages } from '@/shared/types/ui/elements';
+import type {
+	DataWithoutMeta,
+	INavigation,
+	INewsMessages,
+} from '@/shared/types';
 
 const queryParams = ['populate[0]=links', 'populate[1]=localizations.links'];
 

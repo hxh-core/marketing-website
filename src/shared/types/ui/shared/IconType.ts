@@ -1,6 +1,7 @@
 export interface IconType {
 	className?: string;
 	color?: 'dark' | 'light' | string;
+	ariaLabel?: string;
 }
 
 export type IIcons =

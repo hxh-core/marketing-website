@@ -3,10 +3,11 @@ import favicon32 from '@/data/user/favicon/favicon-32x32.png';
 import favicon64 from '@/data/user/favicon/favicon-64x64.png';
 import faviconSvg from '@/data/user/favicon/favicon.svg';
 import {
+	CookieService,
 	FooterService,
 	MetricsService,
 	NavigationService,
-} from '@/services/user/layout';
+} from '@/services';
 import { REVALIDATE_TIME, ZEN_VERIFICATION } from '@/shared';
 import { ClientRootLayout } from '@/widgets/lib';
 import type { Metadata } from 'next';
@@ -57,6 +58,7 @@ export default async function RootLayout({
 	const navigation = await NavigationService.getNavigation();
 	const newsMessages = await NavigationService.getNewsMessages();
 	const footer = await FooterService.getFooter();
+	const cookie = await CookieService.getCookie();
 
 	// Get analytics
 	const yandexMetrics = await MetricsService.getYandexMetrics();
@@ -81,6 +83,7 @@ export default async function RootLayout({
 				footerProps={footer.data}
 				navProps={navigation.data}
 				newsProps={newsMessages.data}
+				cookie={cookie.data}
 				analytics={{
 					yandex:
 						yandexMetrics && yandexMetrics.data

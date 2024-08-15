@@ -1,0 +1,54 @@
+@import '@/shared/styles/_vars';
+
+.widget {
+	position: fixed;
+	background-color: $text-dark;
+	border-top-left-radius: $corner-large;
+	border-top-right-radius: $corner-large;
+	width: 100%;
+	min-height: rem(50);
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	transform: translate(0, 100%);
+	transition: transform 0.2s;
+	padding: rem(14) 0;
+
+	&.open {
+		transform: translate(0);
+	}
+}
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: rem(30);
+
+	@media screen and (max-width: $max-768) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: stretch;
+	}
+}
+.text {
+	@include gilroy(400, 14);
+	color: $gray-extra-light;
+	line-height: 1.5;
+}
+.buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: rem(20);
+
+	@media screen and (max-width: $max-400) {
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+		gap: rem(10);
+	}
+}
+.button {
+	white-space: nowrap !important;
+}

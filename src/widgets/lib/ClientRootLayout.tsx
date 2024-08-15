@@ -7,17 +7,19 @@ import {
 	IYandexMetrics,
 } from '@/shared/types';
 import type {
+	ICookie,
 	IFooter,
 	INavigation,
 	INewsMessages,
 } from '@/shared/types/ui/elements';
-import { Footer, Navigation } from '@/shared/ui';
+import { CookieWidget, Footer, Navigation } from '@/shared/ui';
 
 interface ClientLayoutProps {
 	children: React.ReactNode;
 	navProps: INavigation;
 	newsProps: INewsMessages;
 	footerProps: IFooter;
+	cookie?: ICookie;
 	analytics?: {
 		yandex?: IYandexMetrics;
 		googleAnalytics?: IGoogleAnalytics;
@@ -31,6 +33,7 @@ export const ClientRootLayout = ({
 	navProps,
 	newsProps,
 	analytics,
+	cookie,
 }: ClientLayoutProps) => {
 	return (
 		<body>
@@ -48,6 +51,7 @@ export const ClientRootLayout = ({
 					}}
 				/>
 				<main className='main'>{children}</main>
+				{cookie && <CookieWidget data={cookie} />}
 				<Footer data={footerProps} />
 			</MetricsWrapper>
 		</body>

@@ -1,5 +1,6 @@
 export * from './IAccordion';
 export * from './IAdvantage';
+export * from './ICookie';
 export * from './IFooter';
 export * from './ILogo';
 export * from './INavigation';
@@ -10,4 +11,5 @@ export * from './ITeamPerson';
 export * from './ITextWithLink';
 export * from './ITitle';
 export * from './IWorkCard';
+export * from './IWorkSteps';
 export * from './LabelWithValue';
