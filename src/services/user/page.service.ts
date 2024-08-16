@@ -22,6 +22,7 @@ const queryParams = [
 	'populate[blocks][populate][10]=data.price',
 	'populate[blocks][populate][11]=data.oldPrice',
 	'populate[blocks][populate][12]=data.link',
+	'populate[blocks][populate][13]=data.slug',
 	// Page meta settings
 	'populate=metaImage',
 	'pagination[pageSize]=1000',

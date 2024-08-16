@@ -1,4 +1,4 @@
-import type { ICustomLinkProps, IIcons } from '../shared';
+import type { ICustomLinkProps, IIcons, ILink } from '../shared';
 
 export interface IService {
 	id: number;
@@ -6,7 +6,7 @@ export interface IService {
 		color: 'primary' | 'secondary';
 		hoverTransition?: boolean;
 		icon: IIcons;
-		slug?: string;
+		slug?: ILink;
 		title: string;
 		description: string;
 		price: IServicePrice;

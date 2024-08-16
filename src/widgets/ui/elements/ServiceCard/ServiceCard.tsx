@@ -57,8 +57,13 @@ export const ServiceCard = ({ data }: Props) => {
 					</div>
 					<p className={styles.title}>{data.attributes.title}</p>
 				</div>
-				{data.attributes.slug && (
-					<Link href={data.attributes.slug} className={styles.linkIcon}>
+				{data.attributes.slug && data.attributes.slug.href && (
+					<Link
+						href={data.attributes.slug.href}
+						aria-label={data.attributes.slug.label}
+						target={data.attributes.slug.target}
+						className={styles.linkIcon}
+					>
 						<ArrowIcon className={styles.arrowLinkIcon} />
 					</Link>
 				)}
