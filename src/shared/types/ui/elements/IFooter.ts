@@ -7,6 +7,7 @@ export interface IFooter {
 	attributes: {
 		logo: ILogo;
 		pages: ILink[];
+		moreLinks?: ILink[];
 		text?: ITextWithLink;
 		copyrightText: string;
 		contacts: IContactLink[];

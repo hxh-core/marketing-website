@@ -5,6 +5,8 @@ export * from './forms';
 export * from './NotFound/NotFound';
 export * from './ServiceBlock/ServiceBlock';
 export * from './TeamBlock/TeamBlock';
+export * from './TextContent/TextContent';
 export * from './TitleWithButtons/TitleWithButtons';
 export * from './WorkCardsLarge/WorkCardsLarge';
 export * from './WorkCardsMini/WorkCardsMini';
+export * from './WorkSteps/WorkSteps';

@@ -2,6 +2,7 @@ import { IIcons } from '@/shared/types/ui/shared';
 import {
 	ArrowIcon,
 	BehanceIcon,
+	CalendarIcon,
 	CheckMarkIcon,
 	DzenIcon,
 	GitHubIcon,
@@ -37,6 +38,7 @@ const Icons = {
 	CheckMark: CheckMarkIcon,
 	Dzen: DzenIcon,
 	Yandex: YandexIcon,
+	Calendar: CalendarIcon,
 };
 
 // 11.07.2024 / v.1.0.0

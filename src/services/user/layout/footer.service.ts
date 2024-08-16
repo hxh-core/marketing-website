@@ -7,6 +7,7 @@ const queryParams = [
 	'populate[1]=logo',
 	'populate[2]=text.link',
 	'populate[3]=contacts',
+	'populate[4]=moreLinks',
 ];
 
 // 10.07.2024

@@ -6,6 +6,7 @@
 	flex-direction: column;
 	background-color: $text-black;
 	margin-top: rem(80);
+	gap: rem(20);
 
 	@media (max-width: $max-768) {
 		margin-top: rem(40);
@@ -116,11 +117,38 @@
 		text-align: center;
 	}
 }
+.medium {
+	padding: rem(20);
+}
+.mediumContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	gap: rem(30);
+
+	@media screen and (max-width: $max-600) {
+		flex-direction: column;
+		align-items: center;
+		gap: rem(12);
+	}
+}
+.mediumLink {
+	@include gilroy(400, 14);
+	color: $gray-extra-light;
+	text-decoration: none;
+	transition: 0.1s;
+	cursor: pointer;
+	line-height: 1.2;
+	text-align: center;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
 .lowerContainer {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	width: 100%;
 	gap: rem(10);
 
 	@media screen and (max-width: $max-600) {

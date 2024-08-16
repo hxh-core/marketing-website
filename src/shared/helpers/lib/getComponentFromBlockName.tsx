@@ -7,8 +7,10 @@ import {
 	CollectLinkMini,
 	ServiceBlock,
 	TeamBlock,
+	TextContent,
 	TitleWithButtons,
 	WorkCardsMini,
+	WorkSteps,
 } from '@/widgets/ui/blocks';
 import { WorkCardLarge } from '@/widgets/ui/elements';
 import { isPropsValid } from './isPropsValid';
@@ -24,6 +26,8 @@ const components: IComponentMap = {
 	'collect-link-mini': CollectLinkMini,
 	'collect-link-large': CollectLinkLarge,
 	'advantages-block': Advantages,
+	'work-steps': WorkSteps,
+	'text-content-big-block': TextContent,
 };
 
 export const getComponentFromBlockName = (

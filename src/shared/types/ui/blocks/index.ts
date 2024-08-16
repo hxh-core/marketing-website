@@ -8,6 +8,7 @@ export * from './IComponentMap';
 export * from './IDefaultBlockProps';
 export * from './IServicesProps';
 export * from './ITeamBlockProps';
+export * from './ITextContentBigBlockProps';
 export * from './ITitleWithButtons';
 export * from './ITitleWithImageBlockProps';
 export * from './IWorksProps';

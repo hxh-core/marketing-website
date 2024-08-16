@@ -21,7 +21,8 @@ export type IIcons =
 	| 'Info'
 	| 'Dzen'
 	| 'Yandex'
-	| 'Send';
+	| 'Send'
+	| 'Calendar';
 
 // Admin panel
 

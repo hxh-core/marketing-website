@@ -48,6 +48,23 @@ export const Footer = ({ data }: FooterProps) => {
 					)}
 				</Container>
 			</div>
+			{data.attributes.moreLinks && data.attributes.moreLinks.length !== 0 && (
+				<div className={styles.medium}>
+					<Container size='medium' className={styles.mediumContainer}>
+						{data.attributes.moreLinks.map((link) => (
+							<Link
+								href={link.href}
+								target={link.target}
+								className={styles.mediumLink}
+								key={link.id}
+								aria-label={link.label}
+							>
+								{link.label}
+							</Link>
+						))}
+					</Container>
+				</div>
+			)}
 			<div className={styles.lower}>
 				<Container size='medium' className={styles.lowerContainer}>
 					<p className={styles.copyright}>{data.attributes.copyrightText}</p>

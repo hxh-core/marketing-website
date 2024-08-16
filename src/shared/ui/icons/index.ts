@@ -1,5 +1,6 @@
 export * from './Arrow.icon';
 export * from './Behance.icon';
+export * from './Calendar.icon';
 export * from './CheckMark.icon';
 export * from './Dzen.icon';
 export * from './GitHub.icon';
