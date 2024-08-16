@@ -14,6 +14,10 @@
 	transition: transform 0.2s;
 	padding: rem(14) 0;
 
+	@media screen and (max-width: $max-768) {
+		padding-bottom: rem(40);
+	}
+
 	&.open {
 		transform: translate(0);
 	}
