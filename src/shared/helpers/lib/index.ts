@@ -1,5 +1,6 @@
 export * from './generateCustomMetadata';
 export * from './getAnimationStyle';
+export * from './getClientValuesFromForm';
 export * from './getComponentFromBlockName';
 export * from './getIconFromName';
 export * from './isPropsValid';

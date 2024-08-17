@@ -1,4 +1,5 @@
 import { $bot, $server } from '@/services/http';
+import { getClientValuesFromForm } from '@/shared/helpers/lib';
 import { IAdminMessage, ICollectDataFormBlockProps } from '@/shared/types';
 
 const BOT_URL = process.env.NEXT_PUBLIC_BOT_URL;
@@ -25,25 +26,21 @@ export class TelegramService {
 	static async sendNewClient(
 		form: ICollectDataFormBlockProps,
 		client: ClientValues,
-		options?: {
-			blockName?: string;
-		},
 	) {
 		if (!BOT_URL) {
 			return;
 		}
 
+		const clientValues = getClientValuesFromForm(form, client);
+
 		const message: IAdminMessage = {
 			title: '<b>Новая заявка с сайта!</b>',
 			text: {
-				'Form title': form.data.data.attributes.title,
-				...client,
+				'Название блока': form.data.data.attributes.uniqueBlockName,
+				'Заголовок формы': form.data.data.attributes.title,
+				...clientValues,
 			},
 		};
-
-		if (options?.blockName) {
-			message.text.blockName = options.blockName;
-		}
 
 		return await $bot.post<boolean>('/bot/send-admin-message', message);
 	}

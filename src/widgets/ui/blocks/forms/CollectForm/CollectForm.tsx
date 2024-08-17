@@ -60,9 +60,7 @@ export const CollectForm = ({ data, index }: Props) => {
 		}
 
 		try {
-			await TelegramService.sendNewClient(data, formData, {
-				blockName: data.blockName,
-			});
+			await TelegramService.sendNewClient(data, formData);
 		} catch (error) {
 			content.inputs.forEach((input) => {
 				setError(input.inputProps!.name!, {
