@@ -17,7 +17,11 @@ export const WorkCardMini = ({ data }: Props) => {
 			target={data.attributes.link.target}
 			title={data.attributes.link.label}
 			className={styles.workCard}
+			itemProp='hasPart'
+			itemScope
+			itemType='https://schema.org/CreativeWork'
 		>
+			<meta itemProp='url' content={data.attributes.link.href} />
 			<div className={styles.imageWrapper}>
 				<Image
 					src={setUrlBeforeImageName(
@@ -33,13 +37,27 @@ export const WorkCardMini = ({ data }: Props) => {
 			</div>
 
 			<div className={styles.content}>
-				<p className={styles.title}>{data.attributes.title}</p>
+				<p className={styles.title} itemProp='name'>
+					{data.attributes.title}
+				</p>
 				<div className={styles.lowerString}>
-					<p className={styles.tag}>{data.attributes.tag}</p>
+					<p
+						className={styles.tag}
+						itemProp='about'
+						itemScope
+						itemType='https://schema.org/Thing'
+					>
+						{data.attributes.tag}
+					</p>
 					<div className={styles.icon}>
 						<ArrowIcon />
 					</div>
 				</div>
+				<meta itemProp='description' content={data.attributes.title} />
+				<meta
+					itemProp='image'
+					content={data.attributes.image.data.attributes.url}
+				/>
 			</div>
 		</Link>
 	);

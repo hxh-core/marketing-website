@@ -13,7 +13,11 @@ export const WorkCardsMini = ({ data, index }: Props) => {
 	const content = data.data.data;
 
 	return (
-		<BlockWithTitle id={data.blockId}>
+		<BlockWithTitle
+			id={data.blockId}
+			itemScope
+			itemType='https://schema.org/CreativeWork'
+		>
 			<Container className={getAnimationStyle('from-bottom-to-top')}>
 				<Title title={data.title} index={index} />
 				<div className={styles.workCardsMini}>
