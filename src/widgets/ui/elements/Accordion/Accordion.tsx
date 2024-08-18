@@ -22,9 +22,14 @@ export const Accordion = ({ accordion, isOpen, setIsOpen }: AccordionProps) => {
 				styles: styles,
 				needStyle: styles.open,
 			})}`}
+			itemScope
+			itemProp='mainEntity'
+			itemType='https://schema.org/Question'
 		>
 			<button type='button' onClick={setIsOpen} className={styles.upperButton}>
-				<p className={styles.title}>{accordion.ask}</p>
+				<p className={styles.title} itemProp='name'>
+					{accordion.ask}
+				</p>
 				<ArrowIcon className={styles.icon} />
 			</button>
 			<div
@@ -32,9 +37,13 @@ export const Accordion = ({ accordion, isOpen, setIsOpen }: AccordionProps) => {
 				style={
 					isOpen ? { height: content.current?.scrollHeight } : { height: 0 }
 				}
+				itemScope
+				itemProp='acceptedAnswer'
+				itemType='https://schema.org/Answer'
 			>
 				<div className={styles.divider}></div>
 				<div
+					itemProp='text'
 					className={styles.content}
 					ref={content}
 					dangerouslySetInnerHTML={{ __html: accordion.answer }}

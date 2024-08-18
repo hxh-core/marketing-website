@@ -6,4 +6,5 @@ export * from './ICustomInput';
 export * from './ILink';
 export * from './INavLink';
 export * from './IReviewPerson';
+export * from './ISchemaOrg';
 export * from './TColors';
