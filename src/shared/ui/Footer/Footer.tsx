@@ -12,7 +12,12 @@ interface FooterProps {
 
 export const Footer = ({ data }: FooterProps) => {
 	return (
-		<footer className={`${styles.footer}`} id='footer'>
+		<footer
+			className={`${styles.footer}`}
+			id='footer'
+			itemScope
+			itemType='https://schema.org/Organization'
+		>
 			<div className={styles.upper}>
 				<Container size='medium' className={styles.upperContainer}>
 					<div className={styles.logo}>
@@ -21,7 +26,7 @@ export const Footer = ({ data }: FooterProps) => {
 							color={data.attributes.logo.color}
 						/>
 						{data.attributes.logo.description && (
-							<p className={styles.description}>
+							<p className={styles.description} itemProp='description'>
 								{data.attributes.logo.description}
 							</p>
 						)}
@@ -67,7 +72,9 @@ export const Footer = ({ data }: FooterProps) => {
 			)}
 			<div className={styles.lower}>
 				<Container size='medium' className={styles.lowerContainer}>
-					<p className={styles.copyright}>{data.attributes.copyrightText}</p>
+					<p className={styles.copyright} itemProp='copyrightYear'>
+						{data.attributes.copyrightText}
+					</p>
 					<div className={styles.contacts}>
 						{data.attributes.contacts.map((contact) => (
 							<Link
