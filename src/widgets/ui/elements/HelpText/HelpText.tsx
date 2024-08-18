@@ -9,9 +9,17 @@ interface HelpTextProps {
 }
 
 export const HelpText = ({ text, className }: HelpTextProps) => {
+	const replaceText = text.replace(/(<([^>]+)>)/gi, ' ');
+
+	console.log(replaceText);
+
+	if (!replaceText || text === '<p></p>') {
+		return;
+	}
+
 	return (
 		<button
-			aria-label={text.replace(/(<([^>]+)>)/gi, ' ')}
+			aria-label={replaceText}
 			className={`${styles.helpText} ${className ? className : ''}`}
 		>
 			<div className={styles.helpIconWrapper}>

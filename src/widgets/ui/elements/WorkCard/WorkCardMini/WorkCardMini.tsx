@@ -1,6 +1,7 @@
-import { setServerUrlBeforeSrc } from '@/shared/helpers/files';
+import { SERVER_URL } from '@/shared';
 import type { IWorkCardMini } from '@/shared/types';
 import { ArrowIcon } from '@/shared/ui/icons';
+import { setUrlBeforeImageName } from '@hxh-core/react/dist/helpers';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './WorkCardMini.module.scss';
@@ -19,7 +20,10 @@ export const WorkCardMini = ({ data }: Props) => {
 		>
 			<div className={styles.imageWrapper}>
 				<Image
-					src={setServerUrlBeforeSrc(data.attributes.image.data.attributes.url)}
+					src={setUrlBeforeImageName(
+						data.attributes.image.data.attributes.url,
+						SERVER_URL,
+					)}
 					alt={data.attributes.title}
 					width={545}
 					height={300}

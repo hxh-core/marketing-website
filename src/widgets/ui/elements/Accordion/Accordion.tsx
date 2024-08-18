@@ -2,6 +2,7 @@
 
 import type { IAccordion } from '@/shared/types/ui/elements';
 import { ArrowIcon } from '@/shared/ui/icons';
+import { getNeedStyle } from '@hxh-core/react/dist/helpers';
 import { useRef } from 'react';
 import styles from './Accordion.module.scss';
 
@@ -11,13 +12,17 @@ type AccordionProps = {
 	setIsOpen: () => void;
 };
 
-const getIsOpen = (isOpen: boolean) => (isOpen ? styles.open : '');
-
 export const Accordion = ({ accordion, isOpen, setIsOpen }: AccordionProps) => {
 	const content = useRef<HTMLDivElement>(null);
 
 	return (
-		<div className={`${styles.accordion} ${getIsOpen(isOpen)}`}>
+		<div
+			className={`${styles.accordion} ${getNeedStyle({
+				isActive: isOpen,
+				styles: styles,
+				needStyle: styles.open,
+			})}`}
+		>
 			<button type='button' onClick={setIsOpen} className={styles.upperButton}>
 				<p className={styles.title}>{accordion.ask}</p>
 				<ArrowIcon className={styles.icon} />
