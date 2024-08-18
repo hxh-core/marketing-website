@@ -11,8 +11,6 @@ interface HelpTextProps {
 export const HelpText = ({ text, className }: HelpTextProps) => {
 	const replaceText = text.replace(/(<([^>]+)>)/gi, ' ');
 
-	console.log(replaceText);
-
 	if (!replaceText || text === '<p></p>') {
 		return;
 	}
