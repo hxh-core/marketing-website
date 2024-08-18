@@ -1,4 +1,5 @@
 import type { StrapiImageWithoutData } from '../../api';
+import type { SiteType } from '../../meta';
 import type { IBlock } from '../blocks';
 
 export interface IPage {
@@ -15,6 +16,7 @@ export interface IPage {
 			data: StrapiImageWithoutData[];
 		};
 		path: string;
+		type?: SiteType;
 		blocks: IBlock<any>[];
 	};
 }

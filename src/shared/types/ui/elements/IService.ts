@@ -19,16 +19,23 @@ export interface IService {
 }
 
 export type IServicePrice =
-	| {
-			state: 'Фикс';
-			amount: number;
-			currency: string;
-	  }
-	| {
-			state: 'От';
-			amount: number;
-			currency: string;
-	  }
-	| {
-			state: 'По договоренности';
-	  };
+	| IServicePriceFixed
+	| IServicePriceFrom
+	| IServicePriceAgreement;
+
+export interface IServicePriceFixed {
+	state: 'Фикс';
+	amount: number;
+	currency: string;
+}
+
+export interface IServicePriceFrom {
+	state: 'От';
+	amount: number;
+	currency: string;
+}
+
+export interface IServicePriceAgreement {
+	state: 'По договоренности';
+	currency: string;
+}

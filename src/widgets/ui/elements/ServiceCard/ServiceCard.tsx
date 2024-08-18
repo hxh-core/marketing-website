@@ -1,4 +1,4 @@
-import { getIconFromName } from '@/shared/helpers/lib';
+import { getIconFromName, getPriceCurrencyFormat } from '@/shared/helpers/lib';
 import { IService, IServicePrice } from '@/shared/types/ui/elements';
 import { CustomButton } from '@/shared/ui';
 import { ArrowIcon } from '@/shared/ui/icons';
@@ -22,6 +22,14 @@ const getServicePrice = (price: IServicePrice) => {
 		case 'По договоренности':
 		default:
 			return 'По договоренности';
+	}
+};
+
+const getServicePriceType = (price: IServicePrice) => {
+	if ('amount' in price) {
+		return price;
+	} else {
+		return price;
 	}
 };
 
@@ -49,13 +57,17 @@ export const ServiceCard = ({ data }: Props) => {
 	return (
 		<div
 			className={`${styles.serviceCard} ${getServiceCardTheme(data.attributes.color, data.attributes.hoverTransition)}`}
+			itemScope
+			itemType='http://schema.org/Service'
 		>
 			<div className={styles.header}>
 				<div className={styles.titleWrapper}>
 					<div className={styles.iconWrapper}>
 						{getIconFromName(data.attributes.icon, styles.previewIcon)}
 					</div>
-					<p className={styles.title}>{data.attributes.title}</p>
+					<p itemProp='name' className={styles.title}>
+						{data.attributes.title}
+					</p>
 				</div>
 				{data.attributes.slug && data.attributes.slug.href && (
 					<Link
@@ -63,6 +75,7 @@ export const ServiceCard = ({ data }: Props) => {
 						aria-label={data.attributes.slug.label}
 						target={data.attributes.slug.target}
 						className={styles.linkIcon}
+						itemProp='url'
 					>
 						<ArrowIcon className={styles.arrowLinkIcon} />
 					</Link>
@@ -70,6 +83,7 @@ export const ServiceCard = ({ data }: Props) => {
 			</div>
 			<div className={styles.content}>
 				<div
+					itemProp='description'
 					className={styles.description}
 					dangerouslySetInnerHTML={{ __html: data.attributes.description }}
 				></div>
@@ -77,6 +91,7 @@ export const ServiceCard = ({ data }: Props) => {
 					<div className={styles.button}>
 						<CustomButton.Link
 							{...data.attributes.button}
+							itemProp='url'
 							className={styles.button}
 						></CustomButton.Link>
 					</div>
@@ -85,7 +100,22 @@ export const ServiceCard = ({ data }: Props) => {
 							<s>{getServicePrice(data.attributes.oldPrice)}</s>
 						</p>
 					)}
-					<p className={styles.price}>
+					<p
+						className={styles.price}
+						itemProp='offers'
+						itemScope
+						itemType='https://schema.org/Offer'
+					>
+						{'amount' in data.attributes.price && (
+							<meta
+								itemProp='price'
+								content={data.attributes.price.amount.toString()}
+							/>
+						)}
+						<meta
+							itemProp='priceCurrency'
+							content={getPriceCurrencyFormat(data.attributes.price.currency)}
+						/>
 						{getServicePrice(data.attributes.price)}
 					</p>
 				</div>

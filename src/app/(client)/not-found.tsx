@@ -6,7 +6,6 @@ import { Container } from '@/shared/ui/layout';
 export default function NotFoundPage() {
 	return (
 		<>
-			<title>Страница не найдена: 404</title>
 			<Container>
 				<div className={`${styles.notFound} ${styles.darkBg}`}>
 					<p className={styles.code}>{404}</p>

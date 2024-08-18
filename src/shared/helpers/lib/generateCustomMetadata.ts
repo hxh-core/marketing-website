@@ -1,11 +1,10 @@
 import { SERVER_URL, SITE_NAME, WEBSITE_DOMEN } from '@/shared/constants';
-import { IPage, SiteType } from '@/shared/types';
+import { IPage } from '@/shared/types';
 import type { Metadata } from 'next/types';
 
 interface GenerateCustomMetadataProps {
 	path: string;
 	page: IPage;
-	type: SiteType;
 }
 
 // 07,08.2024 / v.1.0.0
@@ -13,7 +12,6 @@ interface GenerateCustomMetadataProps {
 export const generateCustomMetadata = async ({
 	page,
 	path,
-	type = 'website',
 }: GenerateCustomMetadataProps): Promise<Metadata> => {
 	// Если нет мета-тегов, то возвращаем стандартные мета-теги
 
@@ -30,7 +28,7 @@ export const generateCustomMetadata = async ({
 				? page.attributes.metaKeywords
 				: undefined,
 			openGraph: {
-				type: type ? type : 'website',
+				type: page.attributes.type ? page.attributes.type : 'website',
 				title: page.attributes.metaTitle,
 				description: page.attributes.metaDescription
 					? page.attributes.metaDescription
@@ -56,11 +54,11 @@ export const generateCustomMetadata = async ({
 
 	return {
 		metadataBase: new URL(`${WEBSITE_DOMEN}/${path}`),
-		title: SITE_NAME,
+		title: 'Страница не найдена: 404',
 		openGraph: {
-			siteName: SITE_NAME,
+			siteName: 'Страница не найдена: 404',
 			url: `${WEBSITE_DOMEN}${path}`,
-			type: type,
+			type: 'website',
 		},
 		alternates: {
 			canonical: `${WEBSITE_DOMEN}${path}`,

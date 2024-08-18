@@ -12,6 +12,7 @@ export interface ICustomButtonProps {
 	size?: ICustomButtonSize;
 	className?: string;
 	icon?: IIcons;
+	itemProp?: string;
 }
 
 export interface ICustomLinkProps {
@@ -22,4 +23,5 @@ export interface ICustomLinkProps {
 	size?: ICustomButtonSize;
 	className?: string;
 	icon?: IIcons;
+	itemProp?: string;
 }

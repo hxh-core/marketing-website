@@ -30,7 +30,6 @@ export const generateMetadata = async ({
 	return generateCustomMetadata({
 		page: page.data[0],
 		path: params.slug,
-		type: 'website',
 	});
 };
 

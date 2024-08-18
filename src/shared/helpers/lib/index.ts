@@ -3,6 +3,7 @@ export * from './getAnimationStyle';
 export * from './getClientValuesFromForm';
 export * from './getComponentFromBlockName';
 export * from './getIconFromName';
+export * from './getPriceCurrencyFormat';
 export * from './isPropsValid';
 export * from './setupParallax';
 export * from './toggleBodyOverflow';

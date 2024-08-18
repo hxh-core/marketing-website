@@ -26,7 +26,6 @@ export const generateMetadata = async (): Promise<Metadata> => {
 	return generateCustomMetadata({
 		page: page.data[0],
 		path: '/',
-		type: 'website',
 	});
 };
 

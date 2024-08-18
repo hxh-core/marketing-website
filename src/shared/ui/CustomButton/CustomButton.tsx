@@ -45,6 +45,7 @@ export const CustomButton = {
 		target,
 		className,
 		icon,
+		itemProp,
 	}: ICustomLinkProps) => {
 		return (
 			<Link
@@ -52,6 +53,7 @@ export const CustomButton = {
 				target={target}
 				className={`${styles.button} ${getButtonTypeStyles(color)} ${getButtonSizeStyles(size)} ${className ? className : ''}`}
 				aria-label={children}
+				itemProp={itemProp}
 			>
 				{children}
 				{icon && getIconFromName(icon, styles.icon)}
@@ -67,6 +69,7 @@ export const CustomButton = {
 		disabled,
 		className,
 		icon,
+		itemProp,
 	}: ICustomButtonProps) => {
 		return (
 			<button
@@ -75,6 +78,7 @@ export const CustomButton = {
 				disabled={disabled}
 				onClick={onClick}
 				aria-label={children}
+				itemProp={itemProp}
 			>
 				{children}
 				{icon && getIconFromName(icon, styles.icon)}
