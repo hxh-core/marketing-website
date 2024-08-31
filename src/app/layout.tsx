@@ -44,9 +44,6 @@ export const metadata: Metadata = {
 			'zen-verification': ZEN_VERIFICATION,
 		},
 	},
-	// openGraph: {
-	// 	images: [poster.src],
-	// },
 };
 
 export default async function RootLayout({
