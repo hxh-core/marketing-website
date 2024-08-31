@@ -1,6 +1,7 @@
 import type { StrapiImageWithoutData } from '../../api';
 import type { SiteType } from '../../meta';
 import type { IBlock } from '../blocks';
+import type { ILocalizations } from '../shared';
 
 export interface IPage {
 	id: number;
@@ -8,7 +9,7 @@ export interface IPage {
 		createdAt: string;
 		updatedAt?: string;
 		publishedAt?: string;
-		locale?: string;
+		locale: string;
 		metaTitle: string;
 		metaDescription?: string;
 		metaKeywords?: string;
@@ -18,5 +19,6 @@ export interface IPage {
 		path: string;
 		type?: SiteType;
 		blocks: IBlock<any>[];
+		localizations: ILocalizations<IPage>;
 	};
 }

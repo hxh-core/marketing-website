@@ -17,9 +17,10 @@ import { CookieWidget, Footer, Navigation } from '@/shared/ui';
 interface ClientLayoutProps {
 	children: React.ReactNode;
 	navProps: INavigation;
-	newsProps: INewsMessages;
+	newsProps?: INewsMessages;
 	footerProps: IFooter;
 	cookie?: ICookie;
+	language?: string;
 	analytics?: {
 		yandex?: IYandexMetrics;
 		googleAnalytics?: IGoogleAnalytics;
@@ -34,6 +35,7 @@ export const ClientRootLayout = ({
 	newsProps,
 	analytics,
 	cookie,
+	language = 'ru',
 }: ClientLayoutProps) => {
 	return (
 		<body>
@@ -45,6 +47,7 @@ export const ClientRootLayout = ({
 				<Navigation
 					data={navProps}
 					news={newsProps}
+					language={language}
 					options={{
 						hideByHeight: true,
 						scrollHeight: 30,

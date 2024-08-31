@@ -11,6 +11,7 @@ import { handleNav } from './handleNav';
 interface NavProps {
 	data: INavigation;
 	news?: INewsMessages;
+	language?: string;
 	options?: {
 		hideByHeight: boolean;
 		scrollHeight: number;
@@ -20,6 +21,7 @@ interface NavProps {
 export const Navigation = ({
 	data,
 	news,
+	language = 'ru',
 	options = {
 		hideByHeight: false,
 		scrollHeight: 300,
@@ -31,7 +33,7 @@ export const Navigation = ({
 
 	const isActivePath = (linkHref: string): string => {
 		if (linkHref === '/') {
-			return path === linkHref ? styles.active : '';
+			return path.slice(-3) === '' ? styles.active : '';
 		}
 
 		return path.startsWith(linkHref) ? styles.active : '';
@@ -80,7 +82,11 @@ export const Navigation = ({
 				ref={nav}
 			>
 				<div className={styles.container}>
-					<Logo logo={data.attributes.logo} className={styles.logo} />
+					<Logo
+						logo={data.attributes.logo}
+						language={language}
+						className={styles.logo}
+					/>
 					<menu className={styles.pages}>
 						{data.attributes.links.map((link) => (
 							<Link

@@ -8,9 +8,10 @@ import styles from './Footer.module.scss';
 
 interface FooterProps {
 	data: IFooter;
+	language?: string;
 }
 
-export const Footer = ({ data }: FooterProps) => {
+export const Footer = ({ data, language = 'ru' }: FooterProps) => {
 	return (
 		<footer
 			className={`${styles.footer}`}
@@ -22,8 +23,9 @@ export const Footer = ({ data }: FooterProps) => {
 				<Container size='medium' className={styles.upperContainer}>
 					<div className={styles.logo}>
 						<Logo
-							logo={data.attributes.logo.name}
+							logo={data.attributes.logo.logo}
 							color={data.attributes.logo.color}
+							language={language}
 						/>
 						{data.attributes.logo.description && (
 							<p className={styles.description} itemProp='description'>

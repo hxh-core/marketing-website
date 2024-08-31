@@ -1,5 +1,5 @@
 export interface ILogo {
-	name: string;
+	logo: string;
 	color: 'primary' | 'secondary';
 	description?: string;
 }

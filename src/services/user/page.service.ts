@@ -30,9 +30,9 @@ const queryParams = [
 // 10.07.2024
 // Page service / v.1.0.0
 export class PageService {
-	static async getPageData(slug: string) {
+	static async getPageData(slug: string, locale = 'en') {
 		const request = new Request(
-			`${API_URL}/pages?filters[path]=${slug}&${queryParams.join('&')}`,
+			`${API_URL}/pages?filters[path]=${slug}&locale=${locale}`,
 			{
 				method: 'GET',
 				next: {
@@ -45,7 +45,7 @@ export class PageService {
 			const responseJson: DataWithMeta<IPage[]> = await response.json();
 			return responseJson;
 		} catch (error) {
-			throw new Error(`Error get page ${slug}.\nFile: PageService.ts:43`, {
+			throw new Error(`Error get page ${slug}.\nFile: PageService.ts:48`, {
 				cause: error,
 			});
 		}
@@ -63,7 +63,7 @@ export class PageService {
 			const responseJson: DataWithMeta<IPage[]> = await response.json();
 			return responseJson;
 		} catch (error) {
-			throw new Error(`Error get all pages.\nFile: PageService.ts:61`, {
+			throw new Error(`Error get all pages.\nFile: PageService.ts:66`, {
 				cause: error,
 			});
 		}

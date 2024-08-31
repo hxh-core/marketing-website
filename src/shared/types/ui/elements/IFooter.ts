@@ -1,5 +1,5 @@
 import type { IContactLink, ILink } from '../shared';
-import type { ILogo } from './ILogo';
+import { ILogo } from './ILogo';
 import type { ITextWithLink } from './ITextWithLink';
 
 export interface IFooter {

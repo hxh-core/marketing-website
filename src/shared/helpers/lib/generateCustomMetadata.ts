@@ -1,5 +1,5 @@
 import { SERVER_URL, SITE_NAME, WEBSITE_DOMEN } from '@/shared/constants';
-import { IPage } from '@/shared/types';
+import type { IPage } from '@/shared/types';
 import type { Metadata } from 'next/types';
 
 interface GenerateCustomMetadataProps {
@@ -28,6 +28,11 @@ export const generateCustomMetadata = async ({
 				? page.attributes.metaKeywords
 				: undefined,
 			openGraph: {
+				locale: `${page.attributes.locale}_${page.attributes.locale.toUpperCase()}`,
+				alternateLocale: page.attributes.localizations.data.map(
+					(localePage) =>
+						`${localePage.attributes.locale}_${localePage.attributes.locale.toUpperCase()}`,
+				),
 				type: page.attributes.type ? page.attributes.type : 'website',
 				title: page.attributes.metaTitle,
 				description: page.attributes.metaDescription

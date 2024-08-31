@@ -10,16 +10,13 @@ const queryParams = ['populate[0]=links', 'populate[1]=localizations.links'];
 // 10.07.2024
 // Navigation service / v.1.0.0
 export class NavigationService {
-	static async getNavigation() {
-		const request = new Request(
-			`${API_URL}/navigation?${queryParams.join('&')}`,
-			{
-				method: 'GET',
-				next: {
-					revalidate: REVALIDATE_TIME,
-				},
+	static async getNavigation(locale = 'en') {
+		const request = new Request(`${API_URL}/navigation?locale=${locale}`, {
+			method: 'GET',
+			next: {
+				revalidate: REVALIDATE_TIME,
 			},
-		);
+		});
 		try {
 			const response = await fetch(request);
 			const responseJson: DataWithoutMeta<INavigation> = await response.json();

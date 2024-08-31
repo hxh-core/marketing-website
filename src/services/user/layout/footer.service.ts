@@ -13,8 +13,8 @@ const queryParams = [
 // 10.07.2024
 // Footer service / v.1.0.0
 export class FooterService {
-	static async getFooter() {
-		const request = new Request(`${API_URL}/footer?${queryParams.join('&')}`, {
+	static async getFooter(locale = 'en') {
+		const request = new Request(`${API_URL}/footer?locale=${locale}`, {
 			method: 'GET',
 			next: {
 				revalidate: REVALIDATE_TIME,

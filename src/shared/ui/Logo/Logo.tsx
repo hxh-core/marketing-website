@@ -7,6 +7,7 @@ interface Props {
 	logo?: string;
 	color?: 'primary' | 'secondary';
 	isSchemaOrg?: boolean;
+	language?: string;
 }
 
 const getLogoColor = (color: 'primary' | 'secondary') => {
@@ -25,9 +26,12 @@ export const Logo = ({
 	logo,
 	color = 'primary',
 	isSchemaOrg,
+	language = 'ru',
 }: Props) => {
+	console.log(language);
 	return (
 		<Link
+			locale={'en'}
 			href={appLinks.user.main}
 			className={`${styles.logo} ${getLogoColor(color)} ${className ? className : ''}`}
 			{...(isSchemaOrg && {

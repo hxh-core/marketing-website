@@ -13,24 +13,18 @@ export const revalidate = REVALIDATE_TIME;
 export const generateMetadata = async ({
 	params,
 }: {
-	params: { slug: string; path: string };
+	params: { language: string };
 }): Promise<Metadata> => {
-	const page = await PageService.getPageData(`/${params.slug}/${params.path}`);
+	const page = await PageService.getPageData(`/`, params.language);
 
 	return generateCustomMetadata({
 		page: page.data[0],
-		path: `${params.slug}/${params.path}`,
+		path: '/',
 	});
 };
 
-const SlugPage = async ({
-	params,
-}: {
-	params: { slug: string; path: string };
-}) => {
-	const pageData = await PageService.getPageData(
-		`/${params.slug}/${params.path}`,
-	);
+const SlugPage = async ({ params }: { params: { language: string } }) => {
+	const pageData = await PageService.getPageData('/', params.language);
 
 	if (!pageData.data[0] || !pageData.data[0].attributes.path) {
 		notFound();
