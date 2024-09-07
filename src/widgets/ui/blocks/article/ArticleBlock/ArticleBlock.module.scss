@@ -45,12 +45,6 @@
 	& path {
 		fill: $gray-dark;
 	}
-
-	&.eyeIcon {
-		& path {
-			fill: transparent;
-		}
-	}
 }
 
 .articleInfoText {
@@ -67,7 +61,6 @@
 .articleImageWrapper {
 	border-radius: $corner-medium;
 	width: 100%;
-	max-height: rem(360);
 	height: 100%;
 	-o-object-fit: cover;
 	object-fit: cover;
@@ -75,10 +68,6 @@
 	object-position: 50% 50%;
 	margin-top: rem(30);
 	overflow: hidden;
-
-	@media (max-width: $max-768) {
-		max-height: rem(200);
-	}
 }
 
 .articleImage {

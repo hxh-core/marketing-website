@@ -1,0 +1,23 @@
+@import '@/shared/styles/_vars';
+
+.moreArticles {
+	width: 100%;
+	overflow-x: hidden;
+	overflow-y: visible;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.fingerAnimation {
+	max-width: rem(100);
+	width: 100%;
+	margin: 0 auto;
+
+	@media (max-width: $max-768) {
+		max-width: rem(60);
+		margin: initial;
+		align-self: flex-end;
+	}
+}

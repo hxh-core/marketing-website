@@ -3,11 +3,11 @@
 import { SERVER_URL } from '@/shared';
 import { getAnimationStyle } from '@/shared/helpers/lib';
 import type { IArticleBlockProps } from '@/shared/types/ui/blocks/IArticleBlockProps';
-import { CalendarIcon, EyeIcon } from '@/shared/ui/icons';
+import { CalendarIcon } from '@/shared/ui/icons';
 import { Container } from '@/shared/ui/layout';
 import { setUrlBeforeImageName } from '@hxh-core/react/dist/helpers';
 import Image from 'next/image';
-import { AuthorMiniCard, BreadCrumbs } from '../../elements';
+import { AuthorMiniCard, BreadCrumbs } from '../../../elements';
 import styles from './ArticleBlock.module.scss';
 
 interface Props {
@@ -41,11 +41,7 @@ export const ArticleBlock = ({ data }: Props) => {
 								{new Date(content.publishedAt).toLocaleDateString('ru')}
 							</time>
 						</div>
-						<p className={styles.upperDivider}>|</p>
-						<div className={styles.articleInfoWrapper}>
-							<EyeIcon className={`${styles.grayIcon} ${styles.eyeIcon}`} />
-							<p className={styles.articleInfoText}>{content.viewsCount}</p>
-						</div>
+						{/* <p className={styles.upperDivider}>|</p> */}
 					</div>
 					<div className={styles.articleImageWrapper}>
 						<Image

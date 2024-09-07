@@ -6,6 +6,7 @@ import {
 	CollectForm,
 	CollectLinkLarge,
 	CollectLinkMini,
+	MoreArticles,
 	ServiceBlock,
 	TeamBlock,
 	TextContent,
@@ -30,6 +31,7 @@ const components: IComponentMap = {
 	'work-steps': WorkSteps,
 	'text-content-big-block': TextContent,
 	'article-block': ArticleBlock,
+	'more-articles-block': MoreArticles,
 };
 
 export const getComponentFromBlockName = (

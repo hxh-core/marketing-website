@@ -6,6 +6,7 @@ export * from './ICollectLinkLargeBlockProps';
 export * from './ICollectLinkMiniBlockProps';
 export * from './IComponentMap';
 export * from './IDefaultBlockProps';
+export * from './IMoreArticlesBlockProps';
 export * from './IServicesProps';
 export * from './ITeamBlockProps';
 export * from './ITextContentBigBlockProps';

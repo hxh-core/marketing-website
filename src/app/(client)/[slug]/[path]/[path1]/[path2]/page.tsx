@@ -13,25 +13,25 @@ export const revalidate = REVALIDATE_TIME;
 export const generateMetadata = async ({
 	params,
 }: {
-	params: { slug: string; path: string; path1: string };
+	params: { slug: string; path: string; path1: string; path2: string };
 }): Promise<Metadata> => {
 	const page = await PageService.getPageData(
-		`/${params.slug}/${params.path}/${params.path1}`,
+		`/${params.slug}/${params.path}/${params.path1}/${params.path2}`,
 	);
 
 	return generateCustomMetadata({
 		page: page.data[0],
-		path: `${params.slug}/${params.path}/${params.path1}`,
+		path: `${params.slug}/${params.path}/${params.path1}/${params.path2}`,
 	});
 };
 
 const SlugPage = async ({
 	params,
 }: {
-	params: { slug: string; path: string; path1: string };
+	params: { slug: string; path: string; path1: string; path2: string };
 }) => {
 	const pageData = await PageService.getPageData(
-		`/${params.slug}/${params.path}/${params.path1}`,
+		`/${params.slug}/${params.path}/${params.path1}/${params.path2}`,
 	);
 
 	if (!pageData.data[0] || !pageData.data[0].attributes.path) {

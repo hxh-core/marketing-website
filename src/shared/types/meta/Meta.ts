@@ -1,5 +1,5 @@
-import type { Pagination } from './Pagination';
+import type { IPagination } from './IPagination';
 
 export interface Meta {
-	pagination: Pagination;
+	pagination: IPagination;
 }

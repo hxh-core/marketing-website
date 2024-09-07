@@ -6,8 +6,8 @@ export interface IArticle {
 	id: number;
 	attributes: {
 		title: string;
-		viewsCount: number;
 		content: string;
+		description: string;
 		type: string;
 		preview: StrapiImage;
 		// Page для получение ссылки на статью
