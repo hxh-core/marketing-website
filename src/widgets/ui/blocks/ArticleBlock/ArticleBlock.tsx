@@ -27,12 +27,12 @@ export const ArticleBlock = ({ data }: Props) => {
 			<Container>
 				<BreadCrumbs type='article' article={data.data.data} />
 				<h1 className={styles.title}>{content.title}</h1>
+				<meta itemProp='dateCreated' content={content.createdAt} />
+				<meta itemProp='dateModified' content={content.updatedAt} />
 				<div className={styles.articleContainer}>
 					<div className={styles.articleInfo}>
 						<div className={styles.articleInfoWrapper}>
 							<CalendarIcon className={styles.grayIcon} />
-							<meta itemProp='dateCreated' content={content.createdAt} />
-							<meta itemProp='dateModified' content={content.updatedAt} />
 							<time
 								itemProp='datePublished'
 								dateTime={content.publishedAt}

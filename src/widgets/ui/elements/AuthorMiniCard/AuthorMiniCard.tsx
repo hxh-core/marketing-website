@@ -74,13 +74,20 @@ export const AuthorMiniCard = ({
 				</div>
 			</div>
 			{showMoreAuthorArticles &&
+				author &&
 				author.attributes.articles &&
-				author.attributes.articles.data.length && (
+				author.attributes.articles.data.length &&
+				author.attributes.articles.data.filter(
+					(item) => item.attributes.publishedAt && item.id !== article?.id,
+				).length > 0 && (
 					<div className={styles.authorInfo}>
 						<p className={styles.authorName}>Другие статьи этого автора</p>
 						<div className={styles.authorMoreInfo}>
 							{author.attributes.articles.data
-								.filter((item) => item.id !== article?.id)
+								.filter(
+									(item) =>
+										item.attributes.publishedAt && item.id !== article?.id,
+								)
 								.slice(0, 3)
 								.map((article) => (
 									<Link
