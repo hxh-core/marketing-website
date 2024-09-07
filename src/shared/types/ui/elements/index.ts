@@ -1,5 +1,7 @@
 export * from './IAccordion';
 export * from './IAdvantage';
+export * from './IArticle';
+export * from './IAuthor';
 export * from './ICookie';
 export * from './IFooter';
 export * from './ILogo';

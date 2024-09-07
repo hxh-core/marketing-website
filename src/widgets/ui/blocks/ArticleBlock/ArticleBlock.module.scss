@@ -1,0 +1,300 @@
+@import '@/shared/styles/_vars';
+
+.articleBlock {
+	padding: rem(40) 0;
+}
+
+.title {
+	@include gilroy(500, 50);
+	line-height: 1.2;
+	text-transform: uppercase;
+
+	@media (max-width: $max-768) {
+		font-size: rem(26);
+	}
+}
+
+.articleContainer {
+	max-width: rem(800);
+	width: 100%;
+	margin: 0 auto;
+}
+
+.articleInfo {
+	color: $gray-dark;
+	display: flex;
+	align-items: center;
+	gap: rem(10);
+}
+
+.articleInfoWrapper {
+	display: flex;
+	align-items: center;
+	gap: rem(6);
+}
+
+.grayIcon {
+	max-height: rem(14);
+	height: 100%;
+	width: 100%;
+	color: transparent;
+	background: transparent;
+
+	& path {
+		fill: $gray-dark;
+	}
+
+	&.eyeIcon {
+		& path {
+			fill: transparent;
+		}
+	}
+}
+
+.articleInfoText {
+	@include gilroy(400, 16);
+	white-space: nowrap;
+}
+
+.upperDivider {
+	@include gilroy(400, 16);
+	cursor: default;
+	white-space: nowrap;
+}
+
+.articleImageWrapper {
+	border-radius: $corner-medium;
+	width: 100%;
+	max-height: rem(360);
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: 50% 50%;
+	object-position: 50% 50%;
+	margin-top: rem(30);
+	overflow: hidden;
+
+	@media (max-width: $max-768) {
+		max-height: rem(200);
+	}
+}
+
+.articleImage {
+	transform: scale(1.01);
+	width: 100%;
+	height: 100%;
+	max-height: rem(360);
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: 50% 50%;
+	object-position: 50% 50%;
+
+	@media (max-width: $max-768) {
+		max-height: rem(200);
+	}
+}
+
+// Content
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: rem(20);
+	width: 100%;
+	margin-top: rem(40);
+	color: $gray-extra-light;
+	line-height: 1.2;
+
+	& > p {
+		@include gilroy(400, 18);
+		line-height: 1.2;
+	}
+
+	// Headings
+	& > h2 {
+		@include gilroy(600, 32);
+	}
+	& > h3 {
+		@include gilroy(600, 28);
+	}
+	& > h4 {
+		@include gilroy(600, 24);
+	}
+	& > h5 {
+		@include gilroy(600, 22);
+	}
+	& > h6 {
+		@include gilroy(600, 20);
+	}
+
+	& > a {
+		color: $primary-tint-100;
+		text-decoration: underline;
+		text-underline-offset: rem(4);
+	}
+
+	& ol,
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: rem(8);
+		line-height: 1.2;
+	}
+
+	& > p:has(img) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: default;
+		width: 100%;
+		max-width: rem(700);
+		margin: 0 auto;
+		border-radius: $corner-medium;
+	}
+
+	& img {
+		cursor: default;
+		max-width: rem(700);
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		margin-block: rem(20);
+		aspect-ratio: inherit;
+		-o-object-fit: cover;
+		object-fit: cover;
+		-o-object-position: center center;
+		object-position: center center;
+		border-radius: $corner-medium;
+	}
+
+	& > blockquote {
+		position: relative;
+		max-width: rem(700);
+		width: 100%;
+		margin: 0 auto;
+		padding: rem(20);
+		border-radius: $corner-medium;
+		display: flex;
+		font-size: rem(16);
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		gap: rem(10);
+		background-color: $text-light-black;
+
+		& p {
+			position: relative;
+			z-index: 2;
+		}
+
+		&:before {
+			content: url('/icons/QuoteIcon.svg');
+			position: absolute;
+			left: rem(20);
+			top: rem(-6);
+			width: rem(16);
+			height: 100%;
+			z-index: 0;
+		}
+	}
+
+	& > pre {
+		position: relative;
+		max-width: rem(700);
+		width: 100%;
+		margin: 0 auto;
+		padding: rem(20);
+		border-radius: $corner-medium;
+		display: flex;
+		font-size: rem(16);
+		flex-direction: column;
+		overflow: visible;
+		background-color: $text-light-black;
+
+		& code {
+			position: relative;
+			z-index: 2;
+		}
+
+		&:before {
+			content: url('/icons/CodeIcon.svg');
+			position: absolute;
+			left: rem(20);
+			top: rem(-10);
+			width: rem(16);
+			height: 100%;
+			z-index: 0;
+		}
+	}
+
+	@media screen and (max-width: $max-768) {
+		margin-top: rem(20);
+		gap: rem(10);
+
+		& > p {
+			font-size: rem(16);
+		}
+
+		// Headings
+		& > h2 {
+			font-size: rem(26);
+			font-weight: 500;
+		}
+		& > h3 {
+			font-size: rem(24);
+			font-weight: 500;
+		}
+		& > h4 {
+			font-size: rem(22);
+			font-weight: 500;
+		}
+		& > h5 {
+			font-size: rem(20);
+			font-weight: 500;
+		}
+		& > h6 {
+			font-size: rem(18);
+			font-weight: 500;
+		}
+
+		& ol,
+		ul {
+			gap: rem(6);
+		}
+
+		& img {
+			margin-block: rem(10);
+		}
+
+		& > blockquote {
+			padding: rem(12);
+			font-size: rem(14);
+			border-radius: $corner-small;
+
+			&:before {
+				content: url('/icons/QuoteIcon.svg');
+				position: absolute;
+				left: rem(12);
+				top: rem(-6);
+				width: rem(12);
+			}
+		}
+
+		& > pre {
+			padding: rem(12);
+			font-size: rem(14);
+			border-radius: $corner-small;
+
+			&:before {
+				content: url('/icons/CodeIcon.svg');
+				position: absolute;
+				left: rem(12);
+				top: rem(-10);
+				width: rem(12);
+			}
+		}
+	}
+}
+
+.authorCard {
+	margin-top: rem(40);
+}

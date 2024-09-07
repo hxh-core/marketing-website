@@ -2,6 +2,7 @@ import type { IComponentMap, IComponentProps } from '@/shared/types/ui/blocks';
 import {
 	AccordionBlock,
 	Advantages,
+	ArticleBlock,
 	CollectForm,
 	CollectLinkLarge,
 	CollectLinkMini,
@@ -28,6 +29,7 @@ const components: IComponentMap = {
 	'advantages-block': Advantages,
 	'work-steps': WorkSteps,
 	'text-content-big-block': TextContent,
+	'article-block': ArticleBlock,
 };
 
 export const getComponentFromBlockName = (

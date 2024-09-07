@@ -22,7 +22,14 @@ export type IIcons =
 	| 'Dzen'
 	| 'Yandex'
 	| 'Send'
-	| 'Calendar';
+	| 'Calendar'
+	| 'Google'
+	| 'Chrome'
+	| 'Eye'
+	| 'Fire'
+	| 'Briefcase'
+	| 'Clock'
+	| 'Update';
 
 // Admin panel
 
@@ -42,3 +49,10 @@ export type IIcons =
 // CheckMark
 // Info
 // Yandex
+// Google
+// Chrome
+// Eye
+// Fire
+// Briefcase
+// Clock
+// Update

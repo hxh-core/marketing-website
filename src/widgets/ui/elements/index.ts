@@ -1,4 +1,6 @@
 export * from './Accordion/Accordion';
+export * from './AuthorMiniCard/AuthorMiniCard';
+export * from './BreadCrumbs/BreadCrumbs';
 export * from './HelpText/HelpText';
 export * from './InfinityScrollText/InfinityScrollText';
 export * from './ServiceCard/ServiceCard';

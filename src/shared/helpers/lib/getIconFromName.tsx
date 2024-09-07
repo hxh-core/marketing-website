@@ -2,10 +2,16 @@ import { IIcons } from '@/shared/types/ui/shared';
 import {
 	ArrowIcon,
 	BehanceIcon,
+	BriefcaseIcon,
 	CalendarIcon,
 	CheckMarkIcon,
+	ChromeIcon,
+	ClockIcon,
 	DzenIcon,
+	EyeIcon,
+	FireIcon,
 	GitHubIcon,
+	GoogleIcon,
 	HabrIcon,
 	InfoIcon,
 	InstagramIcon,
@@ -14,6 +20,7 @@ import {
 	RobotIcon,
 	SendIcon,
 	TelegramIcon,
+	UpdateIcon,
 	VkIcon,
 	WebsiteIcon,
 	WhatsAppIcon,
@@ -39,6 +46,13 @@ const Icons = {
 	Dzen: DzenIcon,
 	Yandex: YandexIcon,
 	Calendar: CalendarIcon,
+	Google: GoogleIcon,
+	Chrome: ChromeIcon,
+	Eye: EyeIcon,
+	Fire: FireIcon,
+	Briefcase: BriefcaseIcon,
+	Clock: ClockIcon,
+	Update: UpdateIcon,
 };
 
 // 11.07.2024 / v.1.0.0

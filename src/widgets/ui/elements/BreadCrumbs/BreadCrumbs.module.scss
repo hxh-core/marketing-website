@@ -1,0 +1,62 @@
+@import '@/shared/styles/_vars';
+
+.breadCrumbs {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: rem(20);
+}
+
+.backIcon {
+	max-width: rem(14);
+	width: 100%;
+	height: 100%;
+	color: transparent;
+	transform: rotate(225deg);
+}
+.backButton {
+	background: transparent;
+	border: 0;
+	outline: none;
+	border-radius: $corner-extra-small;
+	cursor: pointer;
+
+	&:focus-visible {
+		outline: 1px solid $primary-tint-700;
+	}
+}
+
+.links {
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: rem(4);
+	color: $gray-dark;
+}
+
+.linkWrapper {
+	display: inline-flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: rem(4);
+}
+.link {
+	color: inherit;
+	text-decoration: none;
+	transition: 0.1s;
+	opacity: 0.8;
+	@include gilroy(400, 16);
+	cursor: pointer;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&.active {
+		color: $gray-extra-light;
+		opacity: 1;
+	}
+}
+
+.divider {
+	cursor: default;
+}

@@ -9,7 +9,7 @@ export class MetaService {
 	// Получить все страницы
 	static async getAllPages() {
 		const request = new Request(
-			`${API_URL}/pages?populate=*&pagination[pageSize]=100`,
+			`${API_URL}/pages?populate=*&pagination[pageSize]=100&sort[0]=id`,
 			{
 				method: 'GET',
 				next: {

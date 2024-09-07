@@ -1,5 +1,6 @@
 export * from './AccordionBlock/AccordionBlock';
 export * from './Advantages/Advantages';
+export * from './ArticleBlock/ArticleBlock';
 export * from './collect';
 export * from './forms';
 export * from './NotFound/NotFound';
