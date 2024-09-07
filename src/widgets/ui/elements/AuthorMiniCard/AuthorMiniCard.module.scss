@@ -59,6 +59,7 @@
 	color: $gray-extra-light;
 	text-decoration: underline;
 	@include gilroy(400, 16);
+	line-height: 1.2;
 	cursor: pointer;
 	text-underline-offset: rem(4);
 }

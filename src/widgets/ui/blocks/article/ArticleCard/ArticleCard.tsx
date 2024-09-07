@@ -13,9 +13,8 @@ interface Props {
 }
 
 export const ArticleCard = ({ article }: Props) => {
-	const publishedDays = 61;
-	// const publishedDays =
-	// 	(+new Date() - +new Date(article.attributes.publishedAt)) / DATE_DIVISION;
+	const publishedDays =
+		(+new Date() - +new Date(article.attributes.publishedAt)) / DATE_DIVISION;
 
 	return (
 		<Link
