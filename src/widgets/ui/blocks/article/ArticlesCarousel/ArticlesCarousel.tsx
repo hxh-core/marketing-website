@@ -17,47 +17,37 @@ interface Props {
 
 export const ArticlesCarousel = ({ articles }: Props) => {
 	const path = usePathname();
-	console.log(path);
 	const filteredArticles = articles.filter(
 		(item) => item.attributes.page.data?.attributes.path !== path,
 	);
 
-	if (filteredArticles.length > 0) {
-		return (
-			<div className={styles.scrollHorizontalContainer}>
-				<Swiper
-					wrapperClass={styles.swiperWrapper}
-					className={styles.articlesSwiperWrapper}
-					spaceBetween={30}
-					slidesPerView={'auto'}
-					direction='horizontal'
-					allowTouchMove={true}
-					mousewheel={{
-						enabled: true,
-						forceToAxis: true,
-					}}
-					modules={[Mousewheel]}
-				>
-					{filteredArticles.map((article) => (
-						<SwiperSlide className={`${styles.articleCard}`} key={article.id}>
-							<ArticleCard article={article} />
-							{/* <p className={styles.title}>{article.attributes.title}</p>
-							<div
-								className={styles.description}
-								dangerouslySetInnerHTML={{
-									__html: article.attributes.content,
-								}}
-							></div> */}
-						</SwiperSlide>
-					))}
-				</Swiper>
-				<Lottie
-					alt='Horizontal scroll'
-					className={styles.fingerAnimation}
-					animationData={horizontalFingerAnimation}
-					loop
-				/>
-			</div>
-		);
-	}
+	return (
+		<div className={styles.scrollHorizontalContainer}>
+			<Swiper
+				wrapperClass={styles.swiperWrapper}
+				className={styles.articlesSwiperWrapper}
+				spaceBetween={30}
+				slidesPerView={'auto'}
+				direction='horizontal'
+				allowTouchMove={true}
+				mousewheel={{
+					enabled: true,
+					forceToAxis: true,
+				}}
+				modules={[Mousewheel]}
+			>
+				{filteredArticles.map((article) => (
+					<SwiperSlide className={`${styles.articleCard}`} key={article.id}>
+						<ArticleCard article={article} />
+					</SwiperSlide>
+				))}
+			</Swiper>
+			<Lottie
+				alt='Horizontal scroll'
+				className={styles.fingerAnimation}
+				animationData={horizontalFingerAnimation}
+				loop
+			/>
+		</div>
+	);
 };
