@@ -1,0 +1,156 @@
+$white: var(--white);
+// Primary
+$primary-main: var(--primary-main);
+// Primary Shade
+$primary-shade-100: var(--primary-shade-100);
+$primary-shade-200: var(--primary-shade-200);
+$primary-shade-300: var(--primary-shade-300);
+$primary-shade-400: var(--primary-shade-400);
+$primary-shade-500: var(--primary-shade-500);
+$primary-shade-600: var(--primary-shade-600);
+$primary-shade-700: var(--primary-shade-700);
+$primary-shade-800: var(--primary-shade-800);
+// Primary Tint
+$primary-tint-100: var(--primary-tint-100);
+$primary-tint-200: var(--primary-tint-200);
+$primary-tint-300: var(--primary-tint-300);
+$primary-tint-400: var(--primary-tint-400);
+$primary-tint-500: var(--primary-tint-500);
+$primary-tint-600: var(--primary-tint-600);
+$primary-tint-700: var(--primary-tint-700);
+$primary-tint-800: var(--primary-tint-800);
+$primary-tint-900: var(--primary-tint-900);
+// Text
+$text-100: var(--text-100);
+$text-200: var(--text-200);
+$text-300: var(--text-300);
+$text-400: var(--text-400);
+$text-500: var(--text-500);
+$text-600: var(--text-600);
+$text-700: var(--text-700);
+$text-800: var(--text-800);
+$text-100-fixed: var(--text-100-fixed);
+$text-200-fixed: var(--text-200-fixed);
+$text-300-fixed: var(--text-300-fixed);
+$text-400-fixed: var(--text-400-fixed);
+$text-500-fixed: var(--text-500-fixed);
+$text-600-fixed: var(--text-600-fixed);
+$text-700-fixed: var(--text-700-fixed);
+$text-800-fixed: var(--text-800-fixed);
+// Backgrounds
+$bg-main-dark: var(--bg-main-dark);
+$bg-main-light: var(--bg-main-light);
+// State
+$state-info: var(--state-info);
+$state-warning: var(--state-warning);
+$state-error: var(--state-error);
+$state-success: var(--state-success);
+// Gray
+$gray-500: var(--gray-500);
+$gray-600: var(--gray-600);
+$gray-700: var(--gray-700);
+$gray-800: var(--gray-800);
+$gray-500-fixed: var(--gray-500-fixed);
+$gray-600-fixed: var(--gray-600-fixed);
+$gray-700-fixed: var(--gray-700-fixed);
+$gray-800-fixed: var(--gray-800-fixed);
+
+// Gradients
+$gradient-primary: linear-gradient(
+	90deg,
+	var(--primary-shade-100) 0%,
+	var(--primary-shade-300) 100%
+);
+$gradient-secondary: linear-gradient(
+	90deg,
+	var(--white) 0%,
+	var(--primary-tint-800) 100%
+);
+
+// Primary
+@property --gradient-primary-1 {
+	syntax: '<color>';
+	initial-value: #006cec;
+	inherits: false;
+}
+@property --gradient-primary-2 {
+	syntax: '<color>';
+	initial-value: #0051b1;
+	inherits: false;
+}
+@property --gradient-primary-hover-1 {
+	syntax: '<color>';
+	initial-value: #005ece;
+	inherits: false;
+}
+@property --gradient-primary-hover-2 {
+	syntax: '<color>';
+	initial-value: #004393;
+	inherits: false;
+}
+// Secondary
+@property --gradient-secondary-1 {
+	syntax: '<color>';
+	initial-value: #ffffff;
+	inherits: false;
+}
+@property --gradient-secondary-2 {
+	syntax: '<color>';
+	initial-value: #ddecff;
+	inherits: false;
+}
+@property --gradient-secondary-hover-1 {
+	syntax: '<color>';
+	initial-value: #ddecff;
+	inherits: false;
+}
+@property --gradient-secondary-hover-2 {
+	syntax: '<color>';
+	initial-value: #badaff;
+	inherits: false;
+}
+
+@mixin gradient-primary($duration: 0.1s, $isNeedHover: false) {
+	transition:
+		all $duration,
+		--gradient-primary-1 $duration,
+		--gradient-primary-2 $duration,
+		--gradient-secondary-1 $duration,
+		--gradient-secondary-2 $duration;
+
+	background: linear-gradient(
+		270deg,
+		var(--gradient-primary-1) 25%,
+		var(--gradient-primary-2) 100%
+	);
+
+	// Если ховер нужен
+	@if $isNeedHover == true {
+		&:hover {
+			--gradient-primary-1: var(--gradient-primary-hover-1);
+			--gradient-primary-2: var(--gradient-primary-hover-2);
+		}
+	}
+}
+@mixin gradient-secondary($duration: 0.1s, $isNeedHover: false) {
+	transition:
+		all $duration,
+		--gradient-primary-1 $duration,
+		--gradient-primary-2 $duration,
+		--gradient-secondary-1 $duration,
+		--gradient-secondary-2 $duration;
+
+	background: linear-gradient(
+		90deg,
+		var(--gradient-secondary-1) 0%,
+		var(--gradient-secondary-2) 100%
+	);
+
+	// Если ховер нужен
+	@if $isNeedHover == true {
+		&:hover {
+			--gradient-secondary-1: var(--gradient-secondary-hover-1);
+			--gradient-secondary-2: var(--gradient-secondary-hover-2);
+		}
+	}
+}

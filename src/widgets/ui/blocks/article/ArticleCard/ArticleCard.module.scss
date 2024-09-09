@@ -1,5 +1,3 @@
-@import '@/shared/styles/_vars';
-
 .articleCard {
 	display: flex;
 	align-items: stretch;
@@ -10,7 +8,7 @@
 	width: 100%;
 	max-width: rem(380);
 	border-radius: $corner-large;
-	background-color: $text-light-black;
+	background-color: $text-200;
 	overflow: hidden;
 	text-decoration: none;
 	cursor: pointer;
@@ -51,14 +49,14 @@
 .title {
 	@include gilroy(500, 20);
 	cursor: pointer;
-	color: $gray-extra-light;
+	color: $text-800;
 	line-height: 1.2;
 }
 .description {
 	@include gilroy(400, 16);
 	cursor: pointer;
 	line-height: 1.2;
-	color: $gray-light;
+	color: $text-700;
 	@include strings(3);
 }
 
@@ -81,7 +79,7 @@
 	@include gilroy(500, 16);
 	cursor: pointer;
 	line-height: 1.2;
-	color: $gray-light;
+	color: $text-700;
 }
 .tag {
 	display: flex;
@@ -99,13 +97,13 @@
 	height: 100%;
 
 	& path {
-		fill: $gray-extra-light;
+		fill: $gray-800-fixed;
 	}
 }
 .tagText {
 	@include gilroy(500, 16);
 	cursor: pointer;
-	color: $gray-light;
+	color: $text-800-fixed;
 	white-space: nowrap;
 
 	@media (max-width: $max-768) {

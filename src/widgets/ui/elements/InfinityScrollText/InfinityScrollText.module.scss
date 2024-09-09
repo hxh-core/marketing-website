@@ -1,8 +1,6 @@
-@import '@/shared/styles/_vars';
-
 .scrollText {
 	padding: rem(16) 0;
-	border-block: 1px solid $gray-dark;
+	border-block: 1px solid $text-600;
 	overflow: hidden;
 
 	@media (max-width: $max-768) {
@@ -40,7 +38,7 @@
 }
 .text {
 	@include gilroy(400, 16);
-	color: $gray-dark;
+	color: $text-600;
 	text-transform: uppercase;
 	white-space: nowrap;
 	position: relative;

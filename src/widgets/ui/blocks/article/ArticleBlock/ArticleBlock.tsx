@@ -3,7 +3,7 @@
 import { SERVER_URL } from '@/shared';
 import { getAnimationStyle } from '@/shared/helpers/lib';
 import type { IArticleBlockProps } from '@/shared/types/ui/blocks/IArticleBlockProps';
-import { CalendarIcon } from '@/shared/ui/icons';
+import { CalendarIcon, ClockIcon } from '@/shared/ui/icons';
 import { Container } from '@/shared/ui/layout';
 import { setUrlBeforeImageName } from '@hxh-core/react/dist/helpers';
 import Image from 'next/image';
@@ -41,6 +41,14 @@ export const ArticleBlock = ({ data }: Props) => {
 								{new Date(content.publishedAt).toLocaleDateString('ru')}
 							</time>
 						</div>
+						{content && content.readingTime && (
+							<div className={styles.articleInfoWrapper}>
+								<ClockIcon className={styles.grayIcon} />
+								<p className={styles.articleInfoText}>
+									{`Время чтения: ${content.readingTime}`}
+								</p>
+							</div>
+						)}
 						{/* <p className={styles.upperDivider}>|</p> */}
 					</div>
 					<div className={styles.articleImageWrapper}>

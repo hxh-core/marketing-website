@@ -1,5 +1,3 @@
-@import '@/shared/styles/_vars';
-
 .button {
 	display: flex;
 	align-items: center;
@@ -19,7 +17,7 @@
 		color: $white;
 
 		&:disabled {
-			background: $gray-dark;
+			background: $gray-500-fixed;
 			cursor: default;
 		}
 
@@ -29,15 +27,15 @@
 	}
 
 	&.secondary {
-		color: $text-black;
+		color: $text-100-fixed;
 		@include gradient-secondary(0.2s, true);
 
 		& .icon path {
-			fill: $text-black;
+			fill: $text-100-fixed;
 		}
 
 		&:disabled {
-			background: $gray-medium;
+			background: $gray-600-fixed;
 			cursor: default;
 		}
 		&:focus-visible {
@@ -50,14 +48,14 @@
 		background: transparent;
 		border: 1px solid rgba(1, 109, 236, 0.6);
 		outline: none;
-		color: $text-black;
+		color: $text-100;
 
 		& .icon path {
-			fill: $text-black;
+			fill: $text-100;
 		}
 
 		&:disabled {
-			background: $gray-medium;
+			background: $gray-600-fixed;
 			cursor: default;
 		}
 

@@ -1,8 +1,6 @@
-@import '@/shared/styles/_vars';
-
 .widget {
 	position: fixed;
-	background-color: $text-dark;
+	background-color: $text-300;
 	border-top-left-radius: $corner-large;
 	border-top-right-radius: $corner-large;
 	width: 100%;
@@ -37,7 +35,7 @@
 }
 .text {
 	@include gilroy(400, 14);
-	color: $gray-extra-light;
+	color: $gray-800;
 	line-height: 1.5;
 }
 .buttons {

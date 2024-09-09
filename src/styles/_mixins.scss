@@ -1,0 +1,58 @@
+// Containers mixins
+@mixin container-big($padding-inline: rem(20)) {
+	max-width: $containers-big;
+	padding: 0 $padding-inline;
+	width: 100%;
+	margin: 0 auto;
+}
+@mixin container-medium($padding-inline: rem(20)) {
+	max-width: $containers-medium;
+	padding: 0 $padding-inline;
+	width: 100%;
+	margin: 0 auto;
+}
+@mixin container-small($padding-inline: rem(20)) {
+	max-width: $containers-small;
+	padding: 0 $padding-inline;
+	width: 100%;
+	margin: 0 auto;
+}
+
+@mixin dark-theme {
+	@media (prefers-color-scheme: dark) {
+		@content;
+	}
+}
+@mixin light-theme {
+	@media (prefers-color-scheme: light) {
+		@content;
+	}
+}
+
+// Fonts
+@mixin gilroy($weight: 400, $size: 16, $style: normal) {
+	font-family: 'Gilroy', sans-serif;
+	font-style: $style;
+	font-size: rem($size);
+	font-weight: $weight;
+	line-height: 1;
+	cursor: text;
+}
+
+// Helpers
+@mixin strings($string-count) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -moz-box;
+	display: -webkit-box;
+	-webkit-line-clamp: $string-count;
+	-webkit-box-orient: vertical;
+	line-clamp: $string-count;
+	box-orient: vertical;
+}
+@mixin position-center() {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

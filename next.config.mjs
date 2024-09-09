@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	sassOptions: {
+		additionalData: `@import "./src/styles/_colors.scss"; @import "./src/styles/_mixins.scss"; @import "./src/styles/_functions.scss"; @import "./src/styles/_variables.scss";`,
+	},
 	images: {
 		remotePatterns: [
 			{

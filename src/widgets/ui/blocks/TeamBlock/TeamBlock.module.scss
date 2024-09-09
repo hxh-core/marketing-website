@@ -1,5 +1,3 @@
-@import '@/shared/styles/_vars';
-
 .team {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(rem(300), 1fr));

@@ -17,6 +17,7 @@ interface Props {
 
 export const ArticlesCarousel = ({ articles }: Props) => {
 	const path = usePathname();
+	// FIXME: страница крашится, если не находит page в article
 	const filteredArticles = articles.filter(
 		(item) => item.attributes.page.data?.attributes.path !== path,
 	);

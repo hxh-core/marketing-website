@@ -1,6 +1,6 @@
 import { SERVER_URL } from '@/shared';
 import type { IArticle, IAuthor } from '@/shared/types';
-import { BriefcaseIcon, ClockIcon, UpdateIcon } from '@/shared/ui/icons';
+import { BriefcaseIcon, UpdateIcon } from '@/shared/ui/icons';
 import { setUrlBeforeImageName } from '@hxh-core/react/dist/helpers';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -61,14 +61,6 @@ export const AuthorMiniCard = ({
 								month: 'long',
 								year: 'numeric',
 							})}`}</time>
-						</div>
-					)}
-					{article && article.attributes && (
-						<div className={styles.authorInfoCard}>
-							<ClockIcon className={styles.authorInfoIcon} />
-							<p className={styles.authorInfoText}>
-								{`Время чтения: ${article.attributes.readingTime}`}
-							</p>
 						</div>
 					)}
 				</div>

@@ -1,12 +1,10 @@
-@import '@/shared/styles/_vars';
-
 .textContent {
 	padding: rem(80) 0;
 }
 .title {
 	@include gilroy(500, 50);
 	line-height: 1.2;
-	color: $gray-extra-light;
+	color: $text-800;
 	text-transform: uppercase;
 
 	@media (max-width: $max-768) {
@@ -23,12 +21,12 @@
 	width: 100%;
 
 	& path {
-		fill: $gray-extra-light;
+		fill: $text-800;
 	}
 }
 .dateText {
 	@include gilroy(400, 20);
-	color: $gray-extra-light;
+	color: $text-800;
 }
 .content {
 	margin-top: rem(40);
@@ -51,7 +49,7 @@
 	}
 
 	line-height: 1.2;
-	color: $gray-extra-light;
+	color: $text-800;
 
 	& p {
 		min-height: 1em;
@@ -83,7 +81,7 @@
 		& th,
 		td {
 			padding: rem(10);
-			border: 1px solid $gray-extra-light;
+			border: 1px solid $text-800;
 		}
 	}
 }

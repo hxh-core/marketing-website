@@ -1,5 +1,3 @@
-@import '@/shared/styles/_vars';
-
 .teamPerson {
 	display: flex;
 	flex-direction: column;
@@ -9,7 +7,7 @@
 	justify-content: space-between;
 	border-radius: $corner-large;
 	width: 100%;
-	background-color: $text-light-black;
+	background-color: $text-200;
 	container-type: inline-size;
 
 	@media screen and (max-width: $max-600) {
@@ -51,7 +49,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: rem(20);
-	color: $gray-extra-light;
+	color: $text-800;
 }
 .name {
 	display: flex;
@@ -68,7 +66,7 @@
 }
 .personJob {
 	@include gilroy(300, 18);
-	color: $gray-dark;
+	color: $text-600;
 
 	@container (width <= 400px) {
 		font-size: rem(16);
@@ -80,7 +78,7 @@
 	gap: rem(8);
 }
 .label {
-	color: $gray-dark;
+	color: $text-600;
 	@include gilroy(300, 14);
 }
 .value {
@@ -104,11 +102,11 @@
 	& svg {
 		width: 100%;
 		height: 100%;
-		color: $gray-extra-light;
-		fill: $gray-extra-light;
+		color: $text-800;
+		fill: $text-800;
 
 		& path {
-			fill: $gray-extra-light;
+			fill: $text-800;
 		}
 	}
 }

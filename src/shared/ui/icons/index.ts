@@ -4,6 +4,7 @@ export * from './Briefcase.icon';
 export * from './Calendar.icon';
 export * from './CheckMark.icon';
 export * from './Chrome.icon';
+export * from './ClockGradient.icon';
 export * from './Clock.icon';
 export * from './Dzen.icon';
 export * from './Eye.icon';

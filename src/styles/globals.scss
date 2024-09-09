@@ -1,0 +1,156 @@
+:root {
+	--white: #ffffff;
+	--primary-main: #1e41e3;
+	--primary-shade-100: #006cec;
+	--primary-shade-200: #005ece;
+	--primary-shade-300: #0051b1;
+	--primary-shade-400: #004393;
+	--primary-shade-500: #003676;
+	--primary-shade-600: #002858;
+	--primary-shade-700: #001b3b;
+	--primary-shade-800: #000d1d;
+	--primary-tint-100: #006cec;
+	--primary-tint-200: #0f7dff;
+	--primary-tint-300: #318fff;
+	--primary-tint-400: #54a2ff;
+	--primary-tint-500: #76b5ff;
+	--primary-tint-600: #98c7ff;
+	--primary-tint-700: #badaff;
+	--primary-tint-800: #ddecff;
+	--primary-tint-900: #edf5ff;
+	// Text
+	--text-100: #141414;
+	--text-100-fixed: #141414;
+	--text-200: #1e1e1e;
+	--text-200-fixed: #1e1e1e;
+	--text-300: #3a3a3a;
+	--text-300-fixed: #3a3a3a;
+	--text-400: #4a4a4a;
+	--text-400-fixed: #4a4a4a;
+	--text-500: #707070;
+	--text-500-fixed: #707070;
+	--text-600: #afafaf;
+	--text-600-fixed: #afafaf;
+	--text-700: #d8d8d8;
+	--text-700-fixed: #d8d8d8;
+	--text-800: #f7f7f7;
+	--text-800-fixed: #f7f7f7;
+	--bg-main-dark: #141414;
+	--bg-main-light: #f7f7f7;
+	--state-info: #2f80ed;
+	--state-warning: #ebbc2e;
+	--state-error: #ed3a3a;
+	--state-success: #35b369;
+	--gray-500: #a7a7a7;
+	--gray-500-fixed: #a7a7a7;
+	--gray-600: #cfcfcf;
+	--gray-600-fixed: #cfcfcf;
+	--gray-700: #e9e9e9;
+	--gray-700-fixed: #e9e9e9;
+	--gray-800: #f7f7f7;
+	--gray-800-fixed: #f7f7f7;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--text-800: #141414;
+		--text-700: #1e1e1e;
+		--text-600: #3a3a3a;
+		--text-500: #4a4a4a;
+		--text-400: #707070;
+		--text-300: #afafaf;
+		--text-200: #ededed;
+		--text-100: #f7f7f7;
+	}
+}
+
+$animation-px: rem(100);
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: rem(80);
+
+	@media (prefers-color-scheme: dark) {
+		background-color: $bg-main-dark;
+	}
+
+	@media (prefers-color-scheme: light) {
+		background-color: $bg-main-light;
+	}
+}
+body {
+	scroll-behavior: smooth;
+	min-height: 100vh;
+	// -ms-scroll-chaining: none;
+	// overscroll-behavior: none; // Останавливает скролл по Y на iOS
+}
+
+body.overflow {
+	position: relative;
+	overflow: hidden;
+	transition: 0.2s;
+
+	&:before {
+		content: '';
+		transition: 0.2s;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 20;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		visibility: hidden;
+		background: rgba(0, 0, 0, 0.3);
+		-webkit-backdrop-filter: blur(7px);
+		backdrop-filter: blur(7px);
+	}
+}
+body.blur {
+	&::before {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.animation-block {
+	transition: transform 1s;
+	// Directions
+	&.from-left-to-right {
+		transform: translate3d(-$animation-px, 0, 0);
+	}
+	&.from-right-to-left {
+		transform: translate3d($animation-px, 0, 0);
+	}
+	&.from-top-to-bottom {
+		transform: translate3d(0, -$animation-px, 0);
+	}
+	&.from-bottom-to-top {
+		transform: translate3d(0, $animation-px, 0);
+	}
+	&.none {
+		transform: translate3d(0, 0, 0);
+	}
+
+	&.show-animation {
+		transform: translate3d(0, 0, 0);
+	}
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: rem(80);
+
+	@media (max-width: $max-768) {
+		gap: rem(40);
+	}
+}
+
+// Выделение текста
+// * {
+// 	&::-moz-selection {
+// 		background-color: rgba(30, 65, 227, 0.3);
+// 	}
+// 	&::selection {
+// 		background-color: rgba(30, 65, 227, 0.3);
+// 	}
+// }

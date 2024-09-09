@@ -1,5 +1,6 @@
 'use client';
 
+import { CLIENT_URL } from '@/shared/constants';
 import type { INavigation, INewsMessages } from '@/shared/types/ui/elements';
 import { Logo, NewsMessages } from '@/shared/ui';
 import Link from 'next/link';
@@ -79,6 +80,10 @@ export const Navigation = ({
 				className={`${styles.nav} ${news && news.attributes.messages ? styles.withNews : ''} ${options.hideByHeight ? styles.transparentBg : ''}`}
 				ref={nav}
 			>
+				<div itemScope itemType='https://schema.org/WebSite'>
+					<meta itemProp='url' content={CLIENT_URL} />
+					<meta itemProp='name' content={data.attributes.logo} />
+				</div>
 				<div className={styles.container}>
 					<Logo logo={data.attributes.logo} className={styles.logo} />
 					<menu className={styles.pages}>

@@ -9,6 +9,7 @@ import {
 	NavigationService,
 } from '@/services';
 import { REVALIDATE_TIME, ZEN_VERIFICATION } from '@/shared';
+import '@/styles/globals.scss';
 import { ClientRootLayout } from '@/widgets/lib';
 import type { Metadata } from 'next';
 import './styles';
