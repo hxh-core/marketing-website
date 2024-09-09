@@ -37,9 +37,8 @@
 			color: $text-800-fixed;
 		}
 		.arrowLinkIcon {
-			& path {
-				stroke: $text-800-fixed;
-			}
+			fill: transparent;
+			color: $text-800-fixed;
 		}
 	}
 
@@ -164,13 +163,11 @@
 	}
 
 	& svg {
+		fill: transparent;
 		width: 100%;
 		height: 100%;
 		transition: 0.2s ease-in-out;
-	}
-
-	& svg path {
-		stroke: $primary-tint-200;
+		color: $primary-tint-200;
 	}
 }
 .content {
