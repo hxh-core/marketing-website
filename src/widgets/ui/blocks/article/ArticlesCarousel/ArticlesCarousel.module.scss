@@ -18,10 +18,10 @@
 	width: 100%;
 	display: flex;
 	align-items: stretch;
-	height: rem(440);
+	height: rem(465);
 
 	@media (max-width: $max-768) {
-		height: rem(370);
+		height: rem(400);
 	}
 }
 .articlesSwiperWrapper {

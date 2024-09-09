@@ -48,6 +48,7 @@
 }
 .title {
 	@include gilroy(500, 20);
+	@include strings(3);
 	cursor: pointer;
 	color: $text-800;
 	line-height: 1.2;
