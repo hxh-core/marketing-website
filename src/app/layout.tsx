@@ -69,7 +69,7 @@ export default async function RootLayout({
 			<meta
 				name='theme-color'
 				media='(prefers-color-scheme: light)'
-				content='141414'
+				content='f7f7f7'
 			/>
 			<meta
 				name='theme-color'
