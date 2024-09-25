@@ -1,8 +1,8 @@
 .articleMiniCard {
 	display: flex;
 	align-items: flex-start;
-	justify-content: center;
-	gap: rem(20);
+	justify-content: space-between;
+	gap: rem(10);
 
 	@media (max-width: $max-768) {
 		flex-direction: column;
@@ -27,7 +27,7 @@
 	gap: rem(12);
 
 	&:nth-child(2n) {
-		max-width: rem(300);
+		max-width: rem(350);
 	}
 }
 .authorName {
