@@ -23,7 +23,6 @@ export const Accordion = ({ accordion, isOpen, setIsOpen }: AccordionProps) => {
 				needStyle: styles.open,
 			})}`}
 			itemScope
-			itemProp='mainEntity'
 			itemType='https://schema.org/Question'
 		>
 			<button type='button' onClick={setIsOpen} className={styles.upperButton}>

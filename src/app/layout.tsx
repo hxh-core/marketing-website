@@ -65,7 +65,7 @@ export default async function RootLayout({
 
 	return (
 		<html lang='ru'>
-			<meta name='color-scheme' content='only dark' />
+			<meta name='color-scheme' content='light dark' />
 			<meta
 				name='theme-color'
 				media='(prefers-color-scheme: light)'

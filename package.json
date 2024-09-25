@@ -16,10 +16,10 @@
 	"dependencies": {
 		"@hxh-core/react": "^0.0.8",
 		"@loadable/component": "^5.16.4",
-		"@next/third-parties": "^14.2.5",
+		"@next/third-parties": "^14.2.13",
 		"cross-env": "^7.0.3",
 		"lottie-react": "^2.4.0",
-		"next": "14.2.5",
+		"next": "14.2.13",
 		"next-yandex-metrica": "^1.1.2",
 		"react": "^18",
 		"react-dom": "^18",
@@ -32,13 +32,13 @@
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",
-		"axios": "^1.7.3",
+		"axios": "^1.7.7",
 		"eslint": "^8",
-		"eslint-config-next": "14.2.5",
+		"eslint-config-next": "14.2.13",
 		"prettier": "^3.3.3",
 		"react-hook-form": "^7.52.2",
 		"sass": "^1.77.8",
-		"swiper": "^11.1.9",
+		"swiper": "^11.1.14",
 		"typescript": "^5"
 	}
 }

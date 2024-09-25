@@ -17,10 +17,12 @@ import {
 	InstagramIcon,
 	OkIcon,
 	PenIcon,
+	PinterestIcon,
 	RobotIcon,
 	SendIcon,
 	TelegramIcon,
 	UpdateIcon,
+	VcRuIcon,
 	VkIcon,
 	WebsiteIcon,
 	WhatsAppIcon,
@@ -53,6 +55,8 @@ const Icons = {
 	Briefcase: BriefcaseIcon,
 	Clock: ClockIcon,
 	Update: UpdateIcon,
+	VcRu: VcRuIcon,
+	Pinterest: PinterestIcon,
 };
 
 // 11.07.2024 / v.1.0.0

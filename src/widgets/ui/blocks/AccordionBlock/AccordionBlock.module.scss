@@ -2,9 +2,9 @@
 	display: flex;
 	width: 100%;
 	flex-direction: column;
-	gap: rem(40);
+	gap: rem(12);
 
 	@media (max-width: $max-768) {
-		gap: rem(20);
+		gap: rem(8);
 	}
 }

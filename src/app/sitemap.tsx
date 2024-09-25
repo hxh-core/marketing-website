@@ -15,6 +15,7 @@ export default async function sitemap() {
 			? new Date(page.attributes.updatedAt).toISOString()
 			: new Date(page.attributes.createdAt).toISOString(),
 		priority: 1.0,
+		changeFrequency: 'hourly',
 	}));
 
 	// Все статьи

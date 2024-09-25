@@ -29,7 +29,9 @@ export type IIcons =
 	| 'Fire'
 	| 'Briefcase'
 	| 'Clock'
-	| 'Update';
+	| 'Update'
+	| 'VcRu'
+	| 'Pinterest';
 
 // Admin panel
 
@@ -56,3 +58,5 @@ export type IIcons =
 // Briefcase
 // Clock
 // Update
+// VcRu
+// Pinterest

@@ -68,7 +68,11 @@ $animation-px: rem(100);
 
 html {
 	scroll-behavior: smooth;
-	scroll-padding-top: rem(80);
+	scroll-padding-top: rem(160);
+
+	@media (max-width: $max-768) {
+		scroll-padding-top: rem(100);
+	}
 
 	@media (prefers-color-scheme: dark) {
 		background-color: $bg-main-dark;

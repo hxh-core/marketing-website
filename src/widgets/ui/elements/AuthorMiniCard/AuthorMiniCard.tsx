@@ -73,13 +73,14 @@ export const AuthorMiniCard = ({
 					(item) => item.attributes.publishedAt && item.id !== article?.id,
 				).length > 0 && (
 					<div className={styles.authorInfo}>
-						<p className={styles.authorName}>Другие статьи этого автора</p>
+						<p className={styles.authorName}>Новые статьи этого автора</p>
 						<div className={styles.authorMoreInfo}>
 							{author.attributes.articles.data
 								.filter(
 									(item) =>
 										item.attributes.publishedAt && item.id !== article?.id,
 								)
+								.toReversed()
 								.slice(0, 3)
 								.map((article) => (
 									<Link

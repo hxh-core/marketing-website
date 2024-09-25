@@ -19,11 +19,7 @@ export const AccordionBlock = ({ data, index }: Props) => {
 		<BlockWithTitle id={data.blockId}>
 			<Container className={getAnimationStyle(data.animation)} size='medium'>
 				<Title title={data.title} index={index} />
-				<div
-					className={styles.accordions}
-					itemScope
-					itemType='http://schema.org/FAQPage'
-				>
+				<div className={styles.accordions}>
 					{data.data.data.attributes.data.map((accordion, index) => (
 						<Accordion
 							accordion={accordion}

@@ -70,15 +70,13 @@
 	transform: scale(1.01);
 	width: 100%;
 	height: 100%;
-	max-height: rem(360);
-	-o-object-fit: cover;
-	object-fit: cover;
+	aspect-ratio: inherit;
 	-o-object-position: 50% 50%;
 	object-position: 50% 50%;
 
-	@media (max-width: $max-768) {
-		max-height: rem(200);
-	}
+	// @media (max-width: $max-768) {
+	// 	max-height: rem(200);
+	// }
 }
 
 // Content
