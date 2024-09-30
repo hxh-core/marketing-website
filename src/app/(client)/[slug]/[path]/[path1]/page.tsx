@@ -1,5 +1,4 @@
 import { PageService } from '@/services/user';
-import { REVALIDATE_TIME } from '@/shared';
 import {
 	generateCustomMetadata,
 	getComponentFromBlockName,
@@ -8,7 +7,7 @@ import { ScrollComponent } from '@/shared/ui/helpers';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next/types';
 
-export const revalidate = REVALIDATE_TIME;
+export const revalidate = 30;
 
 export const generateMetadata = async ({
 	params,

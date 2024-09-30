@@ -80,7 +80,7 @@ export const AuthorMiniCard = ({
 									(item) =>
 										item.attributes.publishedAt && item.id !== article?.id,
 								)
-								.toReversed()
+								.reverse()
 								.slice(0, 3)
 								.map((article) => (
 									<Link
