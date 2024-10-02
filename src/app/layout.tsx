@@ -95,6 +95,7 @@ export default async function RootLayout({
 						googleTagManager && googleTagManager.data
 							? googleTagManager.data
 							: undefined,
+					vk: 3562125,
 				}}
 			>
 				{children}
