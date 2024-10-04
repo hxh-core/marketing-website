@@ -10,7 +10,7 @@ export interface ITeamPerson {
 		job: string;
 		info: LabelWithValue[];
 		contacts: IContactLink[];
-		contactLink: ICustomLinkProps;
+		contactLink?: ICustomLinkProps;
 		createdAt: string;
 		updatedAt?: string;
 		publishedAt: string;

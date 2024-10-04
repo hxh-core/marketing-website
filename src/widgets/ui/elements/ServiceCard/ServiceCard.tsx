@@ -100,24 +100,26 @@ export const ServiceCard = ({ data }: Props) => {
 							<s>{getServicePrice(data.attributes.oldPrice)}</s>
 						</p>
 					)}
-					<p
-						className={styles.price}
-						itemProp='offers'
-						itemScope
-						itemType='https://schema.org/Offer'
-					>
-						{'amount' in data.attributes.price && (
+					{data.attributes.price && (
+						<p
+							className={styles.price}
+							itemProp='offers'
+							itemScope
+							itemType='https://schema.org/Offer'
+						>
+							{'amount' in data.attributes.price && (
+								<meta
+									itemProp='price'
+									content={data.attributes.price.amount.toString()}
+								/>
+							)}
 							<meta
-								itemProp='price'
-								content={data.attributes.price.amount.toString()}
+								itemProp='priceCurrency'
+								content={getPriceCurrencyFormat(data.attributes.price.currency)}
 							/>
-						)}
-						<meta
-							itemProp='priceCurrency'
-							content={getPriceCurrencyFormat(data.attributes.price.currency)}
-						/>
-						{getServicePrice(data.attributes.price)}
-					</p>
+							{getServicePrice(data.attributes.price)}
+						</p>
+					)}
 				</div>
 			</div>
 		</div>

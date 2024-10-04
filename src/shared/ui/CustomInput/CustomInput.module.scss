@@ -5,12 +5,20 @@
 		left: rem(30);
 		transform: translate(0);
 		font-size: rem(12);
+
+		@media (max-width: $max-768) {
+			left: rem(24);
+		}
 	} @else {
 		position: absolute;
 		top: 50%;
 		left: rem(30);
 		font-size: rem(18);
 		transform: translateY(-50%);
+
+		@media (max-width: $max-768) {
+			font-size: rem(16);
+		}
 	}
 }
 
@@ -37,9 +45,13 @@
 	background-color: transparent;
 	color: $text-300-fixed;
 	@include gilroy(400, 18);
-	padding-bottom: rem(12);
 	padding: rem(26) rem(40) rem(12);
 	transition: 0.2s;
+
+	@media (max-width: $max-768) {
+		padding: rem(20) rem(26) rem(8);
+		font-size: rem(16);
+	}
 
 	&:placeholder-shown {
 		& ~ .label {

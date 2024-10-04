@@ -9,7 +9,7 @@ export interface IService {
 		slug?: ILink;
 		title: string;
 		description: string;
-		price: IServicePrice;
+		price?: IServicePrice;
 		oldPrice?: IServicePrice;
 		button: ICustomLinkProps;
 		createdAt: string;

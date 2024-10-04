@@ -57,7 +57,9 @@ export const TeamPerson = ({ data }: Props) => {
 					</div>
 				</div>
 			</div>
-			<CustomButton.Link {...data.attributes.contactLink}></CustomButton.Link>
+			{data.attributes.contactLink && data.attributes.contactLink.children && (
+				<CustomButton.Link {...data.attributes.contactLink}></CustomButton.Link>
+			)}
 		</div>
 	);
 };
