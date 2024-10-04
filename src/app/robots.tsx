@@ -1,7 +1,7 @@
 import { MetaService } from '@/services/user/meta';
-import { appLinks, REVALIDATE_TIME, WEBSITE_DOMEN } from '@/shared/constants';
+import { appLinks, WEBSITE_DOMEN } from '@/shared/constants';
 
-export const revalidate = REVALIDATE_TIME;
+export const revalidate = 30;
 
 // robots.txt / v.1.0.0
 export default async function robots() {

@@ -29,17 +29,16 @@ export class MetaService {
 	}
 
 	static async getRobots() {
-		const request = new Request(
-			`${API_URL}/robots?pagination[pageSize]=100&populate=*`,
-			{
-				method: 'GET',
-				next: {
-					revalidate: REVALIDATE_TIME,
-				},
-			},
-		);
 		try {
-			const response = await fetch(request);
+			const response = await fetch(
+				`${API_URL}/robots?pagination[pageSize]=100&populate=*`,
+				{
+					method: 'GET',
+					next: {
+						revalidate: 30,
+					},
+				},
+			);
 			const responseJson: DataWithMeta<IRobots[]> = await response.json();
 			return responseJson;
 		} catch (error) {
