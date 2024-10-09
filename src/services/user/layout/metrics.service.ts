@@ -3,11 +3,12 @@ import type {
 	DataWithoutMeta,
 	IGoogleAnalytics,
 	IGoogleTagManager,
+	IVkPixel,
 	IYandexMetrics,
 } from '@/shared/types';
 
 // 07.08.2024
-// Metrics service / v.1.0.0
+// Metrics service / v.1.0.1
 export class MetricsService {
 	static async getYandexMetrics() {
 		const request = new Request(
@@ -32,6 +33,25 @@ export class MetricsService {
 					cause: error,
 				},
 			);
+		}
+	}
+
+	static async getVkPixel() {
+		const request = new Request(`${API_URL}/vk-pixel?populate=*`, {
+			method: 'GET',
+			next: {
+				revalidate: REVALIDATE_TIME,
+			},
+		});
+
+		try {
+			const response = await fetch(request);
+			const responseJson: DataWithoutMeta<IVkPixel> = await response.json();
+			return responseJson;
+		} catch (error) {
+			throw new Error('Error get vk pixel metrics.\nFile: metrics.service', {
+				cause: error,
+			});
 		}
 	}
 

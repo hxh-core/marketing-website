@@ -49,10 +49,10 @@
 		background: transparent;
 		border: 1px solid rgba(1, 109, 236, 0.6);
 		outline: none;
-		color: $text-800-fixed;
+		color: $text-800;
 
 		& .icon path {
-			fill: $text-800-fixed;
+			fill: $text-800;
 		}
 
 		&:disabled {

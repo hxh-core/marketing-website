@@ -65,6 +65,7 @@ export default async function RootLayout({
 	const yandexMetrics = await MetricsService.getYandexMetrics();
 	const googleAnalytics = await MetricsService.getGoogleAnalytics();
 	const googleTagManager = await MetricsService.getGoogleTagManager();
+	const vkPixel = await MetricsService.getVkPixel();
 
 	return (
 		<html lang='ru'>
@@ -98,7 +99,7 @@ export default async function RootLayout({
 						googleTagManager && googleTagManager.data
 							? googleTagManager.data
 							: undefined,
-					vk: 3562125,
+					vk: vkPixel && vkPixel.data ? vkPixel.data : undefined,
 				}}
 			>
 				{children}
