@@ -6,9 +6,9 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
 	return {
-		name: 'HxH Marketing',
-		short_name: 'HxH Marketing',
-		description: 'HxH Marketing',
+		name: 'HxH Agency',
+		short_name: 'HxH Agency',
+		description: 'HxH Agency',
 		start_url: '/',
 		display: 'standalone',
 		background_color: '#141414',

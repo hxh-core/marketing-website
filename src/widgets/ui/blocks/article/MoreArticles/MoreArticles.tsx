@@ -27,6 +27,7 @@ export const MoreArticles = async ({
 
 	return (
 		<BlockWithTitle
+			title={data.title}
 			className={`${getAnimationStyle(data.animation)} ${styles.moreArticles}`}
 			id={data.blockId}
 		>

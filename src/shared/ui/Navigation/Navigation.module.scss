@@ -65,12 +65,9 @@
 .container {
 	@include container-medium();
 	padding-block: rem(5);
-
-	@media (max-width: $max-900) {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 .pages {
 	list-style: none;
@@ -102,6 +99,16 @@
 		&.active {
 			transform: translate(0, 0);
 		}
+	}
+}
+.contactButton {
+	& a,
+	button {
+		border-radius: rem(100) !important;
+	}
+
+	@media (max-width: $max-1000) {
+		display: none;
 	}
 }
 .navPageLink {

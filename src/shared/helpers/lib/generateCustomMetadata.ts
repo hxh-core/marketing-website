@@ -1,4 +1,4 @@
-import { SERVER_URL, SITE_NAME, WEBSITE_DOMEN } from '@/shared/constants';
+import { SERVER_URL, WEBSITE_DOMEN } from '@/shared/constants';
 import { IPage } from '@/shared/types';
 import type { Metadata } from 'next/types';
 
@@ -33,7 +33,6 @@ export const generateCustomMetadata = async ({
 				description: page.attributes.metaDescription
 					? page.attributes.metaDescription
 					: undefined,
-				siteName: SITE_NAME,
 				url: `${WEBSITE_DOMEN}${page.attributes.path ? page.attributes.path : path}`,
 				images:
 					page.attributes.metaImage &&

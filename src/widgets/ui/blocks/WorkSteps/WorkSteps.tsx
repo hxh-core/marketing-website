@@ -14,6 +14,7 @@ export const WorkSteps = ({ data, index }: Props) => {
 	const content = data.data.data.attributes.data;
 	return (
 		<BlockWithTitle
+			title={data.title}
 			className={`${getAnimationStyle(data.animation)} ${styles.workStepsBlock}`}
 			id={data.blockId}
 		>

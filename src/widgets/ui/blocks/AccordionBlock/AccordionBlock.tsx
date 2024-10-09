@@ -16,8 +16,12 @@ export const AccordionBlock = ({ data, index }: Props) => {
 	const [openIndex, setOpenIndex] = useState<number | null>(null);
 
 	return (
-		<BlockWithTitle id={data.blockId}>
-			<Container className={getAnimationStyle(data.animation)} size='medium'>
+		<BlockWithTitle
+			id={data.blockId}
+			title={data.title}
+			className={getAnimationStyle(data.animation)}
+		>
+			<Container size='medium'>
 				<Title title={data.title} index={index} />
 				<div className={styles.accordions}>
 					{data.data.data.attributes.data.map((accordion, index) => (

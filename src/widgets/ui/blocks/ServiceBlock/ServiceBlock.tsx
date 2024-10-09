@@ -13,8 +13,12 @@ export const ServiceBlock = ({ data, index }: Props) => {
 	const content = data.data.data;
 
 	return (
-		<BlockWithTitle id={data.blockId}>
-			<Container className={getAnimationStyle('from-bottom-to-top')}>
+		<BlockWithTitle
+			title={data.title}
+			id={data.blockId}
+			className={getAnimationStyle('from-bottom-to-top')}
+		>
+			<Container>
 				<Title title={data.title} index={index} />
 				<div className={styles.services}>
 					{content.map((service, index) => (

@@ -16,21 +16,23 @@ export const Accordion = ({ accordion, isOpen, setIsOpen }: AccordionProps) => {
 	const content = useRef<HTMLDivElement>(null);
 
 	return (
-		<div
+		<button
 			className={`${styles.accordion} ${getNeedStyle({
 				isActive: isOpen,
 				styles: styles,
 				needStyle: styles.open,
 			})}`}
+			type='button'
+			onClick={setIsOpen}
 			itemScope
 			itemType='https://schema.org/Question'
 		>
-			<button type='button' onClick={setIsOpen} className={styles.upperButton}>
+			<div className={styles.upperButton}>
 				<p className={styles.title} itemProp='name'>
 					{accordion.ask}
 				</p>
 				<ArrowIcon className={styles.icon} />
-			</button>
+			</div>
 			<div
 				className={styles.hiddenContent}
 				style={
@@ -48,6 +50,6 @@ export const Accordion = ({ accordion, isOpen, setIsOpen }: AccordionProps) => {
 					dangerouslySetInnerHTML={{ __html: accordion.answer }}
 				></div>
 			</div>
-		</div>
+		</button>
 	);
 };

@@ -1,3 +1,4 @@
+// Gilroy
 @font-face {
 	font-family: 'Gilroy';
 	src: url('./fonts/gilroy-black.woff2');
@@ -140,6 +141,83 @@
 	font-weight: 200;
 	font-style: italic;
 	font-display: swap;
+}
+
+// Laqonic
+
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-LightItalic.woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-Italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-MediumItalic.woff2')
+		format('woff2');
+	font-weight: 500;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-SemiBold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-SemiBoldItalic.woff2')
+		format('woff2');
+	font-weight: 600;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-BoldItalic.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-Black.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Laqonic 4F Unicase';
+	src: url('./fonts/laqonic/Laqonic4FUnicase-BlackItalic.woff2') format('woff2');
+	font-weight: 900;
+	font-style: italic;
 }
 
 * {

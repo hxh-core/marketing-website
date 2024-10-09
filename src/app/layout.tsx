@@ -8,7 +8,7 @@ import {
 	MetricsService,
 	NavigationService,
 } from '@/services';
-import { REVALIDATE_TIME, ZEN_VERIFICATION } from '@/shared';
+import { REVALIDATE_TIME, SITE_NAME, ZEN_VERIFICATION } from '@/shared';
 import '@/styles/globals.scss';
 import { ClientRootLayout } from '@/widgets/lib';
 import type { Metadata } from 'next';
@@ -17,7 +17,10 @@ import './styles';
 export const revalidate = REVALIDATE_TIME;
 
 export const metadata: Metadata = {
-	creator: 'HxH Marketing',
+	openGraph: {
+		siteName: SITE_NAME,
+	},
+	creator: 'HxH Agency',
 	icons: [
 		{
 			url: faviconSvg.src,

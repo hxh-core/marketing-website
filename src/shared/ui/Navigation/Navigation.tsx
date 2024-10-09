@@ -2,7 +2,7 @@
 
 import { CLIENT_URL } from '@/shared/constants';
 import type { INavigation, INewsMessages } from '@/shared/types/ui/elements';
-import { Logo, NewsMessages } from '@/shared/ui';
+import { CustomButton, Logo, NewsMessages } from '@/shared/ui';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
@@ -99,6 +99,11 @@ export const Navigation = ({
 							</Link>
 						))}
 					</menu>
+					{data.attributes.contactButton && (
+						<div className={styles.contactButton}>
+							<CustomButton.Link {...data.attributes.contactButton} />
+						</div>
+					)}
 					<div
 						ref={burger}
 						className={styles.burger}

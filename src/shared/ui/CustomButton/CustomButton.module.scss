@@ -49,10 +49,10 @@
 		background: transparent;
 		border: 1px solid rgba(1, 109, 236, 0.6);
 		outline: none;
-		color: $text-100;
+		color: $text-800-fixed;
 
 		& .icon path {
-			fill: $text-100;
+			fill: $text-800-fixed;
 		}
 
 		&:disabled {
@@ -61,7 +61,7 @@
 		}
 
 		&:hover {
-			background: rgba(221, 236, 255, 0.6);
+			background: rgba(109, 117, 129, 0.6);
 		}
 
 		&:focus-visible {

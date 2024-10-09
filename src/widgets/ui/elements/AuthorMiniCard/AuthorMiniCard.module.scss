@@ -29,10 +29,21 @@
 	&:nth-child(2n) {
 		max-width: rem(350);
 	}
+
+	&:last-child {
+		@media (max-width: $max-768) {
+			margin-top: rem(20);
+			align-items: flex-start;
+		}
+	}
 }
 .authorName {
 	@include gilroy(500, 20);
 	color: $text-800;
+
+	@media (max-width: $max-768) {
+		text-align: center;
+	}
 }
 
 .authorMoreInfo {

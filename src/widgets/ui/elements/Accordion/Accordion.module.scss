@@ -11,8 +11,11 @@
 	overflow: hidden;
 	height: 100%;
 	@include accordion-transition;
+	border: 0;
+	outline: none;
+	text-align: left;
 
-	&:has(.upperButton:focus-visible) {
+	&:focus-visible {
 		outline: 1px solid $primary-tint-700;
 	}
 

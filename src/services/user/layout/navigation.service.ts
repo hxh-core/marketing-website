@@ -5,7 +5,11 @@ import type {
 	INewsMessages,
 } from '@/shared/types';
 
-const queryParams = ['populate[0]=links', 'populate[1]=localizations.links'];
+const queryParams = [
+	'populate[0]=links',
+	'populate[1]=localizations.links',
+	'populate[2]=contactButton.href',
+];
 
 // 10.07.2024
 // Navigation service / v.1.0.0

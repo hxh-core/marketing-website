@@ -13,8 +13,12 @@ export const TeamBlock = ({ data, index }: Props) => {
 	const content = data.data.data;
 
 	return (
-		<BlockWithTitle id={data.blockId}>
-			<Container className={getAnimationStyle(data.animation)} size='medium'>
+		<BlockWithTitle
+			title={data.title}
+			id={data.blockId}
+			className={getAnimationStyle(data.animation)}
+		>
+			<Container size='medium'>
 				<Title title={data.title} index={index} />
 				<div className={styles.team}>
 					{content.map((person, index) => (

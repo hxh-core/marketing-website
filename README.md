@@ -44,9 +44,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## About us
 
-GitHub organization: **[HxH Marketing](https://github.com/hxh-core)**
+GitHub organization: **[HxH Agency](https://github.com/hxh-core)**
 
-VK Group: **[HxH Marketing](https://vk.com/hxh_marketing)**
+VK Group: **[HxH Agency](https://vk.com/hxh_marketing)**
 
 ---
 

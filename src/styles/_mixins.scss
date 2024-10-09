@@ -38,6 +38,14 @@
 	line-height: 1;
 	cursor: text;
 }
+@mixin laqonic($weight: 400, $size: 16, $style: normal) {
+	font-family: 'Laqonic 4F Unicase', sans-serif;
+	font-style: $style;
+	font-size: rem($size);
+	font-weight: $weight;
+	line-height: 1;
+	cursor: text;
+}
 
 // Helpers
 @mixin strings($string-count) {

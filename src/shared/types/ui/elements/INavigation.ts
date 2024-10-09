@@ -1,4 +1,4 @@
-import type { ILink } from '../shared';
+import type { ICustomLinkProps, ILink } from '../shared';
 
 export interface INavigation {
 	id: number;
@@ -11,5 +11,6 @@ export interface INavigation {
 		};
 		createdAt: string;
 		updatedAt?: string;
+		contactButton?: ICustomLinkProps;
 	};
 }
