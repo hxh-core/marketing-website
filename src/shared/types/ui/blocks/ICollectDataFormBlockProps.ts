@@ -14,6 +14,7 @@ export interface ICollectDataFormProps {
 		contentPosition: 'left' | 'right';
 		inputs: ICustomInput[];
 		button: ICustomButtonProps;
+		hrefAfterSuccess?: string;
 	};
 }
 

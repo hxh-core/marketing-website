@@ -14,6 +14,7 @@ import { HeadingByIndex } from '@/shared/ui/helpers';
 import { Container } from '@/shared/ui/layout';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './CollectForm.module.scss';
@@ -31,6 +32,7 @@ const getFormPositionStyles = (position: 'left' | 'right'): string => {
 
 export const CollectForm = ({ data, index }: Props) => {
 	const content = data.data.data.attributes;
+	const router = useRouter();
 
 	const {
 		register,
@@ -61,6 +63,10 @@ export const CollectForm = ({ data, index }: Props) => {
 
 		try {
 			await TelegramService.sendNewClient(data, formData);
+
+			if (content.hrefAfterSuccess) {
+				router.push(content.hrefAfterSuccess);
+			}
 		} catch (error) {
 			content.inputs.forEach((input) => {
 				setError(input.inputProps!.name!, {
