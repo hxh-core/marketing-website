@@ -11,6 +11,7 @@ export interface IAuthor {
 		publishedAt: string;
 		locale?: string;
 		photo: StrapiImage;
+		url?: string;
 		articles?: {
 			data: IArticle[];
 		};

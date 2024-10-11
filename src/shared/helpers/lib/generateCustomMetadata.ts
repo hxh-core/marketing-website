@@ -13,7 +13,78 @@ export const generateCustomMetadata = async ({
 	page,
 	path,
 }: GenerateCustomMetadataProps): Promise<Metadata> => {
-	// Если нет мета-тегов, то возвращаем стандартные мета-теги
+	if (page && page.attributes && page.attributes.type === 'article') {
+		console.log('true');
+		return {
+			metadataBase: new URL(
+				`${WEBSITE_DOMEN}${page.attributes.path ? page.attributes.path : path}`,
+			),
+			title: page.attributes.metaTitle,
+			description: page.attributes.metaDescription
+				? page.attributes.metaDescription
+				: undefined,
+			keywords: page.attributes.metaKeywords
+				? page.attributes.metaKeywords
+				: undefined,
+			authors: [
+				{
+					name: page.attributes.author?.data.attributes.name,
+					url: page.attributes.author?.data.attributes.url,
+				},
+			],
+			openGraph: {
+				publishedTime: page.attributes.article?.data.attributes.publishedAt,
+				modifiedTime: page.attributes.article?.data.attributes.updatedAt,
+				type: page.attributes.type ? page.attributes.type : 'website',
+				title: page.attributes.metaTitle,
+				description: page.attributes.metaDescription
+					? page.attributes.metaDescription
+					: undefined,
+				url: `${WEBSITE_DOMEN}${page.attributes.path ? page.attributes.path : path}`,
+				images:
+					page.attributes.metaImage &&
+					page.attributes.metaImage.data &&
+					page.attributes.metaImage.data.length
+						? page.attributes.metaImage.data.map((image) => {
+								return {
+									url: `${SERVER_URL}${image.attributes.url}`,
+									type: image.attributes.mime,
+									alt: image.attributes.alternativeText,
+									height: image.attributes.height,
+									width: image.attributes.width,
+								};
+							})
+						: undefined,
+			},
+			// openGraph: {
+			// 	type: page.attributes.type ? page.attributes.type : 'website',
+			// 	title: page.attributes.metaTitle,
+			// 	description: page.attributes.metaDescription
+			// 		? page.attributes.metaDescription
+			// 		: undefined,
+			// 	url: `${WEBSITE_DOMEN}${page.attributes.path ? page.attributes.path : path}`,
+			// 	images:
+			// 		page.attributes.metaImage &&
+			// 		page.attributes.metaImage.data &&
+			// 		page.attributes.metaImage.data.length
+			// 			? page.attributes.metaImage.data.map((image) => {
+			// 					return {
+			// 						url: `${SERVER_URL}${image.attributes.url}`,
+			// 						type: image.attributes.mime,
+			// 						alt: image.attributes.alternativeText,
+			// 						height: image.attributes.height,
+			// 						width: image.attributes.width,
+			// 					};
+			// 				})
+			// 			: undefined,
+			// },
+			alternates: {
+				canonical: `${WEBSITE_DOMEN}${
+					page.attributes.path ? page.attributes.path : path
+				}`,
+			},
+		};
+	}
 
 	if (page && page.attributes) {
 		return {
@@ -39,7 +110,13 @@ export const generateCustomMetadata = async ({
 					page.attributes.metaImage.data &&
 					page.attributes.metaImage.data.length
 						? page.attributes.metaImage.data.map((image) => {
-								return `${SERVER_URL}${image.attributes.url}`;
+								return {
+									url: `${SERVER_URL}${image.attributes.url}`,
+									type: image.attributes.mime,
+									alt: image.attributes.alternativeText,
+									height: image.attributes.height,
+									width: image.attributes.width,
+								};
 							})
 						: undefined,
 			},
@@ -51,6 +128,7 @@ export const generateCustomMetadata = async ({
 		};
 	}
 
+	// Если нет мета-тегов, то возвращаем стандартные мета-теги
 	return {
 		metadataBase: new URL(`${WEBSITE_DOMEN}/${path}`),
 		title: 'Страница не найдена: 404',
@@ -63,49 +141,4 @@ export const generateCustomMetadata = async ({
 			canonical: `${WEBSITE_DOMEN}${path}`,
 		},
 	};
-
-	// if (!page || !page.attributes) {
-	// 	return {
-	// 		metadataBase: new URL(`${CLIENT_URL}/${path}`),
-	// 		title: SITE_NAME,
-	// 		openGraph: {
-	// 			siteName: SITE_NAME,
-	// 			url: `${CLIENT_URL}${path}`,
-	// 			type: type,
-	// 		},
-	// 		alternates: {
-	// 			canonical: `${CLIENT_URL}${path}`,
-	// 		},
-	// 	};
-	// }
-
-	// return {
-	// 	metadataBase: new URL(
-	// 		`${CLIENT_URL}/${page.attributes.path ? page.attributes.path : path}`,
-	// 	),
-	// 	title: page.attributes.metaTitle,
-	// 	description: page.attributes.metaDescription
-	// 		? page.attributes.metaDescription
-	// 		: undefined,
-	// 	keywords: page.attributes.metaKeywords
-	// 		? page.attributes.metaKeywords
-	// 		: undefined,
-	// 	openGraph: {
-	// 		type: type ? type : 'website',
-	// 		title: page.attributes.metaTitle,
-	// 		description: page.attributes.metaDescription
-	// 			? page.attributes.metaDescription
-	// 			: undefined,
-	// 		siteName: SITE_NAME,
-	// 		url: `${CLIENT_URL}/${page.attributes.path ? page.attributes.path : path}`,
-	// 		images: [
-	// 			`${CLIENT_URL}/${page.attributes.metaImage ? page.attributes.metaImage.data[0].data.attributes.url : undefined}`,
-	// 		],
-	// 	},
-	// 	alternates: {
-	// 		canonical: `${CLIENT_URL}/${
-	// 			page.attributes.path ? page.attributes.path : path
-	// 		}`,
-	// 	},
-	// };
 };

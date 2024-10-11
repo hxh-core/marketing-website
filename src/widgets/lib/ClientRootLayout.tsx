@@ -56,12 +56,14 @@ export const ClientRootLayout = ({
 				<main className='main'>{children}</main>
 				{cookie && <CookieWidget data={cookie} />}
 				<Footer data={footerProps} />
-				<script
-					src='https://widget.gravi.org/code/index.js'
-					data-grv-id='1204'
-					data-grv-key='10ot0h9xhvm229fj9p'
-					defer
-				></script>
+				{process.env.NODE_ENV === 'production' && (
+					<script
+						src='https://widget.gravi.org/code/index.js'
+						data-grv-id='1204'
+						data-grv-key='10ot0h9xhvm229fj9p'
+						defer
+					></script>
+				)}
 			</MetricsWrapper>
 		</body>
 	);

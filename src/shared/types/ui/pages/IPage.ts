@@ -1,6 +1,7 @@
 import type { StrapiImageWithoutData } from '../../api';
 import type { SiteType } from '../../meta';
 import type { IBlock } from '../blocks';
+import type { IArticle, IAuthor } from '../elements';
 
 export interface IPage {
 	id: number;
@@ -17,6 +18,12 @@ export interface IPage {
 		};
 		path: string;
 		type?: SiteType;
+		author?: {
+			data: IAuthor;
+		};
+		article?: {
+			data: IArticle;
+		};
 		blocks: IBlock<any>[];
 	};
 }
