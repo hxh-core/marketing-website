@@ -1,3 +1,4 @@
+export * from './emojis';
 export * from './generateCustomMetadata';
 export * from './getAnimationStyle';
 export * from './getClientValuesFromForm';
@@ -5,6 +6,7 @@ export * from './getComponentFromBlockName';
 export * from './getIconFromName';
 export * from './getPriceCurrencyFormat';
 export * from './isPropsValid';
+export * from './PageCheck';
 export * from './setupParallax';
 export * from './toggleBodyOverflow';
 export * from './validation';
