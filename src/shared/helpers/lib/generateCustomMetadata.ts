@@ -13,8 +13,12 @@ export const generateCustomMetadata = async ({
 	page,
 	path,
 }: GenerateCustomMetadataProps): Promise<Metadata> => {
-	if (page && page.attributes && page.attributes.type === 'article') {
-		console.log('true');
+	if (
+		page &&
+		page.attributes &&
+		page.attributes.type &&
+		page.attributes.type === 'article'
+	) {
 		return {
 			metadataBase: new URL(
 				`${WEBSITE_DOMEN}${page.attributes.path ? page.attributes.path : path}`,
