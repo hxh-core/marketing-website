@@ -2,9 +2,9 @@ import { PageService } from '@/services/user';
 import {
 	generateCustomMetadata,
 	getComponentFromBlockName,
+	PageCheck,
 } from '@/shared/helpers/lib';
 import { ScrollComponent } from '@/shared/ui/helpers';
-import { notFound } from 'next/navigation';
 import type { Metadata } from 'next/types';
 
 export const revalidate = 30;
@@ -33,9 +33,7 @@ const SlugPage = async ({
 		`/${params.slug}/${params.path}/${params.path1}`,
 	);
 
-	if (!pageData.data[0] || !pageData.data[0].attributes.path) {
-		notFound();
-	}
+	PageCheck.isPageHasError(pageData);
 
 	return (
 		<>

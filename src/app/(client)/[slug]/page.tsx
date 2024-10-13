@@ -3,9 +3,9 @@ import { REVALIDATE_TIME } from '@/shared';
 import {
 	generateCustomMetadata,
 	getComponentFromBlockName,
+	PageCheck,
 } from '@/shared/helpers/lib';
 import { ScrollComponent } from '@/shared/ui/helpers';
-import { notFound } from 'next/navigation';
 import type { Metadata } from 'next/types';
 
 export const revalidate = REVALIDATE_TIME;
@@ -40,9 +40,7 @@ const SlugPage = async ({ params }: { params: { slug: string } }) => {
 			: `/${params.slug}`,
 	);
 
-	if (!pageData.data[0] || !pageData.data[0].attributes.path) {
-		notFound();
-	}
+	PageCheck.isPageHasError(pageData);
 
 	return (
 		<>
