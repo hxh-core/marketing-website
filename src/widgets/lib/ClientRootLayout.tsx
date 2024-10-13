@@ -56,7 +56,7 @@ export const ClientRootLayout = ({
 				<main className='main'>{children}</main>
 				{cookie && <CookieWidget data={cookie} />}
 				<Footer data={footerProps} />
-				{process.env.NODE_ENV === 'production' && (
+				{process.env.NODE_ENV === 'development' && (
 					<script
 						src='https://widget.gravi.org/code/index.js'
 						data-grv-id='1204'

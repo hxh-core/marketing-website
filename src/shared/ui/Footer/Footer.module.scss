@@ -158,7 +158,11 @@
 .lower {
 	width: 100%;
 	background-color: $text-300-fixed;
-	padding: rem(20) 0;
+	padding: rem(20) 0 rem(60);
+
+	@media screen and (max-width: $max-600) {
+		padding: rem(20) 0 rem(140);
+	}
 }
 .copyright {
 	@include gilroy(500, 14);
