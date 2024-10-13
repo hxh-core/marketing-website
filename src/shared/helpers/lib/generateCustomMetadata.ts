@@ -30,15 +30,24 @@ export const generateCustomMetadata = async ({
 			keywords: page.attributes.metaKeywords
 				? page.attributes.metaKeywords
 				: undefined,
-			authors: [
-				{
-					name: page.attributes.author?.data.attributes.name,
-					url: page.attributes.author?.data.attributes.url,
-				},
-			],
+			authors:
+				page.attributes.author && page.attributes.author.data
+					? [
+							{
+								name: page.attributes.author?.data.attributes.name,
+								url: page.attributes.author?.data.attributes.url,
+							},
+						]
+					: undefined,
 			openGraph: {
-				publishedTime: page.attributes.article?.data.attributes.publishedAt,
-				modifiedTime: page.attributes.article?.data.attributes.updatedAt,
+				publishedTime:
+					page.attributes.article && page.attributes.article.data
+						? page.attributes.article?.data.attributes.publishedAt
+						: undefined,
+				modifiedTime:
+					page.attributes.article && page.attributes.article.data
+						? page.attributes.article?.data.attributes.updatedAt
+						: undefined,
 				type: page.attributes.type ? page.attributes.type : 'website',
 				title: page.attributes.metaTitle,
 				description: page.attributes.metaDescription
@@ -60,28 +69,6 @@ export const generateCustomMetadata = async ({
 							})
 						: undefined,
 			},
-			// openGraph: {
-			// 	type: page.attributes.type ? page.attributes.type : 'website',
-			// 	title: page.attributes.metaTitle,
-			// 	description: page.attributes.metaDescription
-			// 		? page.attributes.metaDescription
-			// 		: undefined,
-			// 	url: `${WEBSITE_DOMEN}${page.attributes.path ? page.attributes.path : path}`,
-			// 	images:
-			// 		page.attributes.metaImage &&
-			// 		page.attributes.metaImage.data &&
-			// 		page.attributes.metaImage.data.length
-			// 			? page.attributes.metaImage.data.map((image) => {
-			// 					return {
-			// 						url: `${SERVER_URL}${image.attributes.url}`,
-			// 						type: image.attributes.mime,
-			// 						alt: image.attributes.alternativeText,
-			// 						height: image.attributes.height,
-			// 						width: image.attributes.width,
-			// 					};
-			// 				})
-			// 			: undefined,
-			// },
 			alternates: {
 				canonical: `${WEBSITE_DOMEN}${
 					page.attributes.path ? page.attributes.path : path
