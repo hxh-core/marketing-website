@@ -25,26 +25,31 @@
 }
 
 .links {
-	display: inline-flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: rem(4);
+	display: inline-block;
+	// align-items: center;
+	// flex-wrap: wrap;
+	// gap: rem(4);
 	color: $text-600;
 }
 
 .linkWrapper {
-	display: inline-flex;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: rem(4);
+	display: inline;
+	// align-items: center;
+	// flex-wrap: wrap;
+	// gap: rem(4);
 }
 .link {
+	display: inline;
 	color: inherit;
 	text-decoration: none;
 	transition: 0.1s;
 	opacity: 0.8;
 	@include gilroy(400, 16);
 	cursor: pointer;
+
+	& span {
+		display: inline;
+	}
 
 	&:hover {
 		opacity: 1;
@@ -58,4 +63,6 @@
 
 .divider {
 	cursor: default;
+	display: inline;
+	margin-inline: rem(4);
 }

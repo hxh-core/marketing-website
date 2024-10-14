@@ -1,3 +1,5 @@
+'use client';
+
 import { SERVER_URL } from '@/shared';
 import type { IArticle } from '@/shared/types';
 import { FireIcon } from '@/shared/ui/icons';
